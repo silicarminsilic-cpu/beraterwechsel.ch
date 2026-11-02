@@ -1,0 +1,1966 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Berater wechseln, Versicherung behalten | beraterwechsel.ch</title>
+<meta name="description" content="Ihr Versicherungsberater meldet sich nicht? Wechseln Sie Ihren Berater, nicht automatisch Ihre Versicherung. Unverbindliche Anfrage in 2 Minuten.">
+<meta name="theme-color" content="#0c2764">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Layout: Swiss Premium. Weiss und Dunkelblau, grosse Typo, Kreisel aus Kundenanliegen als einziges Show-Element. */
+:root{
+  --navy:#0c2764;--navy-hover:#0a2053;--white:#ffffff;
+  --ink:#0f172b;--muted:#45556c;--surface:#f1f5f9;--line:#e2e8f0;
+  --r:12px;
+  --font:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--white);z-index:10}
+img,svg,canvas{max-width:100%}
+.wrap{width:100%;max-width:1240px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sec{--cr:clamp(28px,4.5vw,56px);background:var(--white);padding-block:clamp(64px,9vw,120px);padding-top:calc(clamp(64px,9vw,120px) + var(--cr)*.5);scroll-margin-top:72px;border-radius:var(--cr) var(--cr) 0 0;margin-top:calc(var(--cr)*-1);position:relative;box-shadow:0 -22px 44px -34px rgba(12,39,100,.3)}
+.band{background:var(--surface)}
+.on-navy{background:var(--navy);color:#fff}
+h1,h2,h3,p{margin:0}
+h1{font-weight:800;letter-spacing:-.035em;line-height:1.02;font-size:clamp(2.4rem,5vw,4.5rem);text-wrap:balance;color:var(--ink)}
+h2{font-weight:800;letter-spacing:-.03em;line-height:1.06;font-size:clamp(2rem,3.8vw,3.25rem);text-wrap:balance}
+h3{font-size:1.25rem;line-height:1.25;letter-spacing:-.015em;font-weight:700}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy)}
+.on-navy .eyebrow{color:#fff;opacity:.8}
+.lead{font-size:clamp(1.05rem,1.4vw,1.25rem);color:var(--muted);max-width:62ch}
+.on-navy .lead{color:#fff;opacity:.85}
+.sub{color:var(--muted)}
+.head{display:grid;gap:16px;margin-bottom:clamp(32px,5vw,56px);max-width:820px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:inherit;font-weight:600;font-size:1rem;line-height:1.2;text-align:center;border-radius:10px;padding:14px 22px;border:1.5px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer;text-decoration:none;transition:background .2s,transform .2s var(--ease)}
+.btn:hover{background:var(--navy-hover);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--navy)}
+.btn.ghost:hover{background:var(--surface)}
+.btn.lg{padding:18px 28px;font-size:1.05rem}
+.btn.inv{background:#fff;color:var(--navy);border-color:#fff}
+.btn.inv:hover{background:var(--surface)}
+.btn[disabled]{opacity:.55;cursor:default;transform:none}
+.link{background:none;border:0;padding:0;font:inherit;font-weight:600;color:var(--navy);cursor:pointer;display:inline-flex;gap:8px;align-items:center;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px;text-align:left}
+:focus-visible{outline:3px solid var(--navy);outline-offset:3px;border-radius:6px}
+.on-navy :focus-visible,.overlay-dark :focus-visible{outline-color:#fff}
+
+/* Demo-Leiste und Kopf */
+.demobar{background:var(--navy);color:#fff;font-size:.8rem}
+.demobar .wrap{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;justify-content:space-between;padding-block:8px}
+.demobar label{display:inline-flex;gap:8px;align-items:center}
+.demobar select{font:inherit;font-size:.8rem;padding:4px 8px;border-radius:6px;border:1px solid rgba(255,255,255,.4);background:var(--navy);color:#fff;max-width:100%}
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.logo{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem;letter-spacing:-.02em;color:var(--navy);text-decoration:none;white-space:nowrap}
+.logo span{font-weight:500;color:var(--muted)}
+.nav{display:flex;gap:26px}
+.nav a{color:var(--ink);text-decoration:none;font-weight:500;font-size:.95rem}
+.nav a:hover{color:var(--navy);text-decoration:underline;text-underline-offset:6px}
+@media(max-width:900px){.nav{display:none}.hdr .btn{padding:10px 14px;font-size:.9rem}}
+
+/* Hero */
+.hero{padding-top:clamp(32px,5vw,64px);padding-bottom:clamp(48px,7vw,96px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,4vw,56px);align-items:center}
+@media(max-width:1020px){.hero-grid{grid-template-columns:minmax(0,1fr)}}
+.hero-copy{display:grid;gap:22px;justify-items:start;min-width:0}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.micro{font-size:.88rem;color:var(--muted);max-width:56ch}
+.trust-row{list-style:none;padding:0;margin:6px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 24px}
+.trust-row li{display:flex;gap:10px;align-items:center;font-weight:600;font-size:.95rem}
+@media(max-width:520px){.trust-row{grid-template-columns:minmax(0,1fr)}}
+.ic{width:22px;height:22px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;flex:none}
+.ic svg{width:12px;height:12px}
+.wheel{position:relative;width:100%;max-width:640px;margin-inline:auto;aspect-ratio:1/.95;min-height:340px;isolation:isolate}
+.wheel::before{content:"";position:absolute;inset:6% 4%;border-radius:50%;background:var(--surface);z-index:-1}
+.wheel canvas{width:100%;height:100%;display:block;touch-action:pan-y}
+.wheel-status{position:absolute;left:50%;bottom:2%;transform:translateX(-50%);display:flex;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:.88rem;font-weight:600;color:var(--navy);box-shadow:0 10px 24px -14px rgba(12,39,100,.5);max-width:94%;white-space:nowrap;opacity:0;transition:opacity .35s}
+.wheel-status.show{opacity:1}
+.wheel-status .sd{width:8px;height:8px;border-radius:50%;background:var(--navy);flex:none}
+.wheel-status.b .sd,.wheel-status.c .sd{box-shadow:0 0 0 4px rgba(12,39,100,.15)}
+.wheel-fallback{list-style:none;margin:0;padding:24px;display:flex;flex-wrap:wrap;gap:10px;align-content:center;justify-content:center;height:100%}
+.wheel-fallback li{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:10px 14px;font-weight:600;color:var(--navy);font-size:.9rem}
+
+/* Probleme */
+.prob-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,5vw,80px);align-items:start}
+.prob-left{min-width:0}
+.prob-left .sticky{position:sticky;top:calc(env(safe-area-inset-top,0px) + 108px);display:grid;gap:20px}
+.dots{display:flex;gap:8px;list-style:none;padding:0;margin:0}
+.dots li{height:4px;flex:1;max-width:44px;background:var(--line);border-radius:2px;transition:background .3s}
+.dots li.on{background:var(--navy)}
+.prob-right{display:grid;gap:28px;min-width:0}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px;display:grid;gap:16px;opacity:.5;transform:scale(.97);transition:opacity .5s var(--ease),transform .5s var(--ease),border-color .3s,box-shadow .4s}
+.pcard.on{opacity:1;transform:none;border-color:var(--navy);box-shadow:0 22px 44px -28px rgba(12,39,100,.45)}
+.pcard .body{display:grid;gap:10px;padding:4px 6px 6px;justify-items:start}
+.pcard p{color:var(--muted)}
+.photo{position:relative;aspect-ratio:16/7;border-radius:8px;background:var(--surface);overflow:hidden}
+.photo svg{position:absolute;left:50%;bottom:0;width:62%;height:96%;transform:translateX(-50%)}
+.photo small{position:absolute;left:10px;top:10px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--muted);background:rgba(255,255,255,.9);padding:4px 8px;border-radius:6px}
+@media(max-width:900px){.prob-grid{grid-template-columns:minmax(0,1fr)}.prob-left .sticky{position:static}.prob-right{gap:16px}.pcard{opacity:.7}}
+
+/* Versprechen */
+.cmp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:20px;align-items:stretch}
+.cmp>div{border-radius:var(--r);padding:clamp(24px,3vw,40px);display:grid;gap:18px;align-content:start;min-width:0}
+.cmp .a{background:#fff;border:1px solid var(--line)}
+.cmp .b{background:var(--navy);color:#fff}
+.cmp h3{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
+.cmp .a h3{color:var(--muted)}
+.cmp ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.cmp li{display:flex;gap:12px;align-items:flex-start}
+.cmp .a li{color:var(--muted)}
+.cmp .b li{font-weight:600;font-size:1.1rem}
+.cmp .mk{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;margin-top:2px}
+.cmp .a .mk{border:1.5px solid var(--line);color:var(--muted)}
+.cmp .b .mk{background:#fff;color:var(--navy)}
+.cmp .mk svg{width:12px;height:12px}
+@media(max-width:820px){.cmp{grid-template-columns:minmax(0,1fr)}}
+
+/* Ablauf */
+.steps{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-bottom:48px}
+.steps-line{position:absolute;left:calc((100% - 48px)/6);right:calc((100% - 48px)/6);top:27px;height:2px;background:var(--line);overflow:hidden}
+.steps-line i{position:absolute;inset:0;background:var(--navy);transform:scaleX(0);transform-origin:left;transition:transform 1.8s var(--ease)}
+.steps.in .steps-line i{transform:none}
+.step{position:relative;display:grid;gap:12px;justify-items:center;text-align:center}
+.step .n{width:56px;height:56px;border-radius:50%;background:#fff;border:2px solid var(--navy);color:var(--navy);font-weight:800;font-size:1.2rem;display:grid;place-items:center;position:relative;z-index:1}
+.step p{color:var(--muted);max-width:34ch}
+@media(max-width:760px){
+  .steps{grid-template-columns:minmax(0,1fr);gap:28px}
+  .steps-line{left:27px;right:auto;top:28px;bottom:28px;width:2px;height:auto}
+  .steps-line i{transform:scaleY(0);transform-origin:top}
+  .step{grid-template-columns:56px minmax(0,1fr);justify-items:start;text-align:left;column-gap:18px;align-items:start}
+  .step .n{grid-row:span 2}
+}
+
+/* Vorsorge */
+.vgrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+.vcard{grid-column:span 2;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:14px;align-content:start;justify-items:start}
+.vcard:nth-child(n+4){grid-column:span 3}
+.vcard p{color:var(--muted)}
+.glyph{min-width:56px;height:56px;padding:0 12px;border-radius:10px;background:var(--surface);color:var(--navy);display:grid;place-items:center;font-weight:800;font-size:1.15rem;letter-spacing:-.02em}
+@media(max-width:900px){.vgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.vcard,.vcard:nth-child(n+4){grid-column:span 1}.vcard:last-child{grid-column:1/-1}}
+@media(max-width:560px){.vgrid{grid-template-columns:minmax(0,1fr)}}
+
+/* Sprachen */
+.lang-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:start}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font:inherit;font-weight:600;border:1.5px solid var(--line);background:#fff;color:var(--ink);padding:10px 16px;border-radius:999px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.chip:hover{border-color:var(--navy)}
+.chip[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.greet{background:var(--surface);border-radius:var(--r);padding:clamp(24px,3vw,36px);display:grid;gap:18px;justify-items:start;min-width:0}
+.greet .g{font-size:clamp(1.4rem,2.4vw,2rem);font-weight:700;letter-spacing:-.02em;line-height:1.25;color:var(--navy)}
+.greet small{color:var(--muted)}
+@media(max-width:900px){.lang-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Vollmacht-Demo */
+.poa{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;max-width:920px}
+.sim{background:var(--navy);color:#fff;font-size:.78rem;font-weight:600;letter-spacing:.06em;padding:10px 20px;text-transform:uppercase}
+.pst{display:flex;list-style:none;margin:0;padding:0;overflow-x:auto;border-bottom:1px solid var(--line)}
+.pst li{flex:1 0 auto;min-width:104px;padding:12px 10px;text-align:center;font-size:.75rem;font-weight:600;color:var(--muted);border-bottom:3px solid transparent}
+.pst li b{display:block;font-size:.95rem;color:var(--muted)}
+.pst li.on{color:var(--navy);border-bottom-color:var(--navy)}
+.pst li.on b,.pst li.done b{color:var(--navy)}
+.pst li.done{color:var(--navy)}
+.poa-body{padding:clamp(20px,3vw,32px);display:grid;gap:18px;min-height:300px;align-content:start}
+.poa-foot{display:flex;justify-content:space-between;gap:12px;padding:16px clamp(20px,3vw,32px);border-top:1px solid var(--line);flex-wrap:wrap}
+.paper{position:relative;background:#fff;border:1px solid var(--line);box-shadow:0 10px 26px -18px rgba(15,23,43,.45);padding:24px;font-size:.92rem;border-radius:4px;display:grid;gap:12px;overflow:hidden}
+.paper::after{content:"DEMO";position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(4rem,14vw,8rem);font-weight:800;color:rgba(12,39,100,.06);transform:rotate(-18deg);pointer-events:none}
+.sigpad{width:100%;height:160px;border:1.5px dashed var(--navy);border-radius:10px;background:#fff;touch-action:none;display:block;cursor:crosshair}
+.ph{background:var(--surface);border:1px dashed var(--muted);border-radius:8px;padding:14px 16px;color:var(--muted);font-size:.92rem}
+.bar{height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--navy);transition:width 1.1s linear}
+
+/* Vertrauen und FAQ */
+.tgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.tcard{border:1px solid var(--line);background:#fff;border-radius:var(--r);padding:24px;display:grid;gap:12px;align-content:start}
+.tcard p{color:var(--muted)}
+.tcard .ico{width:44px;height:44px;border-radius:10px;background:var(--navy);color:#fff;display:grid;place-items:center}
+@media(max-width:980px){.tgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.tgrid{grid-template-columns:minmax(0,1fr)}}
+.faq{max-width:860px;display:grid;gap:0;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-weight:700;font-size:1.1rem;letter-spacing:-.01em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary svg{flex:none;transition:transform .3s var(--ease);color:var(--navy)}
+.faq details[open] summary svg{transform:rotate(180deg)}
+.faq .ans{padding:0 0 24px;color:var(--muted);max-width:68ch}
+
+/* Abschluss und Backoffice */
+.final{text-align:left}
+.final .wrap{display:grid;gap:24px;justify-items:start}
+.final h2{font-size:clamp(2.2rem,5vw,4.25rem);max-width:18ch;color:#fff}
+.final p.k{font-weight:600;opacity:.85}
+.bo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:20px}
+.bo>div{border:1px solid var(--line);border-radius:var(--r);padding:20px;background:#fff;min-width:0;display:grid;gap:12px;align-content:start}
+.bo h3{font-size:1rem}
+.evlog{list-style:none;margin:0;padding:0;font-family:var(--mono);font-size:.76rem;display:grid;gap:6px;max-height:240px;overflow:auto}
+.evlog li{padding:6px 8px;background:var(--surface);border-radius:6px;overflow-wrap:anywhere}
+.evlog b{color:var(--navy)}
+pre.payload{margin:0;font-family:var(--mono);font-size:.76rem;background:var(--surface);padding:12px;border-radius:8px;overflow:auto;max-height:180px}
+.board{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(150px,1fr);gap:10px;overflow-x:auto;padding-bottom:6px}
+.col{display:grid;gap:8px;align-content:start;min-width:0}
+.col h4{margin:0;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);min-height:2.4em}
+.lead-card{font:inherit;text-align:left;border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 10px;cursor:pointer;font-size:.78rem;display:grid;gap:2px}
+.lead-card b{color:var(--navy)}
+.lead-card:hover{border-color:var(--navy)}
+.lead-card.new{border-color:var(--navy);background:#f6f8fc}
+@media(max-width:900px){.bo{grid-template-columns:minmax(0,1fr)}}
+.foot{border-top:1px solid var(--line);padding-block:40px 120px;color:var(--muted);font-size:.88rem}
+.foot .wrap{display:grid;gap:14px}
+.foot ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 22px}
+
+/* Mobile-Leiste */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgba(255,255,255,.96);border-top:1px solid var(--line)}
+.mbar .btn{width:100%}
+@media(min-width:900px){.mbar{left:auto;right:28px;bottom:28px;padding:0;background:transparent;border:0}.mbar .btn{width:auto;box-shadow:0 18px 40px -16px rgba(12,39,100,.65)}}
+
+/* Formular */
+.overlay{position:fixed;inset:0;z-index:100;background:rgba(9,29,77,.6);display:grid;place-items:center;padding:16px}
+.sheet{background:#fff;border-radius:16px;width:min(100%,720px);max-height:min(100%,880px);display:flex;flex-direction:column;overflow:hidden}
+.sheet-head,.sheet-body,.sheet-foot{padding-left:max(22px,env(safe-area-inset-left,0px));padding-right:max(22px,env(safe-area-inset-right,0px))}
+.sheet-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:max(16px,env(safe-area-inset-top,0px));padding-bottom:14px}
+.sheet-head .st{font-size:.85rem;color:var(--muted);font-weight:600}
+.xbtn{border:0;background:var(--surface);width:40px;height:40px;border-radius:50%;display:grid;place-items:center;cursor:pointer;color:var(--ink)}
+.prog{height:4px;background:var(--line)}
+.prog i{display:block;height:100%;width:0;background:var(--navy);transition:width .4s var(--ease)}
+.sheet-body{overflow:auto;padding-top:26px;padding-bottom:20px;flex:1;display:grid;gap:18px;align-content:start}
+.sheet-body h2{font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.025em}
+.sheet-body h2:focus{outline:none}
+.sheet-foot{display:flex;justify-content:space-between;gap:12px;padding-top:14px;padding-bottom:max(16px,env(safe-area-inset-bottom,0px));border-top:1px solid var(--line)}
+.opts{display:grid;gap:10px}
+.opts.cols{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.opt{display:flex;gap:12px;align-items:center;border:1.5px solid var(--line);border-radius:10px;padding:14px 16px;cursor:pointer;font-weight:500;background:#fff;min-width:0}
+.opt:hover{border-color:var(--navy)}
+.opt:has(input:checked){border-color:var(--navy);background:#f6f8fc}
+.opt:has(input:focus-visible){outline:3px solid var(--navy);outline-offset:2px}
+.opt input{accent-color:var(--navy);width:18px;height:18px;flex:none;margin:0}
+.fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media(max-width:520px){.fgrid{grid-template-columns:minmax(0,1fr)}}
+.fld{display:grid;gap:6px;min-width:0}
+.fld.full{grid-column:1/-1}
+.fld label{font-weight:600;font-size:.88rem}
+.fld input,.fld select,.fld textarea{width:100%;font:inherit;padding:13px 14px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--navy);outline:none;box-shadow:0 0 0 3px rgba(12,39,100,.16)}
+.fld small{color:#b42318;font-size:.8rem;min-height:0}
+.fld.bad input,.fld.bad select{border-color:#b42318}
+.err{color:#b42318;font-size:.9rem;font-weight:600}
+.legal{font-size:.82rem;color:var(--muted)}
+.done-wrap{padding:36px max(22px,env(safe-area-inset-left,0px));display:grid;gap:18px;justify-items:start;overflow:auto}
+.done-wrap .ic{width:52px;height:52px}
+.done-wrap .ic svg{width:26px;height:26px}
+@media(max-width:640px){.overlay{padding:0}.sheet{width:100%;height:100%;max-height:none;border-radius:0}}
+
+/* Grafik, Übergänge, direkte Handlungsaufforderungen */
+.deco{overflow:hidden}
+.deco::before{content:"";position:absolute;right:-12vw;top:-16vw;width:48vw;height:48vw;max-width:640px;max-height:640px;border-radius:50%;border:1.5px solid rgba(255,255,255,.14);box-shadow:0 0 0 70px rgba(255,255,255,.035),0 0 0 140px rgba(255,255,255,.02);pointer-events:none}
+.deco>.wrap{position:relative}
+.cmp .a{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.22);color:#fff}
+.cmp .a h3{color:rgba(255,255,255,.7)}
+.cmp .a li{color:rgba(255,255,255,.8)}
+.cmp .a .mk{border-color:rgba(255,255,255,.4);color:rgba(255,255,255,.75)}
+.cmp .b{background:#fff;color:var(--navy);box-shadow:0 34px 70px -34px rgba(0,0,0,.65)}
+.cmp .b .mk{background:var(--navy);color:#fff}
+.art{position:relative;aspect-ratio:16/7;border-radius:10px;background:var(--navy);overflow:hidden;display:grid;place-items:center}
+.art::before{content:"";position:absolute;width:60%;aspect-ratio:1;border-radius:50%;border:1.5px solid rgba(255,255,255,.18);box-shadow:0 0 0 34px rgba(255,255,255,.04),0 0 0 68px rgba(255,255,255,.03)}
+.art .orb{position:relative;width:84px;height:84px;border-radius:50%;background:#fff;color:var(--navy);display:grid;place-items:center;box-shadow:0 14px 30px -12px rgba(0,0,0,.55)}
+.fl{position:absolute;background:#fff;color:var(--navy);font-size:.76rem;font-weight:700;padding:7px 12px;border-radius:999px;box-shadow:0 10px 22px -12px rgba(0,0,0,.55);animation:flt 5s ease-in-out infinite;white-space:nowrap;max-width:72%;overflow:hidden;text-overflow:ellipsis}
+.fl.f1{left:5%;top:14%}
+.fl.f2{right:5%;bottom:14%;animation-delay:-2.5s;background:rgba(255,255,255,.14);color:#fff;box-shadow:none;border:1px solid rgba(255,255,255,.4)}
+@keyframes flt{50%{transform:translateY(-6px)}}
+.pcard .btn,.vcard .btn{padding:11px 18px;font-size:.95rem}
+.scard{width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px;display:grid;gap:12px;margin-top:6px}
+.scard p{max-width:none}
+.mock{display:flex;flex-wrap:wrap;gap:8px;align-items:center;align-content:center;background:var(--surface);border-radius:10px;padding:16px;min-height:132px}
+.mock.col{flex-direction:column;align-items:flex-start;justify-content:center}
+.mp{font-size:.78rem;font-weight:600;padding:6px 11px;border-radius:999px;background:#fff;border:1.5px solid var(--line);color:var(--muted)}
+.mp.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.bub{background:#fff;border:1px solid var(--line);padding:8px 12px;border-radius:12px 12px 12px 4px;font-size:.82rem;max-width:86%}
+.bub.me{background:var(--navy);color:#fff;border-color:var(--navy);border-radius:12px 12px 4px 12px;align-self:flex-end}
+.docm{position:relative;width:70px;height:88px;background:#fff;border:1.5px solid var(--line);border-radius:6px;padding:14px 10px;display:grid;gap:8px;align-content:start;margin-right:10px}
+.docm i{height:5px;background:var(--line);border-radius:3px;display:block}
+.docm i.s{width:60%}
+.docm .ok{position:absolute;right:-10px;bottom:-10px;width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:.8rem}
+.glyph{background:var(--navy);color:#fff}
+.vcard,.tcard{transition:transform .3s var(--ease),box-shadow .3s,border-color .3s}
+.vcard:hover,.tcard:hover{transform:translateY(-4px);box-shadow:0 24px 40px -28px rgba(12,39,100,.45);border-color:var(--navy)}
+.faq{border-top:0;gap:10px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:0 22px;transition:border-color .2s,box-shadow .3s}
+.faq details[open]{border-color:var(--navy);box-shadow:0 18px 40px -28px rgba(12,39,100,.4)}
+.cta-band{margin-top:clamp(32px,5vw,56px);background:var(--navy);color:#fff;border-radius:16px;padding:clamp(22px,3vw,32px) clamp(22px,3.5vw,40px);display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between;position:relative;overflow:hidden}
+.cta-band::after{content:"";position:absolute;right:-60px;top:-70px;width:230px;height:230px;border-radius:50%;border:1.5px solid rgba(255,255,255,.16);box-shadow:0 0 0 30px rgba(255,255,255,.04);pointer-events:none}
+.cta-band>div{display:grid;gap:4px;min-width:0;max-width:640px}
+.cta-band b{font-size:clamp(1.2rem,2.2vw,1.65rem);letter-spacing:-.02em;line-height:1.2}
+.cta-band span{opacity:.82}
+.cta-band .btn{position:relative;z-index:1}
+.pills{list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:0}
+.pills li{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:6px 14px;font-size:.88rem;font-weight:600}
+.rv{transform:translateY(28px);transition:transform .9s var(--ease)}
+.rv.in{transform:none}
+/* Feinere, ruhigere Typografie */
+body{font-size:15.5px;line-height:1.62}
+h1{font-weight:700;letter-spacing:-.028em;line-height:1.08;font-size:clamp(2.1rem,4.2vw,3.6rem)}
+h2{font-weight:600;letter-spacing:-.022em;line-height:1.14;font-size:clamp(1.7rem,3vw,2.45rem)}
+h3{font-weight:600;font-size:1.08rem;letter-spacing:-.01em}
+.eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.12em}
+.lead{font-size:clamp(1rem,1.2vw,1.12rem);line-height:1.62}
+.btn{font-weight:600;font-size:.95rem}
+.btn.lg{padding:16px 24px;font-size:1rem}
+.logo{font-weight:700}
+.logo b{font-weight:700}
+.nav a{font-size:.9rem}
+.trust-row li{font-weight:500;font-size:.9rem}
+.step .n{font-weight:700;font-size:1.05rem}
+.glyph{font-weight:700;font-size:1rem}
+.cmp .b li{font-weight:500;font-size:1rem}
+.cmp h3{font-weight:600}
+.greet .g{font-weight:600;font-size:clamp(1.2rem,2vw,1.6rem)}
+.chip{font-weight:500}
+.final h2{font-size:clamp(2rem,4vw,3.3rem);font-weight:600}
+.cta-band b{font-weight:600;font-size:clamp(1.1rem,1.8vw,1.4rem)}
+.faq summary{font-weight:600;font-size:1rem}
+.sheet-body h2{font-weight:600;font-size:clamp(1.35rem,2.6vw,1.75rem)}
+.wheel-status{font-weight:500}
+.pcard.on{box-shadow:0 16px 34px -26px rgba(12,39,100,.35)}
+.tag{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.honest{margin-top:26px;max-width:72ch;color:rgba(255,255,255,.82);font-size:.95rem}
+.honest b{color:#fff;font-weight:600}
+/* Horizontale Scroll-Animation: Karten fahren von rechts nach links */
+.hscroll{position:relative}
+.hpin{position:sticky;top:calc(env(safe-area-inset-top,0px) + 68px);height:calc(100vh - 68px - env(safe-area-inset-top,0px));height:calc(100svh - 68px - env(safe-area-inset-top,0px));min-height:500px;display:flex;align-items:center}
+.hgrid{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:clamp(20px,3vw,48px);align-items:center;width:100%}
+.hview{position:relative;overflow:hidden;min-width:0;padding:28px 0}
+.prob-right{display:flex;gap:20px;width:max-content;will-change:transform}
+.prob-left .sticky{position:static}
+.pcard{flex:none;width:clamp(300px,28vw,400px);opacity:.7}
+.pcard.on{opacity:1}
+@media(max-width:900px){
+  .hgrid{grid-template-columns:minmax(0,1fr);gap:10px;align-content:center}
+  .hpin{min-height:0}
+  .prob-left .lead{display:none}
+  .prob-left .sticky{gap:12px}
+  .pcard{width:min(80vw,340px)}
+}
+.vert .hpin{position:static;height:auto;display:block}
+.vert .hgrid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:start}
+.vert .hview{overflow:visible}
+.vert .prob-right{display:grid;width:auto;gap:24px}
+.vert .pcard{width:auto}
+.vert .prob-left .sticky{position:sticky;top:calc(env(safe-area-inset-top,0px) + 108px)}
+@media(max-width:900px){.vert .hgrid{grid-template-columns:minmax(0,1fr)}.vert .prob-left .sticky{position:static}.vert .prob-left .lead{display:block}}
+/* Vorher-nachher-Animation */
+.story{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);max-width:940px;margin:0 0 26px;border-radius:16px;overflow:hidden;background:#fff;color:var(--ink)}
+.story-left{padding:20px;display:grid;gap:14px;align-content:start;justify-items:start;min-width:0}
+.story-right{min-width:0;display:grid;align-content:start;background:#f6f8fc}
+.stl{list-style:none;margin:0;padding:0;display:grid;gap:8px;width:100%}
+.stp{width:100%;display:flex;gap:12px;align-items:flex-start;text-align:left;font:inherit;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;color:var(--ink);transition:border-color .3s,background .3s}
+.stp .no{flex:none;width:26px;height:26px;border-radius:50%;background:var(--surface);color:var(--muted);display:grid;place-items:center;font-weight:700;font-size:.8rem;transition:background .3s,color .3s}
+.stp b{font-weight:600;display:block}
+.stp small{display:none;color:var(--muted);font-size:.85rem;margin-top:2px;line-height:1.45}
+.stp[aria-pressed="true"]{border-color:var(--navy);background:#f6f8fc}
+.stp[aria-pressed="true"] .no{background:var(--navy);color:#fff}
+.stp[aria-pressed="true"] small{display:block}
+.story-ctrl{display:flex;align-items:center;gap:12px;width:100%}
+.pbar{flex:1;height:4px;background:var(--line);border-radius:2px;overflow:hidden}
+.pbar i{display:block;height:100%;width:0;background:var(--navy)}
+.stage{background:#dde4ee;transition:background .8s}
+.story[data-s="1"] .stage{background:#e6ebf3}
+.story[data-s="2"] .stage{background:#f0f4f9}
+.story[data-s="3"] .stage{background:#fff}
+.sv{display:block;width:100%;height:auto}
+.sv *{transition:opacity .6s ease,transform .9s var(--ease),fill .9s ease,stroke .9s ease,stroke-dashoffset 1.1s ease}
+.sv .t{font:600 18px var(--font);fill:#45556c}
+.sv .t.d{fill:#0c2764;font-size:19px}
+.sv .q{font:700 40px var(--font);fill:#94a3b8}
+.sv .q.big{font-size:52px}
+.sv .ln{fill:none;stroke:#0c2764;stroke-width:3.2;stroke-linecap:round}
+.sv .gs{fill:none;stroke:#94a3b8;stroke-width:3;stroke-dasharray:6 7}
+.story[data-s="2"] .sv .gs{stroke:#0c2764}
+.sv .cbody{fill:#7b8aa3}
+.story[data-s="1"] .sv .cbody{fill:#6a7da0}
+.story[data-s="2"] .sv .cbody{fill:#3d5a91}
+.story[data-s="3"] .sv .cbody{fill:#0c2764}
+.sv .o{opacity:0}
+.story[data-s="0"] .sv .o.s0,.story[data-s="1"] .sv .o.s1,.story[data-s="2"] .sv .o.s2,.story[data-s="3"] .sv .o.s3{opacity:1}
+.sv .adv{transform:translateX(150px)}
+.story[data-s="3"] .sv .adv{transform:none}
+.sv .swap,.sv .spark{transform-box:fill-box;transform-origin:center;transform:scale(.3)}
+.story[data-s="3"] .sv .swap,.story[data-s="3"] .sv .spark{transform:scale(1);transition-delay:.6s}
+.sv .link{fill:none;stroke:#0c2764;stroke-width:3.5;stroke-linecap:round;stroke-dasharray:1 1;stroke-dashoffset:1}
+.story[data-s="1"] .sv .link{stroke-dashoffset:.62}
+.story[data-s="2"] .sv .link{stroke-dashoffset:.3}
+.story[data-s="3"] .sv .link{stroke-dashoffset:0}
+.sv .pkt{transform:translateX(0)}
+.story[data-s="1"] .sv .pkt{transform:translateX(55px)}
+.story[data-s="2"] .sv .pkt{transform:translateX(101px)}
+.sv .spin{transform-box:fill-box;transform-origin:center;animation:spin 1.4s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.legend{display:flex;flex-wrap:wrap;gap:8px;padding:12px 16px}
+.lg{font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px;border:1.5px solid var(--navy)}
+.lg.keep{color:var(--navy);background:#fff}
+.lg.new{background:var(--navy);color:#fff}
+@media(max-width:820px){.story{grid-template-columns:minmax(0,1fr)}.story-right{order:-1}}
+/* Kurz-Check, Vorteile, Rückruf */
+.sg{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,5vw,72px);align-items:start}
+.checks{display:grid;gap:12px}
+.chk{display:flex;gap:14px;align-items:flex-start;background:#fff;color:var(--ink);border-radius:12px;padding:16px 18px;cursor:pointer;border:2px solid transparent;font-weight:500;transition:border-color .2s,background .2s,box-shadow .3s}
+.chk:hover{border-color:rgba(12,39,100,.35)}
+.chk:has(input:checked){background:#f1f5fb;border-color:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.3)}
+.chk input{accent-color:var(--navy);width:20px;height:20px;margin:2px 0 0;flex:none}
+.verdict{margin-top:28px;display:grid;gap:14px;justify-items:start;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.24);border-radius:14px;padding:20px}
+.meter{width:100%;height:8px;background:rgba(255,255,255,.2);border-radius:4px;overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:#fff;transition:width .5s var(--ease)}
+.verdict small{opacity:.8}
+@media(max-width:900px){.sg{grid-template-columns:minmax(0,1fr)}}
+.bgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.tile{border:1px solid var(--line);border-radius:12px;padding:22px;display:grid;gap:12px;align-content:start;background:#fff;transition:transform .3s var(--ease),box-shadow .3s,border-color .3s}
+.tile:hover{transform:translateY(-4px);box-shadow:0 24px 40px -28px rgba(12,39,100,.45);border-color:var(--navy)}
+.tile p{color:var(--muted)}
+.tile .ico{width:48px;height:48px;border-radius:10px;background:var(--navy);color:#fff;display:grid;place-items:center}
+@media(max-width:980px){.bgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.bgrid{grid-template-columns:minmax(0,1fr)}}
+.vswrap{margin-top:28px;overflow-x:auto;border-radius:12px}
+.vs{display:grid;grid-template-columns:minmax(150px,.9fr) minmax(0,1fr) minmax(0,1.1fr);min-width:600px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.vs>div{padding:14px 18px;border-bottom:1px solid var(--line);font-size:.92rem}
+.vs .h{font-weight:600;background:var(--surface)}
+.vs .c1{font-weight:600}
+.vs .c2{color:var(--muted)}
+.vs .c3{background:var(--navy);color:#fff;border-bottom-color:rgba(255,255,255,.18);font-weight:500}
+.vs .c3.h{font-weight:700}
+.vs>div:nth-last-child(-n+3){border-bottom:0}
+.final .wrap{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,4vw,56px);align-items:center;justify-items:stretch}
+.final-copy{display:grid;gap:22px;justify-items:start;min-width:0}
+.cb{background:#fff;color:var(--ink);border-radius:16px;padding:clamp(20px,3vw,32px);position:relative;z-index:1}
+.cb form,.cb>div{display:grid;gap:14px;justify-items:stretch}
+.cb h3{font-size:1.25rem}
+.cb .sub{margin-top:-6px}
+.cb .opt{font-size:.85rem;align-items:flex-start}
+.cb .opt input{margin-top:2px}
+.cb #cbDone{justify-items:start}
+@media(max-width:900px){.final .wrap{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}html{scroll-behavior:auto}.rv{transform:none}}
+
+/* Fotos */
+.art.ph{background:#dde4ee;aspect-ratio:16/9}
+.art.ph::before{display:none}
+.art.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.art.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(12,39,100,.55),rgba(12,39,100,0) 55%)}
+.art.ph .fl{z-index:1;left:12px;top:auto;bottom:12px;right:auto;animation:none;max-width:calc(100% - 24px)}
+.mosaic{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.mosaic figure{margin:0;position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:#dde4ee}
+.mosaic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--ease)}
+.mosaic figure:hover img{transform:scale(1.04)}
+.mosaic figcaption{position:absolute;left:10px;bottom:10px;background:#fff;color:var(--navy);font-size:.78rem;font-weight:600;padding:6px 11px;border-radius:999px}
+.mosaic figure.wide{grid-column:span 2;aspect-ratio:auto}
+.banner-photo{border-radius:14px;overflow:hidden;box-shadow:0 20px 40px -26px rgba(12,39,100,.5)}
+.banner-photo img{display:block;width:100%;height:auto}
+.step-photo{border-radius:10px;overflow:hidden;aspect-ratio:16/9}
+.step-photo img{width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block}
+.step:nth-child(1) .step-photo img{object-position:center 40%}
+
+/* Menschen kompakt */
+.menschen{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:clamp(24px,4vw,56px);align-items:center}
+.mcopy{display:grid;gap:18px;justify-items:start;min-width:0}
+.menschen .mosaic{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:470px;justify-self:end;width:100%}
+.menschen .mosaic figure{aspect-ratio:3/4;border-radius:12px}
+.menschen .mosaic figure:nth-child(3n+2){transform:translateY(22px)}
+.menschen .mosaic figcaption{left:6px;bottom:6px;right:6px;font-size:.7rem;padding:5px 8px;border-radius:8px;text-align:center}
+@media(max-width:900px){.menschen{grid-template-columns:minmax(0,1fr)}.menschen .mosaic{justify-self:start;margin-bottom:22px}}
+
+/* Maklermandat im Formular */
+.opt.mand{border-color:var(--navy);background:#f6f8fc}
+.mwrap{flex:none;height:290px;overflow:auto;border:1.5px solid var(--line);border-radius:12px;background:#fff}
+.mwrap.open{height:auto;overflow:visible}
+.mandate{padding:20px 22px;font-size:.78rem;line-height:1.55;color:#0f172b;display:grid;gap:10px;font-family:var(--font)}
+.mandate p{margin:0;max-width:none}
+.mlogo{text-align:center;letter-spacing:.42em;font-weight:700;font-size:1rem;color:#0f172b;padding-left:.42em}
+.mandate h4{text-align:center;margin:0 0 6px;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;line-height:1.5}
+.mrow{display:grid;grid-template-columns:70px 1fr;gap:10px}
+.mrow u{display:block;text-decoration:none;border-bottom:1px solid #94a3b8;padding:2px 0;margin-bottom:6px}
+.mandate ul{margin:0;padding-left:18px;display:grid;gap:2px}
+.mbox{border:1px solid #94a3b8;padding:10px 12px;display:grid;gap:6px}
+.mbox>b{font-weight:600}
+.msig u{text-decoration:none;display:inline-block;border-bottom:1px solid #94a3b8;padding:2px 20px 2px 0}
+.mandate small{display:block;color:#45556c;font-size:.7rem}
+.msig2{display:flex;gap:30px;flex-wrap:wrap;margin-top:6px!important}
+.msig2 span{min-width:150px;border-top:1px solid #94a3b8;padding-top:4px}
+.sigrow{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:6px}
+.sigrow small{color:var(--muted);font-size:.78rem;flex:1;min-width:180px}
+
+/* Fusszeile */
+.foot{background:#0c2764;color:#cfd8ea;padding-block:0 96px;font-size:.88rem}
+.foot .wrap{display:grid;gap:18px;padding-top:30px}
+.foot a{color:#fff;text-decoration:none}
+.ftop{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;justify-content:space-between}
+.fbrand{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
+.fbrand .logo,.fbrand .logo *{color:#fff}
+.fbrand p{margin:0;color:#cfd8ea}
+.fbrand svg polygon{fill:#fff}
+.fbrand svg polygon:last-child{stroke:#0c2764}
+.fbar{display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,.16);padding-top:16px}
+.flinks{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 18px}
+.flinks button{font:inherit;color:#cfd8ea;background:none;border:0;padding:6px 0;cursor:pointer;border-bottom:1.5px solid transparent}
+.flinks button:hover,.flinks button[aria-expanded="true"]{color:#fff;border-bottom-color:#fff}
+.fcopy{color:#a9b7d3;font-size:.82rem}
+.fpanel{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:16px 18px;display:grid;gap:10px;font-size:.86rem;line-height:1.65;color:#e4eaf6;animation:fpin .35s var(--ease)}
+.fpanel h3{margin:0;color:#fff;font-size:.95rem}
+.fpanel p{margin:0 0 6px;max-width:78ch}
+.fptext{max-height:46vh;overflow:auto;padding-right:8px}
+.fptext h4{margin:12px 0 4px;color:#fff;font-size:.86rem}
+.fptext h4:first-child{margin-top:0}
+.fnote2{font-size:.76rem;color:#a9b7d3}
+.fpanel .ph2{color:#a9b7d3}
+.fpanel .link.inv{justify-self:start;color:#fff;border-color:#fff}
+@keyframes fpin{from{opacity:0;transform:translateY(6px)}}
+.vm{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(24px,5vw,64px);align-items:center}
+.vm-copy{display:grid;gap:20px;justify-items:start;min-width:0}
+.vm-steps{list-style:none;margin:0;padding:0;display:grid;gap:12px;width:100%}
+.vm-steps li{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;transition:border-color .3s,transform .3s var(--ease)}
+.vm-steps li:hover{border-color:var(--navy);transform:translateX(4px)}
+.vm-steps b{flex:none;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:.85rem}
+.vm-steps strong{display:block;font-weight:600}
+.vm-steps small{display:block;color:var(--muted);font-size:.86rem;margin-top:2px}
+.vm-card{display:grid;place-items:center;padding:clamp(18px,4vw,40px);border-radius:16px;background:linear-gradient(160deg,#0c2764,#13398f);min-width:0}
+.vm-paper{background:#fff;border-radius:10px;padding:24px 22px;width:min(340px,100%);display:grid;gap:10px;box-shadow:0 30px 60px -24px rgba(0,0,0,.6);transform:rotate(-2deg)}
+.vm-logo{letter-spacing:.35em;font-weight:700;font-size:.8rem;color:#0f172b;text-align:center}
+.vm-t{margin:0;text-align:center;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:#45556c}
+.vm-paper i{display:block;height:7px;border-radius:4px;background:#e2e8f0}
+.vm-paper i.s{width:60%}
+.vm-sig{margin-top:6px;border-bottom:1px solid #94a3b8;padding-bottom:4px;display:grid;gap:2px}
+.vm-sig small{font-size:.68rem;color:#45556c}
+.vm-draw{stroke-dasharray:1;stroke-dashoffset:1;animation:vmdraw 4.5s ease-in-out infinite}
+@keyframes vmdraw{0%{stroke-dashoffset:1}45%,85%{stroke-dashoffset:0}100%{stroke-dashoffset:1}}
+.vm-ok{justify-self:start;background:var(--navy);color:#fff;font-size:.76rem;font-weight:600;padding:6px 12px;border-radius:999px;animation:vmok 4.5s ease-in-out infinite}
+@keyframes vmok{0%,40%{opacity:0;transform:translateY(6px)}55%,85%{opacity:1;transform:none}100%{opacity:0}}
+@media(max-width:900px){.vm{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){.vm-draw{animation:none;stroke-dashoffset:0}.vm-ok{animation:none}}
+
+/* Vorsorge: Wechsel-Animation */
+.vscroll{position:relative}
+.vpin{position:sticky;top:calc(env(safe-area-inset-top,0px) + 68px);height:calc(100vh - 68px);height:calc(100svh - 68px);min-height:520px;display:flex;align-items:center}
+.vgrid2{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(20px,4vw,64px);align-items:center;width:100%}
+.vleft{display:grid;gap:16px;min-width:0;justify-items:start}
+.vtabs{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.vtab{font:inherit;display:flex;gap:8px;align-items:center;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:6px 14px 6px 6px;cursor:pointer;color:var(--ink);transition:border-color .3s,background .3s,color .3s}
+.vtab .g{min-width:30px;height:30px;border-radius:999px;background:var(--surface);color:var(--navy);display:grid;place-items:center;font-weight:700;font-size:.78rem;padding:0 6px;transition:background .3s,color .3s}
+.vtab .n{font-weight:600;font-size:.88rem}
+.vtab[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.vtab[aria-pressed="true"] .g{background:#fff;color:var(--navy)}
+.vhint{color:var(--muted)}
+.vstage{position:relative;min-height:400px;min-width:0}
+.vpanel{position:absolute;inset:0 0 auto 0;background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(20px,3vw,32px);display:grid;gap:16px;align-content:start;justify-items:start;box-shadow:0 30px 60px -36px rgba(12,39,100,.45);opacity:0;transform:translateX(70px);pointer-events:none;transition:opacity .5s var(--ease),transform .7s var(--ease)}
+.vpanel.on{opacity:1;transform:none;pointer-events:auto}
+.vpanel.out{transform:translateX(-70px)}
+.vph{display:flex;gap:14px;align-items:center}
+.vph h3{margin:0;font-size:1.35rem}
+.vph .q{margin:2px 0 0;color:var(--muted);font-size:.88rem}
+.vpanel .d{margin:0;color:var(--muted);max-width:52ch}
+.vcl{display:grid;gap:10px;width:100%}
+.vcl b{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--navy)}
+.vcl ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.vcl li{display:flex;gap:8px;align-items:center;background:var(--surface);border-radius:10px;padding:10px 12px;font-weight:600;font-size:.88rem;opacity:0;transform:translateX(40px);transition:opacity .5s var(--ease),transform .6s var(--ease)}
+.vcl li span{flex:none;width:20px;height:20px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:.7rem}
+.vpanel.on .vcl li{opacity:1;transform:none;transition-delay:var(--d)}
+.vstay{display:flex;flex-wrap:wrap;gap:8px}
+.vstay span{font-size:.78rem;font-weight:600;padding:6px 12px;border-radius:999px;border:1.5px solid var(--navy);color:var(--navy)}
+.vstay .new{background:var(--navy);color:#fff}
+.vstatic .vpin{position:static;height:auto;display:block}
+.vstatic .vgrid2{grid-template-columns:minmax(0,1fr)}
+.vstatic .vstage{display:grid;gap:16px;min-height:0}
+.vstatic .vpanel{position:static;opacity:1;transform:none}
+.vstatic .vcl li{opacity:1;transform:none}
+@media(max-width:900px){
+  .vgrid2{grid-template-columns:minmax(0,1fr);gap:14px;align-content:center}
+  .vleft .lead,.vhint{display:none}
+  .vleft{gap:10px}
+  .vtabs{flex-wrap:nowrap;overflow-x:auto;margin-inline:-16px;padding-inline:16px;scrollbar-width:none;width:calc(100% + 32px)}
+  .vtab{flex:none}
+  .vstage{min-height:330px}
+  .vcl ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .vcl li{font-size:.8rem;padding:9px 10px;gap:6px}
+  .vpanel{padding:16px;gap:12px}
+  .vpanel .d,.vstay{display:none}
+  .vstatic .vpanel .d,.vstatic .vstay{display:block}
+  .vstatic .vstay{display:flex}
+  .vstatic .vleft .lead{display:block}
+}
+/* Lade-Animation: Intro, dann Seite von oben nach unten */
+@keyframes dropIn{from{opacity:0;transform:translateY(-28px)}to{opacity:1;transform:none}}
+@keyframes wheelIn{from{opacity:0;transform:translateY(-40px) scale(.94)}to{opacity:1;transform:none}}
+.intro{display:none}
+@keyframes introCurtain{0%,72%{transform:none;visibility:visible}99%{transform:translateY(-101%);visibility:visible}100%{transform:translateY(-101%);visibility:hidden}}
+@keyframes introMark{from{opacity:0;transform:translateY(-30px) scale(.7)}to{opacity:1;transform:none}}
+@keyframes introUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes introLine{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media(prefers-reduced-motion:no-preference){
+  .intro{position:fixed;inset:0;z-index:1000;background:#0c2764;color:#fff;display:grid;place-content:center;justify-items:center;gap:18px;text-align:center;padding:24px;border-radius:0 0 40px 40px;animation:introCurtain 3.2s cubic-bezier(.7,0,.2,1) both;pointer-events:none}
+  .intro-mark{animation:introMark .9s var(--ease) .15s both}
+  .intro-word{font-size:clamp(1.8rem,5vw,3rem);font-weight:700;letter-spacing:-.02em;animation:introUp .8s var(--ease) .55s both}
+  .intro-word span{font-weight:400;opacity:.75}
+  .intro-line{width:min(220px,50vw);height:2px;background:rgba(255,255,255,.7);transform-origin:left;animation:introLine .9s var(--ease) 1s both}
+  .intro-tag{font-size:clamp(.95rem,2.4vw,1.2rem);color:#cfd8ea;animation:introUp .8s var(--ease) 1.25s both}
+  .hdr{animation:dropIn .7s var(--ease) calc(var(--t0) + .1s) both}
+  .hero-copy>*{animation:dropIn .8s var(--ease) both}
+  .hero-copy>:nth-child(1){animation-delay:calc(var(--t0) + .25s)}
+  .hero-copy>:nth-child(2){animation-delay:calc(var(--t0) + .4s)}
+  .hero-copy>:nth-child(3){animation-delay:calc(var(--t0) + .55s)}
+  .hero-copy>:nth-child(4){animation-delay:calc(var(--t0) + .7s)}
+  .hero-copy>:nth-child(5){animation-delay:calc(var(--t0) + .82s)}
+  .hero-copy>:nth-child(6){animation-delay:calc(var(--t0) + .94s)}
+  .hero-copy>:nth-child(7){animation-delay:calc(var(--t0) + 1.05s)}
+  .wheel{animation:wheelIn 1.1s var(--ease) calc(var(--t0) + .5s) both}
+}
+
+:root{--t0:2.35s}
+.nointro{--t0:0s}
+.nointro .intro{display:none!important}
+.hdr-tel{display:inline-flex;gap:8px;align-items:center;font-weight:600;color:var(--navy);text-decoration:none;white-space:nowrap;margin-left:auto;margin-right:14px}
+.hdr-tel:hover span{text-decoration:underline}
+.hdr-tel svg{flex:none}
+@media(max-width:1000px){.hdr-tel span{display:none}.hdr-tel{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--navy);justify-content:center;margin-right:8px}}
+.hero-call a{color:var(--navy);font-weight:600}
+.mbar{display:flex;gap:10px}
+.mbar .mcall{flex:none;width:52px;padding:0;justify-content:center;background:#fff}
+@media(min-width:900px){.mbar .mcall{display:none}}
+.cookie{position:fixed;left:16px;bottom:16px;z-index:90;max-width:min(420px,calc(100vw - 32px));background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 24px 50px -20px rgba(12,39,100,.5);padding:16px;display:grid;gap:12px;font-size:.88rem}
+.cookie p{margin:0}
+.ckb{display:flex;gap:10px}
+.ckb .btn{padding:10px 18px;font-size:.92rem;flex:1}
+@media(max-width:899px){.cookie{bottom:84px}}
+.grp{font-weight:600;font-size:.88rem;margin:6px 0 8px}
+.sheet-body .grp:first-child{margin-top:0}
+.next,.upsell{border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;text-align:left;display:grid;gap:8px;width:100%}
+.next ol{margin:0;padding-left:18px;color:var(--muted);display:grid;gap:4px}
+.upsell{border-color:var(--navy);background:#f6f8fc;justify-items:start}
+.upsell p{margin:0;color:var(--muted)}
+.who{margin-top:34px;border:1px solid var(--line);border-radius:16px;background:#fff;padding:clamp(20px,3vw,34px);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(20px,3vw,44px);align-items:start}
+.who-head{display:grid;gap:12px;justify-items:start;min-width:0}
+.who-head h3{margin:0;font-size:clamp(1.4rem,2.4vw,1.9rem)}
+.who-lead{margin:0;color:var(--muted)}
+.who-head .link{text-align:left}
+.who-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;min-width:0}
+.who-grid li{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border-radius:12px;padding:14px 16px}
+.who-grid .wk{flex:none;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center}
+.who-grid b{display:block;font-weight:600;margin-bottom:2px}
+.who-grid li span:not(.wk){display:block;color:var(--muted);font-size:.86rem;line-height:1.5}
+.who-contact{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;border-top:1px solid var(--line);padding-top:18px}
+.who-contact span{font-weight:600}
+.who-contact a{color:var(--navy);font-weight:600}
+.who-contact .btn{margin-left:auto;padding:11px 18px;font-size:.95rem}
+@media(max-width:900px){.who{grid-template-columns:minmax(0,1fr)}.who-contact .btn{margin-left:0}}
+@media(max-width:620px){.who-grid{grid-template-columns:minmax(0,1fr)}}
+.hdr-ico{display:inline-flex;gap:8px;margin-left:auto;margin-right:12px}
+.ico-btn{display:inline-flex;gap:8px;align-items:center;justify-content:center;font-weight:600;font-size:.9rem;color:var(--navy);text-decoration:none;border:1.5px solid var(--navy);border-radius:999px;padding:8px 14px;background:#fff;transition:background .25s,color .25s;white-space:nowrap}
+.ico-btn:hover{background:var(--navy);color:#fff}
+.ico-btn.sm{padding:6px 12px;font-size:.84rem;margin-right:6px}
+@media(max-width:1000px){.hdr-ico .ico-btn span{display:none}.hdr-ico .ico-btn{width:42px;height:42px;padding:0}.hdr-ico{margin-right:8px}}
+.hero-call{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.hero-call-t{margin-right:4px}
+.who-contact{gap:10px}
+.photo-note{font-size:.8rem;color:var(--muted)}
+.final-photo{border-radius:12px;overflow:hidden;aspect-ratio:16/8;max-width:520px;position:relative}
+.final-photo img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:700px){.mosaic{grid-template-columns:repeat(2,minmax(0,1fr))}.mosaic figure.wide{grid-column:span 2;aspect-ratio:16/9}}
+[hidden]{display:none!important}
+</style>
+
+<script>try{if(sessionStorage.getItem("bw_intro")){document.documentElement.classList.add("nointro")}else{sessionStorage.setItem("bw_intro","1")}}catch(e){}</script>
+<div class="intro" aria-hidden="true">
+  <svg class="intro-mark" width="76" height="76" viewBox="0 0 40 40"><polygon points="36,14 16,14 6,24 16,34 36,34 26,24" fill="#ffffff"/><polygon points="4,6 24,6 34,16 24,26 4,26 14,16" fill="#ffffff" stroke="#0c2764" stroke-width="2.5" stroke-linejoin="round"/></svg>
+  <div class="intro-word">beraterwechsel<span>.ch</span></div>
+  <div class="intro-line"></div>
+  <div class="intro-tag">Ihr Beraterwechsel-Service in der Schweiz</div>
+</div>
+<header class="hdr"><div class="wrap">
+  <a class="logo" href="#top" id="logoLink" aria-label="beraterwechsel.ch – Startseite"><span id="logoMark"></span><b>beraterwechsel</b><span>.ch</span></a>
+  <nav class="nav" aria-label="Hauptnavigation">
+    <a href="#so-funktioniert">So funktioniert's</a><a href="#vorsorge">Vorsorge</a><a href="#sprachen">Sprachen</a><a href="#faq">FAQ</a>
+  </nav>
+  <span class="hdr-ico"><a class="ico-btn" href="tel:+4237987733" data-src="header" aria-label="Anrufen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Anrufen</span></a><a class="ico-btn wa" href="https://wa.me/4237987733" target="_blank" rel="noopener" data-src="header" aria-label="Per WhatsApp schreiben"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.65-4.9A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9 8.5c0 3.3 2.7 6 6 6l1.3-1.3-2-1-.9.7a3.6 3.6 0 0 1-1.9-1.9l.7-.9-1-2L9 8.5z" fill="currentColor" stroke="none"/></svg><span>WhatsApp</span></a></span>
+  <button class="btn" type="button" data-open-form data-src="header">Wechsel anfragen</button>
+</div></header>
+
+<main id="top">
+<section class="hero" id="hero"><div class="wrap hero-grid">
+  <div class="hero-copy">
+    <p class="eyebrow">Der Schweizer Service für Ihren Beraterwechsel</p>
+    <h1 id="h1">Ihr Versicherungs&shy;berater passt nicht mehr? Wechseln Sie ihn.</h1>
+    <p class="lead" id="lead"></p>
+    <div class="cta-row">
+      <button class="btn lg" type="button" data-open-form data-src="hero">Jetzt in 2 Minuten Beraterwechsel anfragen</button>
+      <a class="btn ghost lg" href="#so-funktioniert">So funktioniert der Wechsel</a>
+    </div>
+    <p class="micro">Die Anfrage dauert etwa zwei Minuten; die tatsächliche Bearbeitung des Wechsels kann länger dauern.</p>
+    <p class="micro hero-call"><span class="hero-call-t">Lieber persönlich?</span> <a class="ico-btn sm" href="tel:+4237987733" data-src="hero" aria-label="Anrufen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Anrufen</span></a><a class="ico-btn wa sm" href="https://wa.me/4237987733" target="_blank" rel="noopener" data-src="hero" aria-label="Per WhatsApp schreiben"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.65-4.9A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9 8.5c0 3.3 2.7 6 6 6l1.3-1.3-2-1-.9.7a3.6 3.6 0 0 1-1.9-1.9l.7-.9-1-2L9 8.5z" fill="currentColor" stroke="none"/></svg><span>WhatsApp</span></a> <a href="mailto:jetzt@beraterwechsel.ch" data-src="hero">E-Mail</a></p>
+    <ul class="trust-row" id="trustRow"></ul>
+  </div>
+  <div class="wheel" id="wheel" role="img" aria-label="Animation: Kundenanliegen kreisen um beraterwechsel.ch und werden zu einer neuen Betreuung.">
+    <canvas id="wheelCanvas"></canvas>
+    <div class="wheel-status" id="wheelStatus" aria-hidden="true"><span class="sd"></span><span class="stx"></span></div>
+    <ul class="wheel-fallback" hidden></ul>
+  </div>
+</div></section>
+
+<section class="sec band" id="probleme"><div class="hscroll" id="hscroll"><div class="hpin"><div class="wrap hgrid">
+  <div class="prob-left"><div class="sticky">
+    <p class="eyebrow">Häufige Gründe für einen Wechsel</p>
+    <h2>Schlechte Betreuung müssen Sie nicht akzeptieren.</h2>
+    <p class="lead">Sie haben Versicherungen, Vorsorgeverträge oder eine Lebensversicherung – aber keinen Berater, auf den Sie sich verlassen können? Wir helfen Ihnen weiter.</p>
+    <ol class="dots" id="probDots" aria-hidden="true"></ol>
+    <p class="micro" id="probCount" aria-live="off"></p>
+  </div></div>
+  <div class="hview" id="hview"><div class="prob-right" id="probRight"></div></div>
+</div></div></div>
+<div class="wrap"><div class="cta-band"><div><b>Erkennen Sie sich wieder?</b><span>Wechseln Sie Ihren Berater in 2 Minuten. Ihre Policen bleiben bestehen, soweit möglich.</span></div><button class="btn inv lg" type="button" data-open-form data-src="band-probleme">Jetzt Beraterwechsel anfragen →</button></div></div></section>
+
+<section class="sec on-navy deco" id="versprechen"><div class="wrap">
+  <div class="head">
+    <p class="eyebrow">Unser Versprechen</p>
+    <h2>Wechseln Sie Ihren Berater. Nicht automatisch Ihre Versicherung.</h2>
+    <p class="lead">Viele Menschen glauben, dass sie ihre bestehende Lebensversicherung oder Vorsorge kündigen müssen, wenn sie einen anderen Berater möchten. Das ist nicht grundsätzlich der Fall. Häufig lässt sich die Betreuung neu regeln. Wir helfen Ihnen, die Möglichkeiten zu prüfen und den Wechsel einzuleiten.</p>
+  </div>
+  <div class="story" id="story" data-s="0">
+    <div class="story-left">
+      <ol class="stl">
+        <li><button type="button" class="stp" data-s="0" aria-pressed="true"><span class="no">1</span><span class="tx"><b>Ausgangslage</b><small>Kein erreichbarer Ansprechpartner, aber der Vertrag läuft weiter.</small></span></button></li>
+        <li><button type="button" class="stp" data-s="1" aria-pressed="false"><span class="no">2</span><span class="tx"><b>Anfrage</b><small>Sie fragen den Wechsel an. Dabei wird nichts gekündigt.</small></span></button></li>
+        <li><button type="button" class="stp" data-s="2" aria-pressed="false"><span class="no">3</span><span class="tx"><b>Prüfung</b><small>Wir klären, ob die Betreuung bei Ihrem Vertrag übertragen werden kann. Die Police bleibt unberührt.</small></span></button></li>
+        <li><button type="button" class="stp" data-s="3" aria-pressed="false"><span class="no">4</span><span class="tx"><b>Neuer Berater</b><small>Dieselbe Police, ein neuer Ansprechpartner, der sich kümmert.</small></span></button></li>
+      </ol>
+      <div class="story-ctrl"><button class="link" type="button" id="storyPlay" aria-pressed="true">Pause</button><div class="pbar"><i id="storyBar"></i></div></div>
+      <button class="btn" type="button" data-open-form data-src="story">Jetzt Beraterwechsel anfragen →</button>
+    </div>
+    <div class="story-right">
+      <div class="stage">
+        <svg class="sv" viewBox="0 0 700 400" role="img" aria-label="Illustration in vier Schritten: Eine Person ohne Ansprechpartner stellt eine Anfrage, die Betreuung wird geprüft, die Police bleibt bestehen, und am Ende gibt es einen neuen Berater.">
+          <rect x="0" y="340" width="700" height="60" fill="#0c2764" opacity=".07"/>
+          <circle class="o s3" cx="250" cy="250" r="150" fill="#0c2764" fill-opacity=".07"/>
+
+          <g transform="translate(70 222)">
+            <rect width="92" height="118" rx="8" fill="#ffffff" stroke="#0c2764" stroke-width="3"/>
+            <rect x="14" y="20" width="64" height="7" rx="3.5" fill="#cbd5e1"/><rect x="14" y="40" width="64" height="7" rx="3.5" fill="#cbd5e1"/><rect x="14" y="60" width="40" height="7" rx="3.5" fill="#cbd5e1"/>
+            <circle class="o s2 s3" cx="70" cy="96" r="13" fill="#0c2764"/><path class="o s2 s3" d="M63 96 l5 5 9-10" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <text class="t o s0 s1" x="116" y="372" text-anchor="middle">Ihre Police</text>
+          <text class="t o s2 s3" x="116" y="372" text-anchor="middle" style="fill:#0c2764">Police bleibt bestehen</text>
+
+          <g transform="translate(14 70)">
+            <g class="o s0"><rect width="276" height="52" rx="26" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/><circle cx="26" cy="26" r="13" fill="#45556c"/><text x="26" y="33" text-anchor="middle" style="font:700 19px var(--font);fill:#fff">!</text><text class="t" x="52" y="33">Anruf unbeantwortet</text></g>
+            <g class="o s1"><rect width="276" height="52" rx="26" fill="#ffffff" stroke="#0c2764" stroke-width="2"/><circle cx="26" cy="26" r="13" fill="#0c2764"/><path d="M19 26 h14 m-6 -6 l6 6 -6 6" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text class="t" x="52" y="33" style="fill:#0c2764">Wechsel angefragt</text></g>
+            <g class="o s2"><rect width="276" height="52" rx="26" fill="#ffffff" stroke="#0c2764" stroke-width="2"/><circle class="spin" cx="26" cy="26" r="12" fill="none" stroke="#0c2764" stroke-width="3" stroke-dasharray="20 56" stroke-linecap="round"/><text class="t" x="52" y="33" style="fill:#0c2764">Wir prüfen Ihre Lage</text></g>
+            <g class="o s3"><rect width="276" height="52" rx="26" fill="#0c2764"/><circle cx="26" cy="26" r="13" fill="#ffffff"/><path d="M20 26 l5 5 8-10" stroke="#0c2764" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text class="t" x="52" y="33" style="fill:#fff">Neue Betreuung steht</text></g>
+          </g>
+
+          <g transform="translate(312 92)"><g class="o s0">
+            <rect width="74" height="60" rx="18" fill="#ffffff" stroke="#94a3b8" stroke-width="2.5"/><text class="q" x="37" y="44" text-anchor="middle">?</text>
+            <circle cx="-4" cy="72" r="7" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/><circle cx="-16" cy="86" r="4.5" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+          </g></g>
+
+          <g transform="translate(250 0)">
+            <path class="cbody" d="M-72 340 C-72 268 -42 232 0 232 C42 232 72 268 72 340Z"/>
+            <circle cx="0" cy="185" r="44" fill="#eef2f8" stroke="#0c2764" stroke-width="3"/>
+            <path d="M-44 180 C-44 138 44 138 44 180 C32 164 -32 164 -44 180Z" fill="#0c2764"/>
+            <circle cx="-16" cy="190" r="4.5" fill="#0c2764"/><circle cx="16" cy="190" r="4.5" fill="#0c2764"/>
+            <g class="o s0"><path class="ln" d="M-26 178 L-9 183 M26 178 L9 183"/><path class="ln" d="M-15 212 Q0 200 15 212"/><path d="M54 172 q-6 10 0 14 q6 -4 0 -14z" fill="#94a3b8"/></g>
+            <g class="o s1 s2"><path class="ln" d="M-26 180 L-9 180 M26 180 L9 180"/><path class="ln" d="M-12 211 L12 211"/></g>
+            <g class="o s3"><path class="ln" d="M-18 205 Q0 224 18 205"/><circle cx="-29" cy="202" r="7" fill="#0c2764" opacity=".14"/><circle cx="29" cy="202" r="7" fill="#0c2764" opacity=".14"/></g>
+          </g>
+          <g transform="translate(168 150)"><path class="o s3 spark" d="M0 -11 L3.5 -3.5 L11 0 L3.5 3.5 L0 11 L-3.5 3.5 L-11 0 L-3.5 -3.5Z" fill="#0c2764" style="transition-delay:.9s"/></g>
+          <g transform="translate(336 140)"><path class="o s3 spark" d="M0 -9 L3 -3 L9 0 L3 3 L0 9 L-3 3 L-9 0 L-3 -3Z" fill="#0c2764" style="transition-delay:1.1s"/></g>
+          <g transform="translate(250 112)"><path class="o s3 spark" d="M0 -8 L2.5 -2.5 L8 0 L2.5 2.5 L0 8 L-2.5 2.5 L-8 0 L-2.5 -2.5Z" fill="#0c2764" style="transition-delay:1.3s"/></g>
+
+          <g class="o s0"><path d="M336 290 H386 M426 290 H480" fill="none" stroke="#94a3b8" stroke-width="3" stroke-dasharray="5 7" stroke-linecap="round"/><path d="M394 278 l24 24 M418 278 l-24 24" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round"/></g>
+          <path class="link o s1 s2 s3" pathLength="1" d="M336 290 H480"/>
+          <g transform="translate(336 290)"><circle class="pkt o s1 s2" r="7" fill="#0c2764"/></g>
+          <g transform="translate(406 290)"><g class="swap o s3"><circle r="26" fill="#ffffff" stroke="#0c2764" stroke-width="3"/>
+            <g transform="translate(-14 -14) scale(.7)"><polygon points="36,14 16,14 6,24 16,34 36,34 26,24" fill="#0c2764"/><polygon points="4,6 24,6 34,16 24,26 4,26 14,16" fill="#0c2764" stroke="#ffffff" stroke-width="2.5" stroke-linejoin="round"/></g>
+          </g></g>
+
+          <g transform="translate(560 0)">
+            <g class="o s0 s1 s2">
+              <circle class="gs" cx="0" cy="185" r="44"/>
+              <path class="gs" d="M-72 340 C-72 268 -42 232 0 232 C42 232 72 268 72 340"/>
+            </g>
+            <text class="q big o s0 s1" x="0" y="203" text-anchor="middle">?</text>
+            <text class="q big o s2" x="0" y="203" text-anchor="middle" style="fill:#0c2764">…</text>
+            <g class="adv o s3">
+              <path d="M-72 340 C-72 268 -42 232 0 232 C42 232 72 268 72 340Z" fill="#0c2764"/>
+              <path d="M-16 232 L0 264 L16 232Z" fill="#ffffff"/>
+              <circle cx="0" cy="185" r="44" fill="#eef2f8" stroke="#0c2764" stroke-width="3"/>
+              <path d="M-44 178 C-44 136 44 136 44 178 C30 160 -30 160 -44 178Z" fill="#0c2764"/>
+              <circle cx="-16" cy="190" r="4.5" fill="#0c2764"/><circle cx="16" cy="190" r="4.5" fill="#0c2764"/>
+              <path class="ln" d="M-17 203 Q0 220 17 203"/>
+              <g transform="translate(-75 36)"><rect width="160" height="70" rx="16" fill="#ffffff" stroke="#0c2764" stroke-width="2.5"/><path d="M57 66 L70 92 L85 66Z" fill="#ffffff"/><path d="M57.5 68 L70 92 L84.5 68" fill="none" stroke="#0c2764" stroke-width="2.5" stroke-linejoin="round"/><text class="t d" x="80" y="31" text-anchor="middle">Ich betreue</text><text class="t d" x="80" y="55" text-anchor="middle">Sie ab jetzt.</text></g>
+            </g>
+          </g>
+          <text class="t o s0" x="560" y="372" text-anchor="middle">Kein Ansprechpartner</text>
+          <text class="t o s1" x="560" y="372" text-anchor="middle">Anfrage wird geprüft</text>
+          <text class="t o s2" x="560" y="372" text-anchor="middle" style="fill:#0c2764">Berater wird zugeordnet</text>
+          <text class="t o s3" x="560" y="372" text-anchor="middle" style="fill:#0c2764">Neuer Ansprechpartner</text>
+        </svg>
+      </div>
+      <div class="legend"><span class="lg keep">Bleibt: Ihre Police</span><span class="lg new">Neu: Ihr Ansprechpartner</span></div>
+    </div>
+  </div>
+  <div class="cmp">
+    <div class="a"><h3>Versicherungswechsel</h3><ul id="cmpA"></ul></div>
+    <div class="b"><h3>Beraterwechsel</h3><ul id="cmpB"></ul>
+      <div><button class="btn lg" type="button" data-open-form data-src="versprechen">Ich möchte meinen Berater wechseln</button></div></div>
+  </div>
+  <p class="honest"><b>Was wir nicht tun:</b> Wir kündigen nichts ohne Ihre ausdrückliche Zustimmung. Und wir sagen Ihnen offen, wenn sich die Betreuung bei Ihrem Vertrag nicht übertragen lässt.</p>
+</div></section>
+
+<section class="sec" id="so-funktioniert"><div class="wrap">
+  <div class="head">
+    <p class="eyebrow">Ablauf</p>
+    <h2>In 2 Minuten den Wechsel anfragen.</h2>
+    <p class="lead">Sie stellen die Anfrage. Wir kümmern uns um die Prüfung der nächsten Schritte.</p>
+  </div>
+  <div class="steps" id="steps">
+    <div class="steps-line"><i></i></div>
+    <div class="step"><span class="n">1</span><div class="scard"><div class="mock"><span class="mp on">Berater nicht erreichbar</span><span class="mp">Lebensversicherung</span><span class="mp on">Säule 3a</span></div><h3>Situation angeben</h3><p>Sie teilen uns mit, warum Sie Ihren Berater wechseln möchten und welche Versicherungen Sie besitzen.</p></div></div>
+    <div class="step"><span class="n">2</span><div class="scard"><div class="mock col"><span class="bub">Wir prüfen Ihre Angaben und melden uns bei Ihnen.</span><span class="bub me">Danke, bis bald.</span></div><h3>Persönliche Kontaktaufnahme</h3><p>Ein zuständiger Ansprechpartner prüft Ihre Angaben, meldet sich bei Ihnen und erklärt die Möglichkeiten.</p></div></div>
+    <div class="step"><span class="n">3</span><div class="scard"><div class="mock"><div class="docm"><i></i><i></i><i class="s"></i><span class="ok">✓</span></div><span class="mp on">Neue Betreuung</span></div><h3>Wechsel organisieren</h3><p>Wenn ein Wechsel möglich ist und Sie zustimmen, unterstützen wir Sie bei den notwendigen Vollmachten und der Organisation der neuen Betreuung.</p></div></div>
+  </div>
+  <button class="btn lg" type="button" data-open-form data-src="ablauf">Beraterwechsel jetzt starten</button>
+  <p class="micro" style="margin-top:12px">Unverbindlich · Diskret · Ca. 2 Minuten</p>
+</div></section>
+
+<section class="sec on-navy deco" id="selbsttest"><div class="wrap sg">
+  <div>
+    <p class="eyebrow">Kurz-Check</p>
+    <h2>Passt ein Beraterwechsel zu Ihnen?</h2>
+    <p class="lead" style="margin-top:16px">Haken Sie an, was auf Sie zutrifft. Je länger Sie warten, desto länger bleibt Ihre Vorsorge ohne verlässlichen Ansprechpartner.</p>
+    <div class="verdict" aria-live="polite">
+      <div class="meter"><i id="meterBar"></i></div>
+      <p id="verdictTxt">Wählen Sie aus, was auf Sie zutrifft. Eine Antwort genügt.</p>
+      <button class="btn inv lg" type="button" id="verdictCta">Jetzt Beraterwechsel anfragen →</button>
+      <small>Unverbindlich · Diskret · Ca. 2 Minuten</small>
+    </div>
+  </div>
+  <div class="checks" id="checks"></div>
+</div></section>
+
+<section class="sec band" id="vorsorge">
+<div class="vscroll" id="vscroll"><div class="vpin"><div class="wrap vgrid2">
+  <div class="vleft">
+    <p class="eyebrow">Vorsorge und Lebensversicherungen</p>
+    <h2>Ihre Vorsorge verdient einen Berater, der erreichbar ist.</h2>
+    <p class="lead">Gerade bei langfristigen Versicherungen und Vorsorgeverträgen ist eine verlässliche Betreuung entscheidend.</p>
+    <ol class="vtabs" id="vTabs"></ol>
+    <p class="micro vhint" id="vHint">Scrollen oder anklicken, um die Vorsorgeart zu wechseln.</p>
+  </div>
+  <div class="vstage" id="vStage" aria-live="polite"></div>
+</div></div></div>
+<div class="wrap"><div class="cta-band"><div><b>Ihre Vorsorge braucht einen erreichbaren Ansprechpartner.</b><span>Unverbindlich anfragen. Wir prüfen, ob sich Ihre Betreuung übertragen lässt.</span></div><button class="btn inv lg" type="button" data-open-form data-src="band-vorsorge" data-reason="better">Betreuung jetzt anfragen →</button></div></div>
+</section>
+
+<section class="sec" id="vorteile"><div class="wrap">
+  <div class="head">
+    <p class="eyebrow">Ihr Gewinn</p>
+    <h2>Das ändert sich für Sie.</h2>
+    <p class="lead">Sie behalten Ihre Verträge, soweit möglich. Sie gewinnen einen Ansprechpartner, der sich kümmert.</p>
+  </div>
+  <div class="bgrid" id="bgrid"></div>
+  <div class="vswrap"><div class="vs" id="vs"></div></div>
+  <div class="cta-band"><div><b>Bereit, den Unterschied zu spüren?</b><span>In 2 Minuten anfragen. Unverbindlich und diskret.</span></div><button class="btn inv lg" type="button" data-open-form data-src="band-vorteile">Jetzt Beraterwechsel anfragen →</button></div>
+</div></section>
+
+<section class="sec" id="menschen"><div class="wrap menschen">
+  <div class="mcopy">
+    <p class="eyebrow">Verständnis für Ihre Lage</p>
+    <h2>Gute Betreuung ist persönlich.</h2>
+    <p class="lead">Ob Sie keinen Ansprechpartner mehr haben oder einfach mehr Klarheit wünschen: Sie sollen jemanden haben, der zuhört und sich kümmert.</p>
+    <button class="btn" type="button" data-open-form data-src="menschen">Jetzt Beraterwechsel anfragen →</button>
+    <p class="photo-note">Symbolbilder. Die dargestellten Personen sind keine Kunden oder Mitarbeitenden.</p>
+  </div>
+  <div class="mosaic" id="mosaic"></div>
+</div></section>
+
+<section class="sec band" id="sprachen"><div class="wrap lang-grid">
+  <div style="display:grid;gap:22px;min-width:0">
+    <p class="eyebrow">Mehrsprachiger Wechselservice</p>
+    <h2>Ihr Berater sollte Ihre Sprache sprechen.</h2>
+    <p class="lead">Versicherungen und Vorsorge sind wichtig. Deshalb sollten Sie Ihre Fragen in einer Sprache stellen können, in der Sie sich wohlfühlen.</p>
+    <div class="chips" id="chips" role="group" aria-label="Sprache wählen"></div>
+  </div>
+  <div class="greet" aria-live="polite">
+    <small id="greetLang">Deutsch</small>
+    <p class="g" id="greetText"></p>
+    <button class="btn" type="button" id="greetCta">Berater in meiner Sprache anfragen</button>
+    <small>Die Verfügbarkeit einer Beratungssprache bestätigen wir Ihnen bei der Kontaktaufnahme.</small>
+  </div>
+</div></section>
+
+<section class="sec" id="vollmacht"><div class="wrap vm">
+  <div class="vm-copy">
+    <p class="eyebrow">Digitaler Wechselprozess</p>
+    <h2>Auf Wunsch gleich digital wechseln.</h2>
+    <p class="lead">Mit der Maklervollmacht übernimmt Ihr neuer Ansprechpartner den Papierkram. Sie prüfen das Mandat in Ruhe und unterschreiben direkt am Bildschirm, mit Finger oder Maus.</p>
+    <ol class="vm-steps">
+      <li><b>1</b><span><strong>Anfrage stellen</strong><small>Grund, Versicherung und Kontaktdaten in etwa 2 Minuten.</small></span></li>
+      <li><b>2</b><span><strong>Mandat prüfen</strong><small>Sie sehen das vollständige Maklermandat, mit Ihren Angaben vorausgefüllt.</small></span></li>
+      <li><b>3</b><span><strong>Digital unterschreiben</strong><small>Direkt im Formular, ohne Drucken und Postweg.</small></span></li>
+      <li><b>4</b><span><strong>Wir übernehmen</strong><small>Die Betreuung wird organisiert, Ihre Police bleibt bestehen.</small></span></li>
+    </ol>
+    <button class="btn lg" type="button" data-open-form data-src="vollmacht" data-mode="digital">Digital wechseln →</button>
+    <p class="micro">Die Maklervollmacht ist freiwillig. Sie können auch zuerst nur eine Anfrage stellen.</p>
+  </div>
+  <div class="vm-card" aria-hidden="true">
+    <div class="vm-paper">
+      <div class="vm-logo">MAKLERMANDAT</div>
+      <p class="vm-t">Vollmacht und Auftrag für die Verwaltung des Versicherungsportefeuilles</p>
+      <i></i><i></i><i class="s"></i><i></i><i class="s"></i>
+      <div class="vm-sig"><svg viewBox="0 0 160 46" width="160" height="46"><path class="vm-draw" d="M6 34 C18 6 26 6 24 26 C22 40 34 14 44 24 C52 32 56 16 66 20 C78 26 84 34 96 22 C104 14 120 12 150 18" fill="none" stroke="#0c2764" stroke-width="2.6" stroke-linecap="round" pathLength="1"/></svg><small>Unterschrift Mandant/in</small></div>
+      <span class="vm-ok">✓ Digital unterschrieben</span>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec band" id="vertrauen"><div class="wrap">
+  <div class="head">
+    <p class="eyebrow">Vertrauen und Diskretion</p>
+    <h2>Ihr Wechsel. Ihre Entscheidung.</h2>
+  </div>
+  <div class="tgrid" id="tgrid"></div>
+  <div class="who">
+    <div class="who-head"><p class="eyebrow">Transparenz</p><h3>Wer steht hinter beraterwechsel.ch?</h3><p class="who-lead">Ein unabhängiger Makler, der für Sie arbeitet und nicht für die Versicherung. Das ist uns wichtig, deshalb sehen Sie hier vorab, worauf Sie sich verlassen können.</p><button class="link" type="button" data-gofp="imp">Alle Angaben zum Anbieter finden Sie im Impressum</button></div>
+    <ul class="who-grid">
+      <li><span class="wk"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Unabhängig für Sie tätig</b><span>Der Makler arbeitet in unabhängiger Stellung für Sie und nicht als Vertreter einer Versicherungsgesellschaft.</span></div></li>
+      <li><span class="wk"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Ihr Vertrag bleibt bestehen</b><span>Sie bleiben Vertragspartner der Gesellschaften. Ohne Ihre Zustimmung wird nichts gekündigt.</span></div></li>
+      <li><span class="wk"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Vergütung offen erklärt</b><span>Die Gesellschaften entschädigen den Makler branchenüblich. Besteht das Mandat mindestens ein Kalenderjahr und wurde nichts anderes vereinbart, ist die Dienstleistung für Sie kostenlos.</span></div></li>
+      <li><span class="wk"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Mandat in Ruhe prüfen</b><span>Sie lesen das vollständige Mandat, bevor Sie unterschreiben. Es ist mit einer Frist von drei Monaten kündbar.</span></div></li>
+      <li><span class="wk"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Persönlicher Ansprechpartner</b><span>Eine Person kümmert sich um Ihre Anliegen und ist direkt per Telefon und E-Mail erreichbar.</span></div></li>
+      <li><span class="wk"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Vertraulich behandelt</b><span>Ihre Daten werden nur für die Bearbeitung Ihrer Anfrage verwendet.</span></div></li>
+    </ul>
+    <div class="who-contact"><span>Fragen vorab?</span><a class="ico-btn sm" href="tel:+4237987733" data-src="who" aria-label="Anrufen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Anrufen</span></a><a class="ico-btn wa sm" href="https://wa.me/4237987733" target="_blank" rel="noopener" data-src="who" aria-label="Per WhatsApp schreiben"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.65-4.9A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9 8.5c0 3.3 2.7 6 6 6l1.3-1.3-2-1-.9.7a3.6 3.6 0 0 1-1.9-1.9l.7-.9-1-2L9 8.5z" fill="currentColor" stroke="none"/></svg><span>WhatsApp</span></a><a href="mailto:jetzt@beraterwechsel.ch" data-src="who">jetzt@beraterwechsel.ch</a><button class="btn" type="button" data-open-form data-src="who">Jetzt anfragen →</button></div>
+  </div>
+  <div class="cta-band"><div><b>Bereit für einen Ansprechpartner, der sich kümmert?</b><span>Die Anfrage ist unverbindlich und dauert etwa zwei Minuten.</span></div><button class="btn inv lg" type="button" data-open-form data-src="band-vertrauen">Jetzt Beraterwechsel anfragen →</button></div>
+</div></section>
+
+<section class="sec" id="faq"><div class="wrap">
+  <div class="head"><p class="eyebrow">Häufige Fragen</p><h2>Alles Wichtige zum Beraterwechsel.</h2></div>
+  <div class="faq" id="faqList"></div>
+  <div class="cta-band"><div><b>Noch eine Frage offen?</b><span>Beschreiben Sie kurz Ihre Situation. Wir melden uns persönlich bei Ihnen.</span></div><button class="btn inv lg" type="button" data-open-form data-src="band-faq" data-mode="talk">Persönliches Gespräch anfragen →</button></div>
+</div></section>
+
+<section class="sec final on-navy deco" id="abschluss"><div class="wrap">
+  <div class="final-copy">
+    <h2>Warum bei einem Berater bleiben, der sich nicht um Sie kümmert?</h2>
+    <p class="lead">Ob Lebensversicherung, Vorsorge oder bestehende Versicherungsverträge: Wir helfen Ihnen, Ihre Betreuung neu zu organisieren. Einfach, diskret und schweizweit.</p>
+    <button class="btn inv lg" type="button" data-open-form data-src="abschluss">Jetzt in 2 Minuten Beraterwechsel anfragen</button>
+    <p class="k">Ein Wechsel beginnt mit einer einfachen Anfrage.</p>
+    <ul class="pills"><li>Diskret</li><li>Unverbindlich</li><li>Schweizweit</li><li>Ca. 2 Minuten</li></ul>
+  </div>
+  <div class="cb">
+    <form id="cbForm" novalidate>
+      <h3>Lieber zuerst sprechen?</h3>
+      <p class="sub">Hinterlassen Sie Ihre Nummer. Wir rufen Sie zurück.</p>
+      <div class="fgrid">
+        <div class="fld"><label for="cbName">Vorname</label><input id="cbName" autocomplete="given-name"><small></small></div>
+        <div class="fld"><label for="cbPhone">Telefonnummer</label><input id="cbPhone" type="tel" inputmode="tel" autocomplete="tel"><small></small></div>
+        <div class="fld"><label for="cbLang">Sprache</label><select id="cbLang"></select></div>
+        <div class="fld"><label for="cbWhen">Wann passt es Ihnen?</label><select id="cbWhen"><option>Vormittags</option><option>Nachmittags</option><option>Abends</option></select></div>
+      </div>
+      <label class="opt"><input type="checkbox" id="cbConsent"><span>Ich bin einverstanden, dass man mich zu meiner Anfrage zurückruft. Details in der Datenschutzerklärung (Fusszeile).</span></label>
+      <button class="btn lg" type="submit" id="cbBtn">Rückruf anfragen</button>
+      <p class="err" id="cbErr" role="alert"></p>
+      <p class="legal">Vorschau-Version: In dieser Ansicht werden keine Daten übermittelt.</p>
+    </form>
+    <div id="cbDone" hidden><span class="ic" style="width:44px;height:44px">✓</span><h3>Danke, wir rufen Sie zurück.</h3><p class="sub">Wir melden uns zum gewünschten Zeitpunkt bei Ihnen. (Vorschau-Version: Es wurde nichts übermittelt.)</p></div>
+  </div>
+</div></section>
+
+</main>
+
+<footer class="foot" id="footer"><div class="wrap">
+  <div class="ftop">
+    <div class="fbrand">
+      <a class="logo" href="#top" aria-label="beraterwechsel.ch, nach oben"><span id="logoMark2"></span><b>beraterwechsel</b><span>.ch</span></a>
+      <p>Berater wechseln. Versicherung behalten.</p>
+    </div>
+    <button class="btn inv" type="button" data-open-form data-src="footer">Jetzt anfragen →</button>
+  </div>
+  <div class="fbar">
+    <ul class="flinks" role="tablist" aria-label="Rechtliches">
+      <li><button type="button" data-fp="imp" aria-expanded="false">Impressum</button></li>
+      <li><button type="button" data-fp="dsg" aria-expanded="false">Datenschutz</button></li>
+      <li><button type="button" data-fp="agb" aria-expanded="false">AGB</button></li>
+      <li><button type="button" data-fp="vag" aria-expanded="false">Vergütung</button></li>
+      <li><button type="button" data-fp="ck" aria-expanded="false">Cookies</button></li>
+      <li><button type="button" data-fp="kon" aria-expanded="false">Kontakt</button></li>
+    </ul>
+    <span class="fcopy">© <span id="fYear">2026</span> beraterwechsel.ch</span>
+  </div>
+  <div class="fpanel" id="fpanel" hidden aria-live="polite"><div id="fpBody"></div><button class="link inv" type="button" id="fpClose">Schliessen</button></div>
+</div></footer>
+
+<div class="mbar" id="mbar" hidden><a class="btn ghost lg mcall" href="tel:+4237987733" data-src="mobile-bar" aria-label="Anrufen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a><a class="btn ghost lg mcall" href="https://wa.me/4237987733" target="_blank" rel="noopener" data-src="mobile-bar" aria-label="Per WhatsApp schreiben"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.65-4.9A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9 8.5c0 3.3 2.7 6 6 6l1.3-1.3-2-1-.9.7a3.6 3.6 0 0 1-1.9-1.9l.7-.9-1-2L9 8.5z" fill="currentColor" stroke="none"/></svg></a><button class="btn lg" type="button" data-open-form data-src="mobile-bar">In 2 Minuten Wechsel anfragen</button></div>
+
+<div class="cookie" id="cookie" hidden role="dialog" aria-label="Cookie-Hinweis"><p><b>Cookies und Statistik.</b> Mit Ihrer Einwilligung nutzen wir Statistik- und Werbe-Cookies, um unsere Anzeigen zu verbessern. <button class="link" type="button" data-cookie-privacy>Datenschutz</button></p><div class="ckb"><button class="btn ghost" type="button" id="ckNo">Ablehnen</button><button class="btn" type="button" id="ckYes">Akzeptieren</button></div></div>
+
+<div class="overlay" id="formOverlay" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="fTitle" id="sheet">
+    <div class="sheet-head"><span class="logo"><span id="logoMark3"></span><b>beraterwechsel</b><span>.ch</span></span><span class="st" id="fStep"></span><button class="xbtn" type="button" id="fClose" aria-label="Schliessen"></button></div>
+    <div class="prog"><i id="fBar"></i></div>
+    <form id="leadForm" novalidate style="display:flex;flex-direction:column;min-height:0;flex:1">
+      <div class="sheet-body" id="fBody"></div>
+      <div class="sheet-foot"><button class="btn ghost" type="button" id="fBack">Zurück</button><span class="err" id="fErr" role="alert" style="align-self:center"></span><button class="btn" type="submit" id="fNext">Weiter</button></div>
+    </form>
+    <div class="done-wrap" id="fDone" hidden></div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+'use strict';
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var esc=function(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})};
+
+/* ---------- Icons und Logo ---------- */
+var ICON={
+  check:'<path d="M20 6 9 17l-5-5"/>',
+  x:'<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+  minus:'<path d="M5 12h14"/>',
+  chev:'<path d="m6 9 6 6 6-6"/>',
+  lock:'<rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
+  file:'<path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/>',
+  user:'<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+  list:'<path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/>',
+  phone:'<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>',
+  help:'<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/>',
+  msg:'<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
+  globe:'<circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+  shield:'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>'
+};
+function svg(n,s,sw){s=s||18;sw=sw||2.2;return '<svg width="'+s+'" height="'+s+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="'+sw+'" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+ICON[n]+'</svg>'}
+function logoSvg(sz){return '<svg width="'+sz+'" height="'+sz+'" viewBox="0 0 40 40" aria-hidden="true"><polygon points="36,14 16,14 6,24 16,34 36,34 26,24" fill="#0c2764"/><polygon points="4,6 24,6 34,16 24,26 4,26 14,16" fill="#0c2764" stroke="#ffffff" stroke-width="2.5" stroke-linejoin="round"/></svg>'}
+['logoMark','logoMark2','logoMark3'].forEach(function(id){var e=document.getElementById(id);if(e)e.innerHTML=logoSvg(id==='logoMark'?34:30)});
+$('#fClose').innerHTML=svg('x',18);
+
+/* ---------- Tracking (Mock, kein Versand) ---------- */
+var evs=[];
+var sp=new URLSearchParams(location.search);
+var utm={};['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){if(sp.get(k))utm[k]=sp.get(k)});
+function track(name,params){
+  var e=Object.assign({event:name},params||{});
+  (window.dataLayer=window.dataLayer||[]).push(e);
+  evs.unshift(e); if(evs.length>40)evs.pop();
+  var ol=$('#evlog'); if(!ol)return;
+  ol.innerHTML=evs.map(function(x){var p=Object.assign({},x);delete p.event;return '<li><b>'+esc(x.event)+'</b> '+esc(JSON.stringify(p))+'</li>'}).join('');
+}
+
+/* ---------- Varianten (Google/Meta Ads) ---------- */
+var DEFLEAD='Ob Ihr Versicherungsberater nicht erreichbar ist, Sie keine Betreuung mehr erhalten oder sich einen besseren Ansprechpartner wünschen: Wir helfen Ihnen, Ihre bestehende Versicherungs- und Vorsorgebetreuung unkompliziert neu zu organisieren.';
+var VARIANTS={
+  'default':{n:'Standard',h:'Ihr Versicherungs&shy;berater passt nicht mehr? Wechseln Sie ihn.'},
+  'ab-test':{n:'A/B-Test: Berater kümmert sich nicht',h:'Ihr Berater kümmert sich nicht? Wir helfen beim Wechsel.',pre:{reason:'unhappy'}},
+  'versicherungsberater':{n:'Versicherungsberater wechseln',h:'Versicherungs&shy;berater wechseln? Einfacher, als Sie denken.'},
+  'broker':{n:'Broker wechseln Schweiz',h:'Broker wechseln in der Schweiz: Wir organisieren Ihren Ansprechpartner neu.',pre:{reason:'unhappy'}},
+  'makler':{n:'Versicherungsmakler wechseln',h:'Versicherungs&shy;makler wechseln, ohne selbst mit ihm zu diskutieren.',pre:{reason:'unhappy'}},
+  'vorsorgeberater':{n:'Vorsorgeberater wechseln',h:'Ihr Vorsorge&shy;berater ist nicht mehr da? Wechseln Sie ihn.',pre:{reason:'better'}},
+  'lebensversicherung':{n:'Lebensversicherung Berater wechseln',h:'Lebensversicherung behalten. Berater wechseln.',l:'Ihre bestehende Lebensversicherung muss nicht gekündigt werden, nur weil Sie einen anderen Ansprechpartner möchten. Ob die Betreuung übertragen werden kann, prüfen wir für Sie.',pre:{reason:'better',type:'lv'}},
+  'nicht-erreichbar':{n:'Versicherungsberater nicht erreichbar',h:'Ihr Versicherungs&shy;berater meldet sich nicht mehr? Dann wechseln Sie ihn.',pre:{reason:'unreachable'}},
+  'keine-betreuung':{n:'Keine Versicherungsbetreuung',h:'Sie bezahlen seit Jahren für Ihre Vorsorge. Aber wer betreut Sie eigentlich?',pre:{reason:'none'}},
+  'saeule-3a':{n:'Säule 3a Berater wechseln',h:'Säule 3a ohne Ansprechpartner? Wechseln Sie Ihren Berater.',l:'Ihre Vorsorge in der Säule 3a läuft weiter. Wir prüfen mit Ihnen, wie die Betreuung neu organisiert werden kann.',pre:{reason:'better',type:'3a'}}
+};
+var curVariant='default';
+var vsel=$('#variantSel')||{};
+if($('#variantSel'))vsel.innerHTML=Object.keys(VARIANTS).map(function(k){return '<option value="'+k+'">'+esc(VARIANTS[k].n)+'</option>'}).join('');
+function applyVariant(k,fromUser){
+  if(!VARIANTS[k])k='default';
+  curVariant=k;var v=VARIANTS[k];
+  $('#h1').innerHTML=v.h;$('#lead').textContent=v.l||DEFLEAD;vsel.value=k;
+  if(fromUser)track('page_view',{variant:k,note:'variant_switch'});
+}
+if($('#variantSel'))vsel.addEventListener('change',function(){applyVariant(vsel.value,true)});
+function readVariant(){
+  var q=sp.get('variant');var m=/^#variant-([a-z0-9-]+)$/.exec(location.hash||'');
+  return q||(m&&m[1])||'default';
+}
+window.addEventListener('hashchange',function(){var m=/^#variant-([a-z0-9-]+)$/.exec(location.hash||'');if(m)applyVariant(m[1],true)});
+
+/* ---------- Statische Inhalte ---------- */
+$('#trustRow').innerHTML=['Diskrete Anfrage','Schweizweiter Wechselservice','Persönliche Betreuung','Keine automatische Kündigung Ihrer Policen'].map(function(t){return '<li><span class="ic">'+svg('check',12,3)+'</span>'+t+'</li>'}).join('');
+$('#cmpA').innerHTML=['Versicherungsprodukt kann verändert werden','Neue Vertragsbedingungen möglich','Gesonderte Prüfung erforderlich','Nicht das automatische Ziel unseres Services'].map(function(t){return '<li><span class="mk">'+svg('minus',12,3)+'</span>'+t+'</li>'}).join('');
+$('#cmpB').innerHTML=['Neuer Ansprechpartner','Bestehende Verträge zunächst behalten','Betreuung neu organisieren','Persönliche Unterstützung','Langfristige Begleitung'].map(function(t){return '<li><span class="mk">'+svg('check',12,3)+'</span>'+t+'</li>'}).join('');
+
+var PH=["img/foto-1.jpg", "img/foto-2.jpg", "img/foto-3.jpg", "img/foto-4.jpg", "img/foto-5.jpg", "img/foto-6.jpg", "img/foto-7.jpg", "img/foto-8.jpg", "img/foto-9.jpg", "img/foto-10.jpg", "img/foto-11.jpg"];
+var PHALT=["Mann telefoniert und wirkt frustriert","Frau liest nachdenklich ein Dokument zur Vorsorge","Älteres Paar im Gespräch mit einem Berater","Beraterin erklärt einem Paar Unterlagen","Schweizer Fahne vor Bergen und See","Lächelnder Berater mit Headset","Mann telefoniert und wirkt verärgert","Smartphone mit dem Formular Beraterwechsel in 2 Minuten","Beraterin und Berater besprechen Unterlagen auf einem Tablet","Paar liest erleichtert ein Dokument","Schweizer Landschaft mit Luzern und dem Text: Versicherungsberater wechseln, nicht Ihre Versicherung"];
+var PHMAP=[6,1,8,5,4,9];
+(function photos(){
+  var m=document.getElementById('mosaic');
+  if(m){
+    var cap={8:'Gemeinsam besprechen',6:'Wenn niemand antwortet',7:'In 2 Minuten angefragt',9:'Verständlich erklärt',5:'Persönlich erreichbar',2:'Ruhig besprochen'};
+    m.innerHTML=[8,6,7,9,5,2].map(function(k,j){return '<figure><img src="'+PH[k]+'" alt="'+PHALT[k]+'" loading="lazy" decoding="async"><figcaption>'+cap[k]+'</figcaption></figure>'}).join('');
+  }
+  var b=document.getElementById('banner');if(b)b.innerHTML='<img src="'+PH[10]+'" alt="'+PHALT[10]+'" loading="lazy" decoding="async">';
+  [[0,7],[1,8],[2,9]].forEach(function(x){var st=document.querySelectorAll('.step .scard')[x[0]];if(st){var d=document.createElement('div');d.className='step-photo';d.innerHTML='<img src="'+PH[x[1]]+'" alt="'+PHALT[x[1]]+'" loading="lazy" decoding="async">';st.insertBefore(d,st.firstChild)}});
+})();
+var ART=[
+ {i:'phone',a:'Anruf unbeantwortet',b:'Keine Rückmeldung'},
+ {i:'help',a:'Wer ist zuständig?',b:'Berater ausgetreten'},
+ {i:'msg',a:'Unterlagen fehlen',b:'Keine Rückmeldung'},
+ {i:'globe',a:'Hallo · Merhaba · Përshëndetje',b:'Ihre Sprache'},
+ {i:'file',a:'Vollmacht vorbereiten',b:'Wir organisieren'},
+ {i:'shield',a:'Vertrag läuft weiter',b:'Ansprechpartner fehlt'}
+];
+function art(i){var a=ART[i],k=PHMAP[i];return '<div class="art ph"><img src="'+PH[k]+'" alt="'+esc(PHALT[k])+'" loading="lazy" decoding="async"><span class="fl f1">'+esc(a.a)+'</span></div>'}
+var PROBS=[
+ {k:'unreachable',t:'Ihr Berater meldet sich nicht mehr?',p:'Sie haben Fragen zu Ihrer Lebensversicherung oder Vorsorge, aber niemand antwortet auf Ihre Anrufe oder Nachrichten?',c:'Jetzt Ansprechpartner wechseln',ph:'Mann mit unbeantwortetem Anruf',n:1,type:'lv'},
+ {k:'left',t:'Sie wissen nicht, wer für Ihre Versicherung zuständig ist?',p:'Ihr bisheriger Berater hat die Firma verlassen oder Ihre Betreuung wurde nie richtig übergeben?',c:'Neue Betreuung anfragen',ph:'Persönliches Beratungsgespräch',n:1},
+ {k:'unhappy',t:'Sie sind unzufrieden mit Ihrem Broker?',p:'Keine Rückmeldungen, fehlende Unterlagen oder das Gefühl, dass sich niemand wirklich um Ihre Anliegen kümmert?',c:'Betreuung wechseln',ph:'Kundin mit Versicherungsunterlagen',n:1},
+ {k:'language',t:'Ihr Berater spricht Ihre Sprache nicht?',p:'Gerade bei wichtigen Vorsorgeentscheidungen müssen Sie verstehen, was besprochen und vereinbart wird.',c:'Beratung in meiner Sprache finden',ph:'Mehrsprachige Beratung',n:2},
+ {k:'other',t:'Sie möchten wechseln, wissen aber nicht wie?',p:'Sie möchten nicht selbst mit Ihrem bisherigen Berater diskutieren oder komplizierte Vollmachten vorbereiten?',c:'Wechselservice starten',ph:'Ansprechpartner im modernen Büro',n:1},
+ {k:'better',t:'Ihre Lebensversicherung läuft – aber wer betreut sie?',p:'Eine langfristige Vorsorgelösung braucht einen zuverlässigen Ansprechpartner.',c:'Vorsorgebetreuung wechseln',ph:'Ehepaar mit Vorsorgeunterlagen',n:2,type:'lv'}
+];
+function sil(n){
+  return n===2
+   ?'<svg viewBox="0 0 200 100" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><g fill="#0c2764" opacity=".16"><circle cx="76" cy="40" r="15"/><path d="M34 100c0-22 16-34 42-34s42 12 42 34z"/><circle cx="130" cy="38" r="17"/><path d="M84 100c0-25 18-38 46-38s46 13 46 38z"/></g></svg>'
+   :'<svg viewBox="0 0 200 100" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><g fill="#0c2764" opacity=".16"><circle cx="100" cy="36" r="19"/><path d="M52 100c0-26 20-40 48-40s48 14 48 40z"/></g></svg>';
+}
+$('#probRight').innerHTML=PROBS.map(function(p,i){
+  return '<article class="pcard'+(i===0?' on':'')+'" data-i="'+i+'">'+art(i)+'<div class="body"><span class="tag">Typische Situation</span><h3>'+esc(p.t)+'</h3><p>'+esc(p.p)+'</p><button class="btn" type="button" data-open-form data-src="problem-'+(i+1)+'" data-reason="'+p.k+'"'+(p.type?' data-type="'+p.type+'"':'')+'>'+esc(p.c)+' <span aria-hidden="true">→</span></button></div></article>';
+}).join('');
+$('#probDots').innerHTML=PROBS.map(function(_,i){return '<li'+(i===0?' class="on"':'')+'></li>'}).join('');
+function setProb(i){
+  $$('.pcard').forEach(function(c,j){c.classList.toggle('on',i===j)});
+  $$('#probDots li').forEach(function(d,j){d.classList.toggle('on',j<=i)});
+  $('#probCount').textContent='Situation '+(i+1)+' von '+PROBS.length;
+}
+setProb(0);
+if('IntersectionObserver' in window){
+  var pio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)setProb(+e.target.dataset.i)})},{rootMargin:'-42% 0px -42% 0px'});
+  if(reduce){$('#probleme').classList.add('vert');$$('.pcard').forEach(function(c){pio.observe(c)})}
+  var sio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');sio.unobserve(e.target)}})},{threshold:.35});
+  sio.observe($('#steps'));
+}else{$('#steps').classList.add('in')}
+if(reduce)$('#steps').classList.add('in');
+
+var VORS=[{"g": "LV", "t": "Lebensversicherungen", "p": "Bestehende Lebensversicherungen betreuen lassen und einen neuen Ansprechpartner finden.", "type": "lv", "q": "Typisch: Berater ausgetreten, keine Rückmeldung.", "c": ["Wer betreut Ihre Police?", "Ansprechpartner erreichbar?", "Vertrag bleibt bestehen", "Betreuung neu regeln"]}, {"g": "3a", "t": "Säule 3a", "p": "Unterstützung bei der Organisation der Betreuung bestehender gebundener Vorsorgelösungen.", "type": "3a", "q": "Typisch: Vorsorge läuft, aber niemand erklärt sie.", "c": ["Gebundene Vorsorge", "Zuständigen herausfinden", "Unterlagen zusammenführen", "Betreuung neu organisieren"]}, {"g": "3b", "t": "Säule 3b", "p": "Neue Betreuung für bestehende freie Vorsorge- und Versicherungslösungen prüfen.", "type": "3b", "q": "Typisch: Freie Vorsorge ohne klaren Ansprechpartner.", "c": ["Freie Vorsorge", "Lösungen prüfen", "Ansprechpartner klären", "Keine automatische Kündigung"]}, {"g": "PV", "t": "Private Vorsorge", "p": "Langfristige persönliche Betreuung bestehender Vorsorgeverträge.", "type": "private", "q": "Typisch: Langfristige Verträge, die Überblick brauchen.", "c": ["Langfristige Verträge", "Persönliche Betreuung", "Überblick über Ihre Verträge", "Regelmässiger Austausch"]}, {"g": "+", "t": "Weitere Versicherungen", "p": "Auf Wunsch auch die Betreuung anderer Versicherungsverträge prüfen.", "type": "more", "q": "Typisch: Mehrere Verträge, mehrere Ansprechpartner.", "c": ["Weitere Verträge", "Auf Wunsch prüfen", "Ein zentraler Ansprechpartner", "Einzelfall klären"]}];
+(function vorsorge(){
+  var sec=$('#vscroll'),pin=$('.vpin',sec),stage=$('#vStage'),tabs=$('#vTabs');if(!sec)return;
+  var N=VORS.length,cur=-1,static_=reduce;
+  tabs.innerHTML=VORS.map(function(v,i){return '<li><button type="button" class="vtab" data-i="'+i+'" aria-pressed="false"><span class="g">'+esc(v.g)+'</span><span class="n">'+esc(v.t)+'</span></button></li>'}).join('');
+  stage.innerHTML=VORS.map(function(v,i){return '<article class="vpanel" data-i="'+i+'" aria-hidden="true"><div class="vph"><span class="glyph">'+esc(v.g)+'</span><div><h3>'+esc(v.t)+'</h3><p class="q">'+esc(v.q)+'</p></div></div><p class="d">'+esc(v.p)+'</p><div class="vcl"><b>Das klären wir mit Ihnen</b><ul>'+v.c.map(function(c,j){return '<li style="--d:'+(0.12+j*0.09).toFixed(2)+'s"><span aria-hidden="true">✓</span>'+esc(c)+'</li>'}).join('')+'</ul></div><div class="vstay"><span>Bleibt: Ihr Vertrag</span><span class="new">Neu: Ihr Ansprechpartner</span></div><button class="btn" type="button" data-open-form data-src="vorsorge-'+v.type+'" data-type="'+v.type+'" data-reason="better">'+esc(v.t)+' anfragen <span aria-hidden="true">→</span></button></article>'}).join('');
+  var panels=$$('.vpanel',stage),btns=$$('.vtab',tabs);
+  function set(i){
+    if(i===cur)return;var prev=cur;cur=i;
+    panels.forEach(function(p,j){
+      p.classList.toggle('on',j===i);p.classList.toggle('out',prev>=0&&j===prev&&j!==i);
+      p.setAttribute('aria-hidden',String(j!==i));
+      if(j!==i&&j!==prev)p.classList.remove('out');
+    });
+    btns.forEach(function(b,j){b.setAttribute('aria-pressed',String(j===i))});
+  }
+  if(static_){sec.classList.add('vstatic');panels.forEach(function(p){p.classList.add('on');p.setAttribute('aria-hidden','false')});$('#vHint').hidden=true;
+    btns.forEach(function(b){b.addEventListener('click',function(){panels[+b.dataset.i].scrollIntoView({block:'center'})})});return}
+  var travel=1;
+  function measure(){travel=Math.max(600,N*window.innerHeight*.5);sec.style.height=(pin.offsetHeight+travel)+'px';frame()}
+  function frame(){
+    var top=parseFloat(getComputedStyle(pin).top)||68;
+    var p=Math.max(0,Math.min(.9999,(top-sec.getBoundingClientRect().top)/travel));
+    set(Math.floor(p*N));
+  }
+  var tk=false;
+  window.addEventListener('scroll',function(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;frame()})}},{passive:true});
+  window.addEventListener('resize',measure);window.addEventListener('load',measure);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(measure);
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    var i=+b.dataset.i,top=parseFloat(getComputedStyle(pin).top)||68;
+    var y=window.pageYOffset+sec.getBoundingClientRect().top-top+((i+.5)/N)*travel;
+    window.scrollTo({top:y,behavior:'smooth'});set(i);
+  })});
+  set(0);measure();
+})();
+
+var TRUST=[
+ {i:'lock',t:'Diskrete Bearbeitung',p:'Ihre Anfrage wird vertraulich behandelt.'},
+ {i:'file',t:'Keine automatische Kündigung',p:'Bestehende Versicherungen werden durch die Anfrage nicht automatisch gekündigt.'},
+ {i:'user',t:'Persönlicher Ansprechpartner',p:'Wir helfen Ihnen, einen passenden zuständigen Ansprechpartner zu erhalten.'},
+ {i:'list',t:'Transparenter Wechselprozess',p:'Sie erfahren, welche Schritte erforderlich sind und welche Möglichkeiten bestehen.'}
+];
+$('#tgrid').innerHTML=TRUST.map(function(t){return '<article class="tcard"><span class="ico">'+svg(t.i,22,2)+'</span><h3>'+t.t+'</h3><p>'+t.p+'</p></article>'}).join('');
+
+var FAQ=[
+ ['Kann ich meinen Versicherungsberater einfach wechseln?','Grundsätzlich ja: Sie entscheiden, wer Sie künftig betreut. Wie der Wechsel konkret abläuft, hängt von Ihrem Vertrag, dem Versicherer und dem bisherigen Betreuungsmandat ab. Wir prüfen das für Sie und zeigen Ihnen die nächsten Schritte.'],
+ ['Muss ich meine Lebensversicherung kündigen?','Nein, nicht grundsätzlich. Beim Beraterwechsel geht es um die Betreuung, nicht um das Produkt. Häufig lässt sich die Betreuung neu regeln, ohne dass der Vertrag verändert wird. Ob das bei Ihrem Vertrag möglich ist, klären wir vorab. Ihre Anfrage führt nie automatisch zu einer Kündigung.'],
+ ['Erfährt mein bisheriger Berater vom Wechsel?','Wenn die Betreuung übertragen wird, werden je nach Ablauf der bisherige Berater oder die Gesellschaft informiert, etwa sobald eine Vollmacht eingereicht wird. Sie müssen aber nicht selbst mit ihm diskutieren. Wir erklären Ihnen im Voraus, wer wann informiert wird.'],
+ ['Kann ich wechseln, wenn mein Berater nicht erreichbar ist?','Das ist einer der häufigsten Gründe für eine Anfrage. Sie brauchen dafür keine Antwort Ihres bisherigen Beraters, um die Möglichkeiten prüfen zu lassen. Ob und wie die Betreuung im Einzelfall übertragen werden kann, klären wir mit Ihnen.'],
+ ['Was passiert, wenn ich meinen Broker nicht kenne?','Das ist kein Hindernis für die Anfrage. Anhand Ihrer Unterlagen, etwa Police oder Prämienrechnung, versuchen wir gemeinsam mit Ihnen herauszufinden, wer aktuell für Ihre Verträge zuständig ist. Nennen Sie uns im Formular einfach die Versicherungsgesellschaft, falls Sie sie kennen.'],
+ ['Wie lange dauert ein Beraterwechsel?','Die Anfrage selbst dauert etwa zwei Minuten. Wie lange die Bearbeitung dauert, hängt vom Versicherer, vom Vertrag und von den vorhandenen Unterlagen ab. Eine pauschale Dauer können wir deshalb nicht zusagen. Im persönlichen Gespräch erfahren Sie, womit Sie rechnen können.'],
+ ['Was kostet der Wechsel?','Die Anfrage ist kostenlos und unverbindlich. Beim Maklermandat bleiben Sie Vertragspartner der Gesellschaften. Der Makler wird von den Gesellschaften mit branchenüblichen Ansätzen entschädigt. Besteht das Mandat mindestens ein Kalenderjahr und wurde nichts anderes vereinbart, ist die Dienstleistung für Sie kostenlos. Fallen nicht entschädigte Aufwendungen an, informiert Sie der Berater vorab. Die Details lesen Sie im Mandat, bevor Sie unterschreiben.'],
+ ['Kann ich auch mehrere Versicherungen betreuen lassen?','Ja. Sie können im Formular mehrere Vorsorge- und Versicherungsarten auswählen. So erhalten Sie, soweit möglich, einen zentralen Ansprechpartner für mehrere Verträge. Ob sich einzelne Verträge übertragen lassen, wird jeweils geprüft.'],
+ ['Kann ich meinen Berater auf Albanisch, Türkisch oder Bosnisch wechseln?','Sie können im Formular Ihre Wunschsprache angeben, darunter Albanisch, Türkisch und Bosnisch. Ob eine Sprache zum Zeitpunkt Ihrer Anfrage verfügbar ist, bestätigen wir Ihnen bei der Kontaktaufnahme.'],
+ ['Kann ich eine Maklervollmacht digital unterschreiben?','Ja, auf Wunsch. Im Anfrageformular können Sie die Maklervollmacht gleich erteilen. Sie sehen das vollständige Maklermandat mit Ihren Angaben, unterschreiben direkt am Bildschirm und bestätigen es. Das ist freiwillig; Sie können auch zuerst nur eine Anfrage stellen. Das Mandat wird nach Eingang vom Makler gegengezeichnet.']
+];
+$('#faqList').innerHTML=FAQ.map(function(f,i){return '<details'+(i===0?' open':'')+'><summary>'+esc(f[0])+svg('chev',22)+'</summary><div class="ans">'+esc(f[1])+'</div></details>'}).join('');
+
+/* ---------- Sprachen ---------- */
+var LANGS=[['de','Deutsch','de-CH','Grüezi! Wir helfen Ihnen beim Wechsel, in Ihrer Sprache.'],
+ ['fr','Französisch','fr','Bonjour ! Nous vous aidons à changer de conseiller, dans votre langue.'],
+ ['it','Italienisch','it','Buongiorno! La aiutiamo a cambiare consulente, nella sua lingua.'],
+ ['en','Englisch','en','Hello! We help you change your advisor, in your language.'],
+ ['sq','Albanisch','sq','Përshëndetje! Ju ndihmojmë të ndërroni këshilluesin tuaj, në gjuhën tuaj.'],
+ ['bs','Bosnisch','bs','Dobar dan! Pomažemo vam da promijenite savjetnika, na vašem jeziku.'],
+ ['hr','Kroatisch','hr','Dobar dan! Pomažemo vam promijeniti savjetnika, na vašem jeziku.'],
+ ['sr','Serbisch','sr-Latn','Dobar dan! Pomažemo vam da promenite savetnika, na vašem jeziku.'],
+ ['tr','Türkisch','tr','Merhaba! Danışmanınızı kendi dilinizde değiştirmenize yardımcı oluyoruz.'],
+ ['pt','Portugiesisch','pt','Olá! Ajudamos a mudar de consultor, no seu idioma.'],
+ ['es','Spanisch','es','¡Hola! Le ayudamos a cambiar de asesor, en su idioma.'],
+ ['pl','Polnisch','pl','Dzień dobry! Pomożemy zmienić doradcę, w Państwa języku.'],
+ ['ru','Russisch','ru','Здравствуйте! Мы поможем вам сменить консультанта, на вашем языке.']];
+var greetLang='de';
+$('#chips').innerHTML=LANGS.map(function(l){return '<button type="button" class="chip" data-lang="'+l[0]+'" aria-pressed="'+(l[0]==='de')+'">'+l[1]+'</button>'}).join('');
+function setGreet(code){
+  greetLang=code;var l=LANGS.filter(function(x){return x[0]===code})[0];
+  $$('.chip').forEach(function(c){c.setAttribute('aria-pressed',String(c.dataset.lang===code))});
+  $('#greetLang').textContent=l[1];var g=$('#greetText');g.textContent=l[3];g.setAttribute('lang',l[2]);
+}
+setGreet('de');
+$('#chips').addEventListener('click',function(e){var b=e.target.closest('.chip');if(b)setGreet(b.dataset.lang)});
+$('#greetCta').addEventListener('click',function(){openForm({src:'sprachen',reason:'language',lang:greetLang})});
+
+var PAGE_TITLE=document.title;
+/* ---------- Konfiguration (vor Livegang ausfüllen) ---------- */
+var CONFIG={
+  endpoint:'lead.php',        // z. B. 'lead.php' oder Webhook-URL (Make, Zapier, CRM). Leer = Vorschau ohne Versand.
+  phoneDisplay:'+423 798 77 33',
+  phoneHref:'tel:+4237987733',
+  waHref:'https://wa.me/4237987733',
+  ga4:'',             // z. B. 'G-XXXXXXXXXX'
+  adsId:'',           // z. B. 'AW-123456789'
+  adsLeadLabel:'',    // Conversion-Label der Lead-Conversion
+  metaPixel:''        // Pixel-ID
+};
+
+/* ---------- Zuordnung der Kampagne (UTM, Klick-IDs) ---------- */
+var attr={};
+(function(){
+  var keys=['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','gbraid','wbraid','fbclid'];
+  try{attr=JSON.parse(sessionStorage.getItem('bw_attr')||'{}')||{}}catch(e){attr={}}
+  keys.forEach(function(k){var v=sp.get(k);if(v)attr[k]=String(v).slice(0,200)});
+  try{sessionStorage.setItem('bw_attr',JSON.stringify(attr))}catch(e){}
+})();
+
+/* ---------- Einwilligung (Consent Mode) und Tracker ---------- */
+window.dataLayer=window.dataLayer||[];
+function gtag(){window.dataLayer.push(arguments)}
+gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
+var consent=null,trackersLoaded=false;
+try{consent=JSON.parse(localStorage.getItem('bw_consent')||'null')}catch(e){consent=null}
+function loadTrackers(){
+  if(trackersLoaded)return;trackersLoaded=true;
+  var id=CONFIG.ga4||CONFIG.adsId;
+  if(id){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(id);document.head.appendChild(s);gtag('js',new Date());if(CONFIG.ga4)gtag('config',CONFIG.ga4);if(CONFIG.adsId)gtag('config',CONFIG.adsId)}
+  if(CONFIG.metaPixel){
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init',CONFIG.metaPixel);window.fbq('track','PageView');
+  }
+}
+function applyConsent(ok){
+  consent={a:!!ok,t:Date.now()};
+  try{localStorage.setItem('bw_consent',JSON.stringify(consent))}catch(e){}
+  var g=ok?'granted':'denied';
+  gtag('consent','update',{ad_storage:g,analytics_storage:g,ad_user_data:g,ad_personalization:g});
+  if(ok)loadTrackers();
+  var b=$('#cookie');if(b)b.hidden=true;
+}
+function fireConversion(){
+  if(!consent||!consent.a)return;
+  try{
+    if(CONFIG.ga4||CONFIG.adsId)gtag('event','generate_lead');
+    if(CONFIG.adsId&&CONFIG.adsLeadLabel)gtag('event','conversion',{send_to:CONFIG.adsId+'/'+CONFIG.adsLeadLabel});
+    if(window.fbq&&CONFIG.metaPixel)window.fbq('track','Lead');
+  }catch(e){}
+}
+(function cookieBanner(){
+  var b=$('#cookie');if(!b)return;
+  if(consent&&consent.a)loadTrackers();
+  if(consent===null){b.hidden=false}
+  $('#ckYes').addEventListener('click',function(){applyConsent(true)});
+  $('#ckNo').addEventListener('click',function(){applyConsent(false)});
+  document.addEventListener('click',function(e){
+    if(e.target.closest('[data-cookie-reset]')){try{localStorage.removeItem('bw_consent')}catch(_){}consent=null;b.hidden=false}
+    if(e.target.closest('[data-cookie-privacy]')){var bt=document.querySelector('[data-fp="dsg"]');if(bt)bt.click()}
+  });
+})();
+/* Klicks auf Telefon und E-Mail messen */
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a[href^="tel:"],a[href^="mailto:"],a[href*="wa.me"]');if(!a)return;
+  track(a.href.indexOf('tel:')===0?'phone_click':(a.href.indexOf('wa.me')>-1?'whatsapp_click':'email_click'),{variant:curVariant,source:a.dataset.src||'link'});
+});
+
+/* ---------- Versand ---------- */
+function sendLead(data){
+  data.meta={variant:curVariant,page:location.pathname,referrer:document.referrer||'',ts:new Date().toISOString(),attr:attr};
+  if(!CONFIG.endpoint)return new Promise(function(r){setTimeout(function(){r({ok:true,id:'vorschau-'+Date.now().toString(36)})},reduce?150:900)});
+  return fetch(CONFIG.endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(function(r){
+    if(!r.ok)throw new Error('http '+r.status);
+    return r.json().catch(function(){return {ok:true}});
+  });
+}
+
+/* ---------- Formular ---------- */
+var REASONS=[['unreachable','Mein Berater ist nicht erreichbar'],['none','Ich habe keinen Berater mehr'],['unhappy','Ich bin mit der Betreuung unzufrieden'],['left','Mein Berater hat die Firma verlassen'],['language','Ich möchte einen Berater in meiner Sprache'],['better','Ich möchte meine Vorsorge besser betreuen lassen'],['other','Anderer Grund']];
+var TYPES=[['lv','Lebensversicherung'],['3a','Säule 3a'],['3b','Säule 3b'],['private','Private Vorsorge'],['kk','Krankenkasse'],['more','Weitere Versicherungen'],['unsure','Ich bin nicht sicher']];
+var AREAS=[['lv','Versicherungsverträge im Bereich Leben / Fondspolicen'],['kap','Kapitalanlagen'],['hyp','Hypothekarverträge / Kredite / Leasing'],['andere','andere']];
+var FREQ=[['jaehrlich','jährlich'],['halbjaehrlich','halbjährlich'],['vierteljaehrlich','vierteljährlich']];
+var STEPN=['anliegen','kontakt','angaben','mandat_unterschrift'];
+var F,fstep=0,startedForm=false,lastFocus=null,leadId='',stage2=false,submitting=false;
+function freshF(){return {reasons:new Set(),types:new Set(),insurer:'',pol:'',lang:'de',first:'',last:'',phone:'',email:'',contact:'phone',consent:false,hp:'',wantMandate:false,
+  mandate:false,mTouched:false,birth:'',street:'',plz:'',ort:'',areas:new Set(['lv']),freq:'jaehrlich',mok:false,share:false,sig:'',sigDirty:false}}
+function lastStep(){return stage2?(F.mandate?3:2):1}
+function fmtDate(){var d=new Date();return ('0'+d.getDate()).slice(-2)+'.'+('0'+(d.getMonth()+1)).slice(-2)+'.'+d.getFullYear()}
+function opt(type,name,val,label,checked){return '<label class="opt"><input type="'+type+'" name="'+name+'" value="'+val+'"'+(checked?' checked':'')+'><span>'+esc(label)+'</span></label>'}
+function fld(id,label,val,extra,cls){return '<div class="fld'+(cls?' '+cls:'')+'"><label for="'+id+'">'+label+'</label><input id="'+id+'" value="'+esc(val)+'" '+(extra||'')+'><small></small></div>'}
+function renderStep(){
+  var b=$('#fBody'),h='';
+  switch(fstep){
+   case 0:h='<h2 id="fTitle" tabindex="-1">Worum geht es?</h2><p class="sub">Zwei Antworten genügen. Mehrfachauswahl möglich.</p>'
+     +'<p class="grp">Warum möchten Sie wechseln?</p><div class="opts">'+REASONS.map(function(r){return opt('checkbox','reason',r[0],r[1],F.reasons.has(r[0]))}).join('')+'</div>'
+     +'<p class="grp">Welche Versicherung betrifft es?</p><div class="opts cols">'+TYPES.map(function(r){return opt('checkbox','type',r[0],r[1],F.types.has(r[0]))}).join('')+'</div>';break;
+   case 1:h='<h2 id="fTitle" tabindex="-1">Wie erreichen wir Sie?</h2><p class="sub">Wir melden uns persönlich. Unverbindlich und diskret.</p><div class="fgrid">'
+     +fld('fFirst','Vorname',F.first,'autocomplete="given-name"')+fld('fLast','Nachname',F.last,'autocomplete="family-name"')
+     +fld('fPhone','Telefonnummer',F.phone,'type="tel" autocomplete="tel" inputmode="tel"')+fld('fEmail','E-Mail-Adresse',F.email,'type="email" autocomplete="email"')
+     +'<div class="fld"><label for="fLang">Sprache</label><select id="fLang">'+LANGS.map(function(l){return '<option value="'+l[0]+'"'+(F.lang===l[0]?' selected':'')+'>'+l[1]+'</option>'}).join('')+'</select><small></small></div></div>'
+     +'<div><p class="grp">Bevorzugter Kontaktweg</p><div class="opts" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">'+opt('radio','contact','phone','Telefon',F.contact==='phone')+opt('radio','contact','mail','E-Mail',F.contact==='mail')+'</div></div>'
+     +'<input id="fHp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" value="'+esc(F.hp)+'">'
+     +'<label class="opt"><input type="checkbox" name="consent"'+(F.consent?' checked':'')+'><span>Ich bin einverstanden, dass meine Anfrage zur Bearbeitung an unseren Vermittlungspartner weitergegeben wird und man mich kontaktiert. Details in der <button type="button" class="link" data-fp-open="dsg">Datenschutzerklärung</button>. (Pflichtfeld)</span></label>'
+     +(CONFIG.endpoint?'':'<p class="legal">Vorschau-Version: In dieser Ansicht werden keine Daten übermittelt.</p>');break;
+   case 2:h='<h2 id="fTitle" tabindex="-1">Angaben zur Vertragszuordnung</h2><p class="sub">Freiwillig. Damit können wir Ihre Verträge schneller zuordnen. Sie können das auch am Telefon ergänzen.</p><div class="fgrid">'
+     +fld('fInsurer','Versicherungsgesellschaft',F.insurer,'autocomplete="off"')+fld('fPol','Policennummer(n)',F.pol,'autocomplete="off"')
+     +fld('fBirth','Geburtsdatum',F.birth,'inputmode="numeric" placeholder="TT.MM.JJJJ" maxlength="10" autocomplete="bday"')
+     +fld('fStreet','Strasse und Nummer',F.street,'autocomplete="street-address"')
+     +fld('fPlz','PLZ',F.plz,'inputmode="numeric" maxlength="4" autocomplete="postal-code"')
+     +fld('fOrt','Ort',F.ort,'autocomplete="address-level2"')+'</div>'
+     +'<label class="opt mand"><input type="checkbox" name="mandate"'+(F.mandate?' checked':'')+'><span><b>Maklervollmacht gleich jetzt erteilen</b> (freiwillig, schnellere Bearbeitung). Sie sehen das Maklermandat vor der Unterschrift vollständig und unterschreiben direkt am Bildschirm.</span></label>'
+     +(F.mandate?'<div><p class="grp">Betreffende Policen / Verträge / Bereiche</p><div class="opts" style="grid-template-columns:minmax(0,1fr)">'+AREAS.map(function(r){return opt('checkbox','area',r[0],r[1],F.areas.has(r[0]))}).join('')+'</div></div>'
+     +'<div><p class="grp">Reporting</p><div class="opts" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr))">'+FREQ.map(function(r){return opt('radio','freq',r[0],r[1],F.freq===r[0])}).join('')+'</div></div>':'');break;
+   case 3:h='<h2 id="fTitle" tabindex="-1">Ihr Maklermandat</h2><p class="sub">Bitte lesen, unterschreiben und bestätigen.</p>'
+     +'<div class="mwrap" id="mwrap">'+mandateHtml()+'</div><button class="link" type="button" id="mToggle">Vollansicht</button>'
+     +'<div><p class="grp" style="margin-top:6px">Unterschrift Mandant/in</p><canvas class="sigpad" id="fsig" aria-label="Unterschriftenfeld"></canvas><div class="sigrow"><button class="link" type="button" id="fsigClear">Löschen</button><small>Mit Finger oder Maus zeichnen. Das Mandat wird nach Eingang vom Makler gegengezeichnet.</small></div></div>'
+     +'<label class="opt"><input type="checkbox" name="mok"'+(F.mok?' checked':'')+'><span>Ich habe das Maklermandat gelesen, bin mit den Bedingungen einverstanden und erteile es dem im Mandat genannten Makler. (Pflichtfeld)</span></label>'
+     +(CONFIG.endpoint?'':'<p class="legal">Vorschau-Version: Die Unterschrift wird in dieser Ansicht nicht gespeichert oder gesendet.</p>');break;
+  }
+  b.innerHTML=h;meta();
+  $('#fBack').style.visibility=(fstep===1||fstep===3)?'visible':'hidden';
+  $('#fErr').textContent='';
+  var t=$('#fTitle');if(t)t.focus({preventScroll:true});
+  b.scrollTop=0;
+  if(fstep===3)initFormSig();
+}
+function meta(){
+  var n,i;
+  if(!stage2){n=2;i=fstep+1;$('#fStep').textContent='Schritt '+i+' von '+n}
+  else{n=F.mandate?2:1;i=fstep-1;$('#fStep').textContent='Optional: Schritt '+i+' von '+n}
+  $('#fBar').style.width=(i/n*100)+'%';
+  var nb=$('#fNext');
+  nb.textContent=!stage2?(fstep===0?'Weiter':'Anfrage senden'):(fstep===2?(F.mandate?'Weiter zum Mandat':'Angaben senden'):'Unterschreiben und senden');
+}
+function mandateHtml(){
+  var nm=(F.first+' '+F.last).trim(),ad=F.street.trim()+', '+F.plz.trim()+' '+F.ort.trim();
+  function cb(on){return on?'☒':'☐'}
+  var fr=FREQ.map(function(r){return cb(F.freq===r[0])+' '+r[1]}).join(' &nbsp; ');
+  return '<div class="mandate"><div class="mlogo">WERTENBURG</div><h4>Maklermandat / Vollmacht und Auftrag<br>für die Verwaltung des Versicherungsportefeuilles</h4>'
+  +'<div class="mrow"><span>Zwischen</span><div><u>'+esc(nm)+'</u><u>'+esc(ad)+'</u>nachstehend <b>Mandant</b> genannt</div></div>'
+  +'<div class="mrow"><span>und der</span><div>Wertenburg GmbH<br>Wuhrstrasse 6, 9490 Vaduz, FL<br><br>nachstehend <b>WB</b> genannt</div></div>'
+  +'<p>Der Mandant erteilt dem Broker die Vollmacht und den Auftrag, die bestehenden, aktiven Verträge über die WB zu verwalten. Ihr Auftrag an uns: Der Mandant erteilt dem Berater in Zusammenarbeit mit der WB als Makler die Vollmacht und den Auftrag, die genannte Police / den Vertrag zum Vorteil des Mandanten zu verarbeiten/verwalten, damit der Mandant langfristig profitiert. Der Auftrag umfasst folgende Aufgaben:</p>'
+  +'<ul><li>Betreuung von bestehenden Versicherungsanlageprodukten</li><li>Regelmässiger Vergleich der Verträge zu den Gegebenheiten am Markt und gemäss dem individuellen Bedarf des Mandanten</li><li>Einholen von Offerten bei verschiedenen Gesellschaften</li><li>Aufbereitung und Abschluss von Neugeschäft bzw. Erneuerungen</li><li>Ein umfangreiches Reporting: '+fr+'</li></ul>'
+  +'<p><b>Betreffende Policen / Verträge / Bereiche</b></p><p>'+AREAS.map(function(r){return cb(F.areas.has(r[0]))+' '+r[1]}).join('<br>')+(F.insurer.trim()?'<br>Gesellschaft: '+esc(F.insurer.trim()):'')+(F.pol.trim()?'<br>Policennummer(n): '+esc(F.pol.trim()):'')+'</p>'
+  +'<div class="mbox"><b>Ihr kostenloser Dienstleister</b><p>Der Mandant bleibt Vertragspartner der Gesellschaften und Prämien- bzw. Kommissionsschuldner. Er unterzeichnet Anträge selbst. Der Makler vertritt den Mandanten in den oben aufgeführten Belangen gegenüber den Gesellschaften, welche diesen für dessen Beratungs- und Betreuungsdienstleistung mittels branchenüblicher Ansätze entschädigen. Der Mandant gesteht dem Makler als Entschädigung seiner Aufwände (Offerten, Beratung, Betreuung, etc.), diese Entschädigungen uneingeschränkt zu. Sofern nichts Anderweitiges vereinbart wurde und das Mandat mindestens ein Kalenderjahr bestehen bleibt, ist die Dienstleistung des Maklers für den Mandanten kostenlos. Sollten sich nicht entschädigte Aufwendungen ergeben, so informiert der Berater rechtzeitig darüber, damit diese abgerechnet werden können.</p><p>Folgende Dokumente sind zur Sicherstellung des Auftrags von den Gesellschaften an den Makler zu senden:</p><ul><li>Policen, Nachträge, Vertragsänderungen, sowie Kopien der Korrespondenz</li><li>Offerten und Anträge für den Mandanten sowie die dazugehörende Korrespondenz</li></ul></div>'
+  +'<div class="mbox"><b>Ihr gesetzlicher Schutz</b><p>Diese Vereinbarung tritt mit gegenseitiger Unterzeichnung in Kraft. Sie kann unter Einhaltung einer dreimonatigen Kündigungsfrist jederzeit gegenseitig schriftlich gekündigt werden. Die unterzeichneten Parteien bestätigen, mit den Bedingungen dieses Maklermandats einverstanden zu sein. Der Mandant bestätigt Kenntnis darüber zu besitzen, dass der Makler in unabhängiger Stellung für den Mandanten tätig ist und gemäss Gesetz (VAG) als ungebundener Vermittler für die Gesellschaften agiert. Der Mandant bestätigt mit Unterzeichnung des Mandates ebenfalls, dass er die AGB akzeptiert und die Informationen gemäss Art. 45 VAG vom Makler erhalten hat. Alle Daten werden vertraulich behandelt und nur soweit verwendet wie es für die Offerten-Erstellung notwendig ist.</p></div>'
+  +'<div class="mbox"><b>Ihre persönliche Beratung</b><p>Die Gesellschaften sind beauftragt, sämtliche Verträge und Bestände zur Betreuung umgehend auf den Makler zu übertragen. Der Mandant wünscht danach ausdrücklich von Kundenberatern der Gesellschaften nicht mehr kontaktiert zu werden. Der Mandant ist sich bewusst und damit einverstanden, dass seine Betreuung ab sofort einzig durch den Makler erfolgen wird. Die aktuellen Vertragsbestände werden daher per Mandatseinreichung auf die WB übertragen.</p></div>'
+  +'<p>Dieses Maklermandat hat ab dem Datum der Unterzeichnung volle Gültigkeit.</p>'
+  +'<p class="msig"><u>'+esc((F.ort.trim()||'[Ort]')+', den '+fmtDate())+'</u><small>Ort, Datum</small></p>'
+  +'<p class="msig2"><span><small>Unterschrift Mandant/in 1</small></span><span><small class="gray">Unterschrift Wertenburg GmbH<br>(nach Eingang)</small></span></p></div>';
+}
+function initFormSig(){
+  var c=$('#fsig');if(!c)return;var dpr=window.devicePixelRatio||1;
+  var w=c.clientWidth||560;c.width=Math.round(w*dpr);c.height=Math.round(160*dpr);
+  var x=c.getContext('2d');x.scale(dpr,dpr);x.lineWidth=2.4;x.lineCap='round';x.lineJoin='round';x.strokeStyle='#0c2764';
+  if(F.sig&&F.sig!=='x'){var im=new Image();im.onload=function(){x.drawImage(im,0,0,w,160)};im.src=F.sig}
+  var draw=false;
+  function pt(e){var r=c.getBoundingClientRect();return [e.clientX-r.left,e.clientY-r.top]}
+  c.addEventListener('pointerdown',function(e){draw=true;var p=pt(e);x.beginPath();x.moveTo(p[0],p[1]);try{c.setPointerCapture(e.pointerId)}catch(_){}e.preventDefault()});
+  c.addEventListener('pointermove',function(e){if(!draw)return;var p=pt(e);x.lineTo(p[0],p[1]);x.stroke();F.sigDirty=true;$('#fErr').textContent=''});
+  function end(){if(!draw)return;draw=false;if(F.sigDirty){try{F.sig=c.toDataURL('image/png')}catch(_){F.sig='x'}}}
+  c.addEventListener('pointerup',end);c.addEventListener('pointercancel',end);
+  $('#fsigClear').addEventListener('click',function(){x.clearRect(0,0,c.width,c.height);F.sig='';F.sigDirty=false});
+  $('#mToggle').addEventListener('click',function(){var m=$('#mwrap');var o=m.classList.toggle('open');this.textContent=o?'Verkleinern':'Vollansicht'});
+}
+var IDMAP={fInsurer:'insurer',fPol:'pol',fBirth:'birth',fStreet:'street',fPlz:'plz',fOrt:'ort',fFirst:'first',fLast:'last',fPhone:'phone',fEmail:'email',fLang:'lang',fHp:'hp'};
+function onFormInput(e){
+  var t=e.target;
+  if(!startedForm){startedForm=true;track('form_start',{variant:curVariant})}
+  if(IDMAP[t.id]){F[IDMAP[t.id]]=t.value;var w=t.closest('.fld');if(w&&w.classList.contains('bad')){w.classList.remove('bad');var s=$('small',w);if(s)s.textContent=''}return}
+  var n=t.name;
+  if(n==='reason'||n==='type'){var set=n==='reason'?F.reasons:F.types;t.checked?set.add(t.value):set.delete(t.value)}
+  else if(n==='area'){t.checked?F.areas.add(t.value):F.areas.delete(t.value)}
+  else if(n==='freq')F.freq=t.value;
+  else if(n==='contact')F.contact=t.value;
+  else if(n==='mok')F.mok=t.checked;
+  else if(n==='consent')F.consent=t.checked;
+  else if(n==='mandate'){F.mandate=t.checked;F.mTouched=true;renderStep();var c=$('input[name=mandate]');if(c)c.focus({preventScroll:true})}
+  $('#fErr').textContent='';
+}
+$('#fBody').addEventListener('input',onFormInput);
+$('#fBody').addEventListener('change',onFormInput);
+$('#fBody').addEventListener('click',function(e){var b=e.target.closest('[data-fp-open]');if(b){var bt=document.querySelector('[data-fp="'+b.dataset.fpOpen+'"]');closeForm();if(bt){bt.click()}}});
+function showErrs(errs){
+  $$('#fBody .fld').forEach(function(w){var c=w.querySelector('input,select');if(!c||!c.id)return;var m=errs[c.id];w.classList.toggle('bad',!!m);var s=w.querySelector('small');if(s)s.textContent=m||''});
+  var first=$('#fBody .fld.bad input, #fBody .fld.bad select');if(first)first.focus();
+}
+function validate(){
+  var err='',errs={};
+  switch(fstep){
+   case 0:if(!F.reasons.size)err='Bitte wählen Sie mindestens einen Grund aus.';else if(!F.types.size)err='Bitte wählen Sie mindestens eine Versicherung aus.';break;
+   case 1:
+    if(F.first.trim().length<2)errs.fFirst='Bitte Vorname eingeben.';
+    if(F.last.trim().length<2)errs.fLast='Bitte Nachname eingeben.';
+    if(F.phone.replace(/\D/g,'').length<9||!/^[+0-9 ()\/\-]{9,22}$/.test(F.phone.trim()))errs.fPhone='Bitte gültige Telefonnummer eingeben.';
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(F.email.trim()))errs.fEmail='Bitte gültige E-Mail-Adresse eingeben.';
+    showErrs(errs);
+    if(Object.keys(errs).length)err='Bitte prüfen Sie die markierten Felder.';
+    else if(!F.consent)err='Bitte bestätigen Sie die Einwilligung.';
+    break;
+   case 2:
+    var any=F.insurer.trim()||F.pol.trim()||F.birth.trim()||F.street.trim()||F.plz.trim()||F.ort.trim();
+    if(F.mandate||F.birth.trim()){if(!/^\d{2}\.\d{2}\.\d{4}$/.test(F.birth.trim())||+F.birth.trim().slice(6)<1900||+F.birth.trim().slice(6)>new Date().getFullYear()-17)errs.fBirth='Bitte Geburtsdatum als TT.MM.JJJJ eingeben.'}
+    if(F.mandate||F.street.trim()){if(F.street.trim().length<4)errs.fStreet='Bitte Strasse und Nummer eingeben.'}
+    if(F.mandate||F.plz.trim()){if(!/^\d{4}$/.test(F.plz.trim()))errs.fPlz='Bitte vierstellige PLZ eingeben.'}
+    if(F.mandate||F.ort.trim()){if(F.ort.trim().length<2)errs.fOrt='Bitte Ort eingeben.'}
+    showErrs(errs);
+    if(Object.keys(errs).length)err='Bitte prüfen Sie die markierten Felder.';
+    else if(!any&&!F.mandate)err='Bitte füllen Sie mindestens ein Feld aus oder schliessen Sie das Fenster.';
+    else if(F.mandate&&!F.areas.size)err='Bitte wählen Sie mindestens einen Bereich aus.';
+    break;
+   case 3:
+    if(!F.sig)err='Bitte unterschreiben Sie im Feld.';
+    else if(!F.mok)err='Bitte bestätigen Sie das Maklermandat.';
+    break;
+  }
+  $('#fErr').textContent=err;
+  return !err;
+}
+function leadData(type){
+  var d={type:type,lead_id:leadId,language:F.lang};
+  if(type==='lead'){d.reasons=Array.from(F.reasons);d.insurance_types=Array.from(F.types);d.first_name=F.first.trim();d.last_name=F.last.trim();d.phone=F.phone.trim();d.email=F.email.trim();d.contact_preference=F.contact;d.consent_forward=true;d.hp=F.hp}
+  else{d.first_name=F.first.trim();d.last_name=F.last.trim();d.email=F.email.trim();d.phone=F.phone.trim();d.insurer=F.insurer.trim();d.policy_numbers=F.pol.trim();d.birth_date=F.birth.trim();d.street=F.street.trim();d.postcode=F.plz.trim();d.city=F.ort.trim();d.hp=F.hp;
+    if(type==='mandate'){d.areas=Array.from(F.areas);d.reporting=F.freq;d.mandate_accepted=true;d.signature_png=F.sig==='x'?'':F.sig;d.signed_at=new Date().toISOString()}}
+  return d;
+}
+function failMsg(){$('#fErr').textContent='Senden nicht möglich. Bitte versuchen Sie es erneut oder nutzen Sie den Anruf-Button oben.'}
+$('#leadForm').addEventListener('submit',function(e){
+  e.preventDefault();if(submitting)return;
+  if(!validate())return;
+  track('form_step_completed',{step:fstep+1,name:STEPN[fstep]});
+  if(fstep===0){fstep=1;renderStep();return}
+  if(stage2&&fstep===2&&F.mandate){track('signature_process_started',{variant:curVariant});fstep=3;renderStep();return}
+  var type=!stage2?'lead':(fstep===3?'mandate':'details');
+  var nb=$('#fNext');submitting=true;nb.disabled=true;nb.textContent='Wird übermittelt …';
+  var p=(type==='lead'&&F.hp)?Promise.resolve({ok:true,id:'x'}):sendLead(leadData(type));
+  p.then(function(res){
+    submitting=false;nb.disabled=false;
+    if(res&&res.ok===false)throw new Error('server');
+    if(type==='lead'){leadId=(res&&res.id)||leadId;finishLead()}
+    else finishStage2(type==='mandate');
+  }).catch(function(){submitting=false;nb.disabled=false;meta();failMsg()});
+});
+$('#fBack').addEventListener('click',function(){if(fstep===1||fstep===3){fstep--;renderStep()}});
+var leadCount=0;
+function finishLead(){
+  leadCount++;
+  track('lead_submitted',{variant:curVariant,language:F.lang,insurance_types:F.types.size});
+  fireConversion();
+  try{history.pushState({d:1},'','#danke');document.title='Danke | beraterwechsel.ch'}catch(e){}
+  track('virtual_pageview',{page_path:'/danke',page_title:'Danke'});
+  LEADS.push({id:'D-'+(1003+leadCount),info:Array.from(F.types).join(', ')+' · '+F.lang,stage:0,fresh:true});renderBoard();
+  $('#leadForm').hidden=true;
+  var d=$('#fDone');d.hidden=false;
+  var dig=F.wantMandate;
+  d.innerHTML='<span class="ic">'+svg('check',26,3)+'</span><h2 id="doneT" tabindex="-1">Danke, '+esc(F.first.trim())+'. Ihre Anfrage ist eingegangen.</h2>'
+   +'<p class="lead">Wir melden uns '+(F.contact==='mail'?'per E-Mail':'telefonisch')+' bei Ihnen.</p>'
+   +'<div class="next"><b>So geht es weiter</b><ol><li>Wir prüfen Ihre Angaben.</li><li>Ein Ansprechpartner meldet sich persönlich bei Ihnen.</li><li>Gemeinsam klären wir, ob und wie sich die Betreuung übertragen lässt.</li></ol></div>'
+   +'<div class="upsell"><b>'+(dig?'Weiter zur Maklervollmacht':'Schneller starten?')+'</b><p>Ergänzen Sie in etwa 1 Minute Ihre Vertragsangaben oder erteilen Sie gleich die Maklervollmacht. Freiwillig.</p><button class="btn" type="button" id="doneMore">'+(dig?'Vollmacht jetzt erteilen':'Angaben und Vollmacht ergänzen')+' →</button></div>'
+   +'<p class="legal">Lieber persönlich? <a href="'+CONFIG.phoneHref+'" data-src="danke">Anrufen</a> · <a href="'+CONFIG.waHref+'" target="_blank" rel="noopener" data-src="danke">WhatsApp</a>'+(CONFIG.endpoint?'':' · Vorschau-Version: In dieser Ansicht wurden keine Daten übermittelt.')+'</p>'
+   +'<button class="link" type="button" id="doneClose">Schliessen</button>';
+  $('#fBar').style.width='100%';$('#fStep').textContent='Anfrage gesendet';
+  $('#doneT').focus({preventScroll:true});
+  $('#doneClose').addEventListener('click',closeForm);
+  $('#doneMore').addEventListener('click',function(){
+    stage2=true;if(dig)F.mandate=true;fstep=2;
+    $('#fDone').hidden=true;$('#leadForm').hidden=false;renderStep();
+  });
+}
+function finishStage2(signed){
+  if(signed)track('mandate_signed',{variant:curVariant});else track('details_submitted',{variant:curVariant});
+  $('#leadForm').hidden=true;
+  var d=$('#fDone');d.hidden=false;
+  d.innerHTML='<span class="ic">'+svg('check',26,3)+'</span><h2 id="doneT" tabindex="-1">'+(signed?'Ihr Maklermandat ist unterschrieben.':'Danke, Ihre Angaben sind angekommen.')+'</h2>'
+   +'<p class="lead">'+(signed?'Nach Eingang wird es vom Makler gegengezeichnet. Wir melden uns bei Ihnen.':'Das hilft uns, Ihre Verträge schneller zuzuordnen. Wir melden uns bei Ihnen.')+'</p>'
+   +(CONFIG.endpoint?'':'<p class="legal">Vorschau-Version: In dieser Ansicht wurden keine Daten übermittelt.</p>')
+   +'<button class="btn" type="button" id="doneClose">Schliessen</button>';
+  $('#fBar').style.width='100%';$('#fStep').textContent='Fertig';
+  $('#doneT').focus({preventScroll:true});
+  $('#doneClose').addEventListener('click',closeForm);
+}
+function openForm(o){
+  o=o||{};
+  F=freshF();fstep=0;stage2=false;leadId='';submitting=false;
+  var pre=VARIANTS[curVariant].pre||{};
+  var reason=o.reasons?null:(o.reason||pre.reason),type=o.type||pre.type;
+  if(reason)F.reasons.add(reason);
+  if(type)F.types.add(type);
+  if(o.lang)F.lang=o.lang;
+  if(o.mode==='digital')F.wantMandate=true;
+  if(o.reasons)o.reasons.forEach(function(r){F.reasons.add(r)});
+  if(F.reasons.size&&F.types.size)fstep=1;
+  $('#leadForm').hidden=false;$('#fDone').hidden=true;
+  lastFocus=document.activeElement;
+  renderStep();
+  $('#formOverlay').hidden=false;document.body.style.overflow='hidden';
+  var t=$('#fTitle');if(t)t.focus({preventScroll:true});
+}
+function closeForm(){
+  $('#formOverlay').hidden=true;document.body.style.overflow='';
+  if(location.hash==='#danke'){try{history.replaceState(null,'',location.pathname+location.search);document.title=PAGE_TITLE}catch(e){}}
+  if(lastFocus&&lastFocus.focus)try{lastFocus.focus()}catch(e){}
+}
+$('#fClose').addEventListener('click',closeForm);
+$('#formOverlay').addEventListener('mousedown',function(e){if(e.target===this)closeForm()});
+document.addEventListener('keydown',function(e){
+  if($('#formOverlay').hidden)return;
+  if(e.key==='Escape'){closeForm();return}
+  if(e.key==='Tab'){
+    var f=$$('#sheet button, #sheet input, #sheet select, #sheet textarea, #sheet [tabindex="-1"]').filter(function(x){return !x.disabled&&x.offsetParent!==null&&x.getAttribute('tabindex')!=='-1'});
+    if(!f.length)return;var a=f[0],z=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}
+    else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}
+  }
+});
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a[href^="#"]');
+  if(a){var id=a.getAttribute('href').slice(1);var el=id&&document.getElementById(id);if(el){e.preventDefault();el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})}return}
+  var b=e.target.closest('[data-open-form]');
+  if(b){
+    var src=b.dataset.src||'';
+    if(src==='hero')track('hero_cta_click',{variant:curVariant,source:src});
+    openForm({src:src,reason:b.dataset.reason,type:b.dataset.type,lang:b.dataset.lang,mode:b.dataset.mode});
+  }
+});
+
+/* ---------- Vollmacht (altes Demo entfernt) ---------- */
+(function(){ if(!$('#poaBody'))return;
+var PS=['Kundendaten','Versicherungen','Neue Gesellschaft','Vorbereiten','Prüfen','Unterschrift','Übermitteln','Übertragung'];
+var P,ptimer=0;
+function freshP(){return {step:0,first:'',last:'',types:new Set(),ack:false,prep:false,read:false,sig:false,sent:false,started:false}}
+P=freshP();
+function poaRender(){
+  clearTimeout(ptimer);
+  $('#poaSteps').innerHTML=PS.map(function(s,i){return '<li class="'+(i===P.step?'on':(i<P.step?'done':''))+'"><b>'+(i+1)+'</b>'+s+'</li>'}).join('');
+  var b=$('#poaBody'),h='';$('#poaErr').textContent='';
+  var names=(P.first+' '+P.last).trim()||'[Name]';
+  var tlist=TYPES.filter(function(t){return P.types.has(t[0])}).map(function(t){return t[1]}).join(', ')||'[Versicherungen]';
+  switch(P.step){
+   case 0:h='<h3>Kundendaten erfassen</h3><p class="sub">Demo: Die Eingaben bleiben in dieser Seite und werden nicht gespeichert.</p><div class="fgrid">'+fld('pFirst','Vorname',P.first,'autocomplete="off"')+fld('pLast','Nachname',P.last,'autocomplete="off"')+'</div>';break;
+   case 1:h='<h3>Bestehende Versicherungen auswählen</h3><div class="opts cols">'+TYPES.slice(0,4).concat([TYPES[5]]).map(function(r){return opt('checkbox','ptype',r[0],r[1],P.types.has(r[0]))}).join('')+'</div>';break;
+   case 2:h='<h3>Neue betreuende Gesellschaft offenlegen</h3><div class="ph">[Platzhalter: Name, Adresse und Vermittlerstatus der neuen betreuenden Gesellschaft. Vor dem Livegang zu klären.]</div>'+opt('checkbox','pack','1','Ich habe die Angaben zur betreuenden Gesellschaft zur Kenntnis genommen.',P.ack);break;
+   case 3:h='<h3>Vollmacht individuell vorbereiten</h3><p class="sub" id="prepTxt">'+(P.prep?'Ihre Vollmacht ist vorbereitet.':'Ihre Vollmacht wird vorbereitet …')+'</p><div class="bar"><i id="prepBar" style="width:'+(P.prep?'100':'0')+'%"></i></div>';break;
+   case 4:h='<h3>Dokument zur Prüfung</h3><div class="paper"><strong>MAKLERVOLLMACHT · DEMO-MUSTER</strong><p>Ich, <b>'+esc(names)+'</b>, bevollmächtige die nachstehend genannte Vermittlergesellschaft [Platzhalter], die Betreuung folgender Verträge zu übernehmen: <b>'+esc(tlist)+'</b>.</p><p>Dieses Dokument ist ein unverbindliches Muster zu Demonstrationszwecken und entfaltet keine Rechtswirkung. Ein produktiver Einsatz setzt geklärte rechtliche Voraussetzungen und eine zuständige Vermittlergesellschaft voraus.</p></div>'+opt('checkbox','pread','1','Ich habe das Dokument gelesen.',P.read);break;
+   case 5:h='<h3>Elektronische Unterschrift (Simulation)</h3><p class="sub">Zeichnen Sie mit Maus oder Finger. Das ist keine rechtsverbindliche Unterschrift.</p><canvas class="sigpad" id="sig" aria-label="Unterschriftenfeld"></canvas><button class="link" type="button" id="sigClear">Feld leeren</button>';break;
+   case 6:h='<h3>Dokument sicher übermitteln</h3><p class="sub">In der Live-Version würde das Dokument hier verschlüsselt übermittelt. In der Demo wird nichts gesendet.</p><div class="bar"><i id="sendBar"></i></div><div><button class="btn" type="button" id="sendBtn">Sicher übermitteln (simuliert)</button></div>';break;
+   case 7:h='<h3>Betreuungsübertragung eingeleitet</h3><div class="ph">Simulation abgeschlossen. In der Live-Version würde nun die Übertragung der Betreuung beim jeweiligen Versicherer beantragt und Sie würden über den Stand informiert.</div><div><button class="btn ghost" type="button" id="poaRestart">Demo neu starten</button></div>';break;
+  }
+  b.innerHTML=h;
+  $('#poaBack').style.visibility=(P.step===0||P.step===7)?'hidden':'visible';
+  $('#poaNext').style.display=(P.step===7||P.step===6)?'none':'inline-flex';
+  if(P.step===3&&!P.prep){
+    requestAnimationFrame(function(){var bar=$('#prepBar');if(bar)bar.style.width='100%'});
+    ptimer=setTimeout(function(){P.prep=true;var t=$('#prepTxt');if(t)t.textContent='Ihre Vollmacht ist vorbereitet.'},reduce?100:1200);
+  }
+  if(P.step===5)initSig();
+  if(P.step===6){$('#sendBtn').addEventListener('click',function(){
+    var btn=this;btn.disabled=true;btn.textContent='Wird übermittelt …';
+    requestAnimationFrame(function(){var s=$('#sendBar');if(s)s.style.width='100%'});
+    ptimer=setTimeout(function(){P.sent=true;P.step=7;poaRender()},reduce?100:1300);
+  })}
+  if(P.step===7)$('#poaRestart').addEventListener('click',function(){P=freshP();poaRender()});
+}
+function initSig(){
+  var c=$('#sig'),dpr=window.devicePixelRatio||1;P.sig=false;
+  var w=c.clientWidth||600;c.width=Math.round(w*dpr);c.height=Math.round(160*dpr);
+  var x=c.getContext('2d');x.scale(dpr,dpr);x.lineWidth=2.4;x.lineCap='round';x.lineJoin='round';x.strokeStyle='#0c2764';
+  var draw=false,moved=false;
+  function pt(e){var r=c.getBoundingClientRect();return [e.clientX-r.left,e.clientY-r.top]}
+  c.addEventListener('pointerdown',function(e){draw=true;moved=false;var p=pt(e);x.beginPath();x.moveTo(p[0],p[1]);try{c.setPointerCapture(e.pointerId)}catch(_){}e.preventDefault()});
+  c.addEventListener('pointermove',function(e){if(!draw)return;var p=pt(e);x.lineTo(p[0],p[1]);x.stroke();moved=true;P.sig=true;$('#poaErr').textContent=''});
+  var end=function(){draw=false};
+  c.addEventListener('pointerup',end);c.addEventListener('pointercancel',end);
+  $('#sigClear').addEventListener('click',function(){x.clearRect(0,0,c.width,c.height);P.sig=false});
+}
+$('#poaBody').addEventListener('input',function(e){
+  var t=e.target;
+  if(t.id==='pFirst')P.first=t.value;else if(t.id==='pLast')P.last=t.value;
+  else if(t.name==='ptype'){t.checked?P.types.add(t.value):P.types.delete(t.value)}
+  else if(t.name==='pack')P.ack=t.checked;else if(t.name==='pread')P.read=t.checked;
+  $('#poaErr').textContent='';
+});
+$('#poaBody').addEventListener('change',function(e){var t=e.target;if(t.name==='ptype'){t.checked?P.types.add(t.value):P.types.delete(t.value)}else if(t.name==='pack')P.ack=t.checked;else if(t.name==='pread')P.read=t.checked});
+$('#poaNext').addEventListener('click',function(){
+  var m='';
+  if(P.step===0&&(P.first.trim().length<2||P.last.trim().length<2))m='Bitte Vor- und Nachname eingeben.';
+  else if(P.step===1&&!P.types.size)m='Bitte mindestens eine Versicherung wählen.';
+  else if(P.step===2&&!P.ack)m='Bitte bestätigen Sie die Kenntnisnahme.';
+  else if(P.step===3&&!P.prep)m='Einen Moment, die Vollmacht wird noch vorbereitet.';
+  else if(P.step===4&&!P.read)m='Bitte bestätigen Sie, dass Sie das Dokument gelesen haben.';
+  else if(P.step===5&&!P.sig)m='Bitte zeichnen Sie eine Unterschrift in das Feld.';
+  if(m){$('#poaErr').textContent=m;return}
+  if(!P.started){P.started=true;track('signature_process_started',{variant:curVariant,simulated:true})}
+  P.step++;poaRender();
+});
+$('#poaBack').addEventListener('click',function(){if(P.step>0){P.step--;poaRender()}});
+poaRender();
+
+})();
+
+/* ---------- Fusszeile ---------- */
+(function foot(){
+  var y=$('#fYear');if(y)y.textContent=String(new Date().getFullYear());
+  var FP={"imp": ["Impressum", "<h4>Betreiberin dieser Website</h4><p>Esche Consuting GmbH<br>Städtle 35, 9490 Vaduz, Liechtenstein<br>Handelsregister des Fürstentums Liechtenstein, Nr. FL-0002.747.099-3<br>Geschäftsführer: Armin Silic<br>Zweck: Beratungsdienstleistung von Unternehmenskunden sowie Marketingdienstleistungen<br>Telefon und Chat: <a href=\"tel:+4237987733\" style=\"color:#fff\">Anrufen</a> · <a href=\"https://wa.me/4237987733\" target=\"_blank\" rel=\"noopener\" style=\"color:#fff\">WhatsApp</a><br>E-Mail: <a href=\"mailto:jetzt@beraterwechsel.ch\" style=\"color:#fff\">jetzt@beraterwechsel.ch</a><br><span class=\"ph2\">UID / MWST-Nr.: [Platzhalter]</span></p><h4>Betreuung und Vermittlung</h4><p>Wertenburg GmbH<br>Wuhrstrasse 6, 9490 Vaduz, Liechtenstein<br>Handelsregister Nr. FL-0002.695.823-8<br>Versicherungsmakler, bewilligt durch die FMA Liechtenstein (Registernummer 338879), Rechtsgrundlage VersVertG, Bewilligung erteilt am 01.05.2023</p><h4>Haftungsausschluss</h4><p>Die Inhalte dieser Website wurden sorgfältig erstellt. Für Richtigkeit, Vollständigkeit und Aktualität wird keine Gewähr übernommen. Die Website enthält allgemeine Informationen und keine individuelle Beratung. Für verlinkte externe Seiten sind deren Betreiber verantwortlich.</p><h4>Urheberrecht</h4><p>Texte, Grafiken und Gestaltung dieser Website sind urheberrechtlich geschützt. Eine Verwendung ausserhalb der gesetzlichen Schranken bedarf der vorherigen Zustimmung. Bilder sind teilweise Symbolbilder.</p>"], "kon": ["Kontakt", "<h4>beraterwechsel.ch</h4><p>Angaben zum Anbieter und die Adresse finden Sie im <button class=\"link\" type=\"button\" data-gofp=\"imp\" style=\"color:#fff\">Impressum</button>.</p><h4>Erreichbarkeit</h4><p>Telefon und Chat: <a href=\"tel:+4237987733\" style=\"color:#fff\">Anrufen</a> · <a href=\"https://wa.me/4237987733\" target=\"_blank\" rel=\"noopener\" style=\"color:#fff\">WhatsApp</a><br>E-Mail: <a href=\"mailto:jetzt@beraterwechsel.ch\" style=\"color:#fff\">jetzt@beraterwechsel.ch</a><br>Anfragen per E-Mail und Formular: rund um die Uhr (24 Stunden). Wir melden uns so rasch wie möglich bei Ihnen.</p><h4>Direkt starten</h4><p><button class=\"link\" type=\"button\" data-open-form data-src=\"footer-callback\" data-mode=\"talk\" style=\"color:#fff\">Rückruf anfragen</button> &nbsp;·&nbsp; <button class=\"link\" type=\"button\" data-open-form data-src=\"footer-form\" style=\"color:#fff\">Beraterwechsel anfragen</button></p>"], "dsg": ["Datenschutzerklärung", "<h4>1. Verantwortliche Stelle</h4><p>Verantwortlich für die Bearbeitung Ihrer Personendaten auf dieser Website ist die Esche Consuting GmbH, Städtle 35, 9490 Vaduz, Liechtenstein. Kontakt für Datenschutzanfragen: <a href=\"mailto:jetzt@beraterwechsel.ch\" style=\"color:#fff\">jetzt@beraterwechsel.ch</a></p><h4>2. Welche Daten wir bearbeiten</h4><p>Angaben aus dem Anfrageformular und dem Rückruf-Formular: Grund des Wechsels, gewünschte Versicherungsarten, Versicherungsgesellschaft, Policennummer, Name, Telefonnummer, E-Mail, PLZ, Kanton, Sprache, bevorzugter Kontaktweg und freiwillige Nachricht. Bei freiwilliger Erteilung eines Maklermandats zusätzlich Geburtsdatum, Adresse, betroffene Bereiche und Ihre Unterschrift. Ausserdem technische Daten beim Besuch der Website (z. B. IP-Adresse, Browser, Zeitpunkt, aufgerufene Seiten).</p><h4>3. Zwecke</h4><p>Bearbeitung und Beantwortung Ihrer Anfrage, Prüfung eines Beraterwechsels, Vorbereitung und Abwicklung eines Maklermandats, Kontaktaufnahme, Betrieb und Sicherheit der Website sowie Erfolgsmessung und Optimierung unserer Werbung.</p><h4>4. Weitergabe</h4><p>Ihre Anfrage wird zur Bearbeitung an die Wertenburg GmbH, Vaduz, weitergegeben, die Sie kontaktiert. Weitere Empfänger sind sorgfältig ausgewählte Dienstleister (z. B. Hosting, E-Mail, CRM), soweit sie für die genannten Zwecke nötig sind. Bei einem Wechsel können Versicherungsgesellschaften informiert werden, aber nur mit Ihrem Mandat. Eine Weitergabe zu Werbezwecken Dritter findet nicht statt.</p><h4>5. Werbung und Tracking</h4><p>Wir nutzen Dienste wie Google Ads und Meta (Facebook/Instagram), um Werbung auszuspielen und deren Erfolg zu messen. Dabei können Cookies oder ähnliche Technologien eingesetzt werden. Sie erhalten dazu vorab eine Einwilligungsabfrage, soweit das Gesetz sie verlangt. An Werbeplattformen übermitteln wir keine Freitexte und keine Angaben zu Ihren Versicherungen. Ihre Einwilligung können Sie jederzeit widerrufen. <span class=\"ph2\">[Liste der eingesetzten Dienste und Anbieter vor Livegang ergänzen]</span></p><h4>6. Aufbewahrung</h4><p>Wir bewahren Ihre Daten nur so lange auf, wie es für die genannten Zwecke und für gesetzliche Aufbewahrungspflichten erforderlich ist. <span class=\"ph2\">[Fristen vor Livegang festlegen]</span></p><h4>7. Datenübermittlung ins Ausland</h4><p>Eingesetzte Dienstleister können ihren Sitz ausserhalb der Schweiz und des EWR haben, etwa in den USA. In diesem Fall stellen wir ein angemessenes Datenschutzniveau durch geeignete Garantien sicher, zum Beispiel Standardvertragsklauseln.</p><h4>8. Ihre Rechte</h4><p>Sie haben im Rahmen des anwendbaren Rechts (Datenschutzgesetz Liechtenstein, DSGVO, Schweizer DSG) das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch sowie auf Widerruf einer Einwilligung. Wenden Sie sich dazu an die oben genannte Stelle. Sie können sich zudem bei der Datenschutzstelle des Fürstentums Liechtenstein oder beim Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB) beschweren.</p><h4>9. Datensicherheit</h4><p>Wir treffen angemessene technische und organisatorische Massnahmen zum Schutz Ihrer Daten, zum Beispiel verschlüsselte Übertragung. Eine absolute Sicherheit ist im Internet nicht möglich.</p><p class=\"fnote2\">Stand: Entwurf. Vor dem Livegang rechtlich prüfen lassen.</p>"], "agb": ["Allgemeine Geschäftsbedingungen", "<h4>1. Geltung</h4><p>Diese Bedingungen gelten für die Nutzung der Website beraterwechsel.ch und für Anfragen, die darüber an die Esche Consuting GmbH (\"wir\") gestellt werden.</p><h4>2. Unsere Leistung</h4><p>Wir nehmen Ihre Anfrage zu einem Beraterwechsel entgegen und leiten sie an die Wertenburg GmbH weiter, die Sie kontaktiert und die Möglichkeiten einer neuen Betreuung mit Ihnen bespricht. Wir erbringen selbst keine Versicherungsberatung und schliessen keine Versicherungsverträge ab.</p><h4>3. Unverbindlich</h4><p>Ihre Anfrage ist kostenlos und unverbindlich. Sie führt nicht automatisch zur Kündigung oder Änderung eines Versicherungsvertrags. Ob und wie eine Betreuung übertragen werden kann, hängt vom Vertrag, der Gesellschaft und dem bisherigen Mandat ab und wird im Einzelfall geprüft. Wir sichern weder einen bestimmten Erfolg noch eine bestimmte Dauer zu.</p><h4>4. Maklermandat</h4><p>Ein Maklermandat kommt nur zustande, wenn Sie es ausdrücklich erteilen und unterzeichnen. Es gelten dessen eigene Bedingungen, insbesondere zu Auftrag, Vergütung und Kündigung. Sie erhalten das Mandat vor der Unterschrift vollständig zur Ansicht.</p><h4>5. Ihre Angaben</h4><p>Sie sind für die Richtigkeit Ihrer Angaben verantwortlich. Bitte geben Sie nur Daten an, zu deren Verwendung Sie berechtigt sind.</p><h4>6. Vergütung</h4><p>Für die Anfrage über diese Website entstehen Ihnen keine Kosten. Zur Vergütung des Maklers gelten die Angaben im Maklermandat und die Informationen im Abschnitt \"Vergütung\".</p><h4>7. Haftung</h4><p>Wir haften nur für Schäden, die wir absichtlich oder grob fahrlässig verursachen, soweit das Gesetz eine Beschränkung zulässt. Für Inhalte Dritter und für Leistungen der Wertenburg GmbH und von Versicherungsgesellschaften sind wir nicht verantwortlich.</p><h4>8. Datenschutz</h4><p>Es gilt die Datenschutzerklärung.</p><h4>9. Änderungen</h4><p>Wir können diese Bedingungen jederzeit anpassen. Es gilt die jeweils auf der Website veröffentlichte Fassung.</p><h4>10. Recht und Gerichtsstand</h4><p>Es gilt liechtensteinisches Recht. Gerichtsstand ist Vaduz, soweit zwingendes Recht (z. B. für Konsumentinnen und Konsumenten) nichts anderes vorsieht. <span class=\"ph2\">[Rechtswahl und Gerichtsstand vor Livegang prüfen]</span></p><p class=\"fnote2\">Stand: Entwurf. Vor dem Livegang rechtlich prüfen lassen.</p>"], "vag": ["Vergütung und Vermittlerinformation", "<h4>Kosten für Sie</h4><p>Die Anfrage über diese Website ist kostenlos und unverbindlich.</p><h4>Vergütung des Maklers</h4><p>Wie im Maklermandat beschrieben, bleiben Sie Vertragspartner der Versicherungsgesellschaften und Prämienschuldner. Der Makler wird von den Gesellschaften mit branchenüblichen Ansätzen für Beratung und Betreuung entschädigt. Sofern nichts anderes vereinbart wurde und das Mandat mindestens ein Kalenderjahr besteht, ist die Dienstleistung für Sie kostenlos. Fallen nicht entschädigte Aufwendungen an, informiert Sie der Berater rechtzeitig vorab.</p><h4>Vermittlerinformation</h4><p>Der Makler handelt in unabhängiger Stellung für Sie. </p><h4>Registrierung des Maklers</h4><p>Wertenburg GmbH, Wuhrstrasse 6, 9490 Vaduz, Liechtenstein<br>Handelsregister Nr. FL-0002.695.823-8<br>Eingetragen im Register der Versicherungsvermittler der Finanzmarktaufsicht Liechtenstein (FMA), Registernummer 338879<br>Kategorie: Versicherungsvermittler, Makler (Haupttätigkeit), Bewilligung gemäss VersVertG, erteilt am 01.05.2023<br>Versicherungszweige: Lebensversicherung (01) sowie anteil- bzw. fondsgebundene Lebensversicherung (03)<br>Grenzüberschreitender Dienstleistungsverkehr: Deutschland, Schweiz</p><h4>Aufsicht und Register</h4><p>Finanzmarktaufsicht Liechtenstein (FMA), Landstrasse 109, Postfach 279, 9490 Vaduz, <a href=\"https://www.fma-li.li\" target=\"_blank\" rel=\"noopener\" style=\"color:#fff\">www.fma-li.li</a></p><h4>Keine automatische Kündigung</h4><p>Ein Beraterwechsel betrifft die Betreuung, nicht automatisch Ihren Vertrag.</p><p class=\"fnote2\">Stand: Entwurf. Vor dem Livegang rechtlich prüfen lassen.</p>"], "ck": ["Cookies und Tracking", "<h4>Was wir einsetzen</h4><p>Technisch notwendige Cookies sorgen dafür, dass die Website funktioniert. Analyse- und Werbe-Cookies (z. B. Google Ads, Meta) setzen wir nur mit Ihrer Einwilligung ein, soweit das Gesetz sie verlangt.</p><h4>Ihre Wahl</h4><p>Sie können Cookies jederzeit in Ihrem Browser löschen oder blockieren und eine erteilte Einwilligung widerrufen. <button class=\"link\" type=\"button\" data-cookie-reset style=\"color:#fff\">Cookie-Einstellungen ändern</button></p><p class=\"fnote2\">Stand: Entwurf. Vor dem Livegang rechtlich prüfen lassen.</p>"]};
+  var panel=$('#fpanel'),body=$('#fpBody'),cur='';
+  function close(){panel.hidden=true;cur='';$$('[data-fp]').forEach(function(b){b.setAttribute('aria-expanded','false')})}
+  $$('[data-fp]').forEach(function(b){b.addEventListener('click',function(){
+    var k=b.dataset.fp;if(cur===k){close();return}
+    cur=k;body.innerHTML='<h3>'+FP[k][0]+'</h3><div class="fptext">'+FP[k][1]+'</div>';body.scrollTop=0;panel.hidden=false;
+    $$('[data-fp]').forEach(function(x){x.setAttribute('aria-expanded',String(x===b))});
+    panel.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'});
+  })});
+  $('#fpClose').addEventListener('click',close);
+  document.addEventListener('click',function(e){var g=e.target.closest('[data-gofp]');if(!g)return;var bt=document.querySelector('[data-fp="'+g.dataset.gofp+'"]');if(bt){if(bt.getAttribute('aria-expanded')!=='true')bt.click();else panel.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'})}});
+})();
+
+/* ---------- CRM-Mock ---------- */
+var STAGES=['Neue Anfrage','Kontakt-aufnahme','Bedarf geklärt','Wechsel-prüfung','Vollmacht','Übertragung beantragt','Betreuung übernommen'];
+var LEADS=[{id:'D-1001',info:'Lebensversicherung · Türkisch · ZH',stage:1,demo:1},{id:'D-1002',info:'Säule 3a · Deutsch · BE',stage:3,demo:1},{id:'D-1003',info:'Private Vorsorge · Albanisch · AG',stage:5,demo:1}];
+function renderBoard(){
+  if(!$('#board'))return;
+  $('#board').innerHTML=STAGES.map(function(s,i){
+    return '<div class="col"><h4>'+s.replace('-','&shy;')+'</h4>'+LEADS.map(function(l,j){return l.stage===i?'<button type="button" class="lead-card'+(l.fresh?' new':'')+'" data-j="'+j+'" title="In die nächste Stufe verschieben"><b>'+l.id+(l.demo?' · Demo':' · neu')+'</b><span>'+esc(l.info)+'</span></button>':''}).join('')+'</div>';
+  }).join('');
+}
+if($('#board'))$('#board').addEventListener('click',function(e){var b=e.target.closest('.lead-card');if(!b)return;var l=LEADS[+b.dataset.j];if(l.stage<6){l.stage++;renderBoard()}});
+renderBoard();
+
+/* ---------- Mobile-Leiste ---------- */
+if('IntersectionObserver' in window){
+  var inHero=true,inFoot=false;
+  function mb(){$('#mbar').hidden=inHero||inFoot}
+  new IntersectionObserver(function(es){inHero=es[0].isIntersecting;mb()},{threshold:0}).observe($('#hero'));
+  new IntersectionObserver(function(es){inFoot=es[0].isIntersecting;mb()},{threshold:0}).observe($('#footer'));
+}
+
+/* ---------- Kurz-Check ---------- */
+(function check(){
+  var CHK=[['unreachable','Mein Berater antwortet nicht auf Anrufe oder Nachrichten.'],['none','Ich weiss nicht, wer für meine Versicherung zuständig ist.'],['left','Mein Berater hat die Firma verlassen.'],['unhappy','Ich fühle mich von meinem Broker nicht betreut.'],['language','Ich hätte gern Beratung in meiner Sprache.'],['better','Meine Vorsorge sollte besser betreut werden.']];
+  $('#checks').innerHTML=CHK.map(function(c){return '<label class="chk"><input type="checkbox" value="'+c[0]+'"><span>'+esc(c[1])+'</span></label>'}).join('');
+  function sel(){return $$('#checks input:checked').map(function(i){return i.value})}
+  function upd(){
+    var s=sel(),n=s.length;
+    $('#meterBar').style.width=(n/CHK.length*100)+'%';
+    $('#verdictTxt').textContent=n===0?'Wählen Sie aus, was auf Sie zutrifft. Eine Antwort genügt.':n+' von '+CHK.length+' trifft zu. '+(n<3?'Das spricht dafür, die Möglichkeiten eines Beraterwechsels prüfen zu lassen.':'Mehrere Punkte treffen zu. Eine Prüfung lohnt sich, die Anfrage dauert etwa zwei Minuten.');
+    $('#verdictCta').textContent=n===0?'Jetzt Beraterwechsel anfragen →':'Jetzt prüfen lassen →';
+  }
+  $('#checks').addEventListener('change',upd);
+  $('#verdictCta').addEventListener('click',function(){var s=sel();openForm({src:'kurz-check',reasons:s.length?s:null})});
+})();
+
+/* ---------- Vorteile ---------- */
+(function benefits(){
+  var B=[{i:'phone',t:'Ein Ansprechpartner, der erreichbar ist',p:'Sie wissen wieder, wen Sie bei Fragen zu Ihrer Vorsorge anrufen können.'},
+   {i:'list',t:'Mehr Überblick',p:'Wir helfen Ihnen, Ihre bestehenden Verträge und deren Betreuung geordnet zu sehen.'},
+   {i:'globe',t:'Beratung in Ihrer Sprache',p:'Sie geben Ihre Wunschsprache an. Die Verfügbarkeit bestätigen wir Ihnen.'},
+   {i:'file',t:'Kein Papierkrieg',p:'Notwendige Vollmachten werden für Sie vorbereitet, auf Wunsch digital.'}];
+  $('#bgrid').innerHTML=B.map(function(b){return '<article class="tile"><span class="ico">'+svg(b.i,22,2)+'</span><h3>'+b.t+'</h3><p>'+b.p+'</p></article>'}).join('');
+  var R=[['Zuständigen herausfinden','Selbst recherchieren','Wir helfen bei der Prüfung'],
+   ['Vollmacht vorbereiten','Formulare selbst suchen und ausfüllen','Vorbereitet, auf Wunsch digital'],
+   ['Gespräch mit dem bisherigen Berater','Häufig selbst zu führen','Sie müssen nicht selbst diskutieren'],
+   ['Neuer Ansprechpartner','Selbst suchen und vergleichen','Persönliche Kontaktaufnahme']];
+  $('#vs').innerHTML='<div class="h c1"></div><div class="h c2">Alleine wechseln</div><div class="h c3">Mit beraterwechsel.ch</div>'+R.map(function(r){return '<div class="c1">'+r[0]+'</div><div class="c2">'+r[1]+'</div><div class="c3">'+r[2]+'</div>'}).join('');
+})();
+
+/* ---------- Rückruf ---------- */
+(function callback(){
+  var f=$('#cbForm');if(!f)return;
+  $('#cbLang').innerHTML=LANGS.map(function(l){return '<option value="'+l[0]+'">'+l[1]+'</option>'}).join('');
+  function mark(el,msg){var w=el.closest('.fld');w.classList.toggle('bad',!!msg);$('small',w).textContent=msg||''}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=$('#cbName'),p=$('#cbPhone'),ok=true;
+    mark(n,'');mark(p,'');$('#cbErr').textContent='';
+    if(n.value.trim().length<2){mark(n,'Bitte Vorname eingeben.');ok=false}
+    if(p.value.replace(/\D/g,'').length<9||!/^[+0-9 ()\/\-]{9,22}$/.test(p.value.trim())){mark(p,'Bitte gültige Telefonnummer eingeben.');ok=false}
+    if(ok&&!$('#cbConsent').checked){$('#cbErr').textContent='Bitte bestätigen Sie das Einverständnis.';ok=false}
+    if(!ok)return;
+    var b=$('#cbBtn');b.disabled=true;b.textContent='Wird übermittelt …';
+    setTimeout(function(){
+      var sl=$('#cbLang');
+      track('lead_submitted',{variant:curVariant,source:'rueckruf',language:sl.value});
+      leadCount++;
+      LEADS.push({id:'D-'+(1003+leadCount),info:'Rückruf · '+sl.options[sl.selectedIndex].text+' · '+$('#cbWhen').value,stage:0,fresh:true});
+      renderBoard();
+      f.hidden=true;$('#cbDone').hidden=false;
+    },reduce?150:900);
+  });
+})();
+
+/* ---------- Vorher-nachher-Geschichte ---------- */
+(function story(){
+  var st=$('#story');if(!st)return;
+  var btns=$$('.stp',st),bar=$('#storyBar'),play=$('#storyPlay');
+  var cur=0,auto=!reduce,timer=0,vis=false,DUR=[3200,3200,3400,6000];
+  function barRun(ms){bar.style.transition='none';bar.style.width='0%';void bar.offsetWidth;bar.style.transition='width '+ms+'ms linear';bar.style.width='100%'}
+  function barStop(){bar.style.transition='none';bar.style.width='0%'}
+  function set(s){cur=s;st.dataset.s=String(s);btns.forEach(function(b){b.setAttribute('aria-pressed',String(+b.dataset.s===s))})}
+  function tick(){clearTimeout(timer);if(!auto||!vis)return;barRun(DUR[cur]);timer=setTimeout(function(){set((cur+1)%4);tick()},DUR[cur])}
+  function setAuto(v){auto=v;play.textContent=v?'Pause':'Abspielen';play.setAttribute('aria-pressed',String(v));clearTimeout(timer);if(v){tick()}else{barStop()}}
+  play.textContent=auto?'Pause':'Abspielen';play.setAttribute('aria-pressed',String(auto));
+  btns.forEach(function(b){b.addEventListener('click',function(){setAuto(false);set(+b.dataset.s)})});
+  play.addEventListener('click',function(){setAuto(!auto)});
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){var was=vis;vis=es[0].isIntersecting;if(vis&&!was){tick()}else if(!vis){clearTimeout(timer)}},{threshold:.4}).observe(st);
+  }
+})();
+
+/* ---------- Horizontale Scroll-Animation der Problemkarten ---------- */
+(function hscroll(){
+  if(reduce)return;
+  var sec=$('#hscroll'),pin=$('.hpin',sec),view=$('#hview'),track=$('#probRight'),cards=$$('.pcard');
+  var startX=0,endX=0,travel=1,cur=-1,ticking=false;
+  function measure(){
+    var vw=view.clientWidth,tw=track.scrollWidth;
+    startX=vw*.88;endX=-(tw-vw*.94);
+    travel=Math.max(900,startX-endX);
+    sec.style.height=(pin.offsetHeight+travel)+'px';
+    frame();
+  }
+  function frame(){
+    ticking=false;
+    var top=parseFloat(getComputedStyle(pin).top)||68;
+    var p=Math.max(0,Math.min(1,(top-sec.getBoundingClientRect().top)/travel));
+    var x=startX+(endX-startX)*p;
+    track.style.transform='translate3d('+x.toFixed(1)+'px,0,0)';
+    var vw=view.clientWidth,best=0,bd=1e9;
+    for(var i=0;i<cards.length;i++){
+      var c=x+cards[i].offsetLeft+cards[i].offsetWidth/2,d=Math.abs(c-vw*.5);
+      if(d<bd){bd=d;best=i}
+    }
+    if(best!==cur){cur=best;setProb(best)}
+  }
+  function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(frame)}}
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',measure);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(measure);
+  window.addEventListener('load',measure);
+  measure();
+})();
+
+/* ---------- Einblend-Animation (nur Versatz, Inhalt bleibt sichtbar) ---------- */
+(function reveal(){
+  var els=$$('.head,.vcard,.tcard,.tile,.chk,.verdict,.vswrap,.step,.cmp>div,.cta-band,.greet,.poa,.faq details,.bo>div,.final .wrap>*');
+  if(!('IntersectionObserver' in window)||reduce)return;
+  els.forEach(function(el){el.classList.add('rv');var i=Array.prototype.indexOf.call(el.parentNode.children,el);el.style.transitionDelay=((i%4)*90)+'ms'});
+  function show(el){el.classList.add('in');setTimeout(function(){el.classList.remove('rv');el.style.transitionDelay=''},1600)}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+  els.forEach(function(el){io.observe(el)});
+})();
+
+/* ---------- Start ---------- */
+applyVariant(readVariant(),false);
+track('page_view',Object.assign({variant:curVariant},utm));
+
+/* ---------- 3D-Wechselrad ---------- */
+(function wheel(){
+  var wrap=$('#wheel'),canvas=$('#wheelCanvas'),statusEl=$('#wheelStatus'),fb=$('.wheel-fallback',wrap);
+  var CARDS=['Berater nicht erreichbar','Keine aktive Betreuung','Unzufrieden mit Broker','Keine Beratung in meiner Sprache','Berater hat Firma verlassen','Kein Ansprechpartner','Lebensversicherung unbetreut','Neue Betreuung gewünscht'];
+  var N=CARDS.length;
+  fb.innerHTML=CARDS.map(function(c){return '<li>'+c+'</li>'}).join('');
+  var renderer;
+  try{
+    if(!window.THREE)throw new Error('three');
+    renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true,alpha:true,powerPreference:'low-power'});
+  }catch(err){canvas.hidden=true;fb.hidden=false;return}
+  var small=window.innerWidth<640;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,small?1.75:2));
+  var scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(32,1,.1,100);
+  var root=new THREE.Group();scene.add(root);
+  scene.add(new THREE.AmbientLight(0xffffff,.72));
+  var key=new THREE.DirectionalLight(0xffffff,.95);key.position.set(-5,6,9);scene.add(key);
+  var fill=new THREE.PointLight(0xa9c0ff,.8,40);fill.position.set(6,-2,7);scene.add(fill);
+
+  var A=3.35,HY=1.9,DZ=3.1,SPEED=.11;
+  function orbit(t,v){v.set(Math.cos(t)*A,-Math.sin(t)*HY,Math.sin(t)*DZ);return v}
+  function rr(x,X,Y,W,H,r){x.beginPath();x.moveTo(X+r,Y);x.arcTo(X+W,Y,X+W,Y+H,r);x.arcTo(X+W,Y+H,X,Y+H,r);x.arcTo(X,Y+H,X,Y,r);x.arcTo(X,Y,X+W,Y,r);x.closePath()}
+  function wrapText(x,t,X,Y,mw,lh,max){var w=t.split(' '),line='',n=0;for(var i=0;i<w.length;i++){var test=line?line+' '+w[i]:w[i];if(x.measureText(test).width>mw&&line){x.fillText(line,X,Y+n*lh);line=w[i];n++;if(n>=max)return}else line=test}x.fillText(line,X,Y+n*lh)}
+  var FONT='Inter, system-ui, sans-serif';
+  var TINTS=['#0c2764','#2b4a8f','#45556c','#1a3a7d','#5b6f94','#0f2f78','#33507f','#3d5a99'];
+  function cardCanvas(txt,i){
+    var W=1024,H=640,cv=document.createElement('canvas');cv.width=W;cv.height=H;var x=cv.getContext('2d');
+    x.shadowColor='rgba(12,39,100,.30)';x.shadowBlur=38;x.shadowOffsetY=16;x.fillStyle='#ffffff';rr(x,44,36,W-88,H-110,38);x.fill();
+    x.shadowColor='transparent';x.shadowBlur=0;x.shadowOffsetY=0;x.lineWidth=4;x.strokeStyle='#e2e8f0';x.stroke();
+    var ax=176,ay=206;
+    x.fillStyle='#e2e8f0';x.beginPath();x.arc(ax,ay,86,0,7);x.fill();
+    x.save();x.beginPath();x.arc(ax,ay,86,0,7);x.clip();
+    x.fillStyle=TINTS[i%TINTS.length];x.globalAlpha=.85;
+    x.beginPath();x.arc(ax,ay-18,32,0,7);x.fill();
+    x.beginPath();x.ellipse(ax,ay+84,64,58,0,0,7);x.fill();x.restore();x.globalAlpha=1;
+    x.textBaseline='alphabetic';
+    x.fillStyle='#45556c';x.font='700 24px '+FONT;if('letterSpacing' in x)x.letterSpacing='3px';x.fillText('KUNDENANLIEGEN',312,142);if('letterSpacing' in x)x.letterSpacing='0px';
+    x.fillStyle='#0c2764';x.font='700 46px '+FONT;wrapText(x,txt,312,210,610,56,3);
+    x.fillStyle='#f1f5f9';rr(x,96,440,340,66,33);x.fill();
+    x.fillStyle='#0c2764';x.font='600 28px '+FONT;x.fillText('Wechsel gewünscht',130,483);
+    return cv;
+  }
+  function discCanvas(){
+    var S=1024,cv=document.createElement('canvas');cv.width=S;cv.height=S;var x=cv.getContext('2d');
+    var g=x.createRadialGradient(360,300,20,512,512,520);g.addColorStop(0,'rgba(255,255,255,.14)');g.addColorStop(1,'rgba(255,255,255,0)');
+    x.fillStyle=g;x.beginPath();x.arc(512,512,500,0,7);x.fill();
+    x.strokeStyle='rgba(255,255,255,.16)';x.lineWidth=3;
+    [492,452].forEach(function(r){x.beginPath();x.arc(512,512,r,0,7);x.stroke()});
+    x.save();x.translate(512-100,310-100);x.scale(5,5);
+    x.fillStyle='#ffffff';x.beginPath();x.moveTo(36,14);x.lineTo(16,14);x.lineTo(6,24);x.lineTo(16,34);x.lineTo(36,34);x.lineTo(26,24);x.closePath();x.fill();
+    x.lineWidth=2.5;x.lineJoin='round';x.strokeStyle='#0c2764';x.beginPath();x.moveTo(4,6);x.lineTo(24,6);x.lineTo(34,16);x.lineTo(24,26);x.lineTo(4,26);x.lineTo(14,16);x.closePath();x.fill();x.stroke();x.restore();
+    x.textAlign='left';x.textBaseline='alphabetic';x.fillStyle='#ffffff';x.font='700 76px '+FONT;
+    var a='beraterwechsel',b='.ch',wa=x.measureText(a).width,wb=x.measureText(b).width,sx=512-(wa+wb)/2;
+    x.fillText(a,sx,590);x.globalAlpha=.7;x.fillText(b,sx+wa,590);x.globalAlpha=1;
+    x.textAlign='center';x.font='500 42px '+FONT;x.fillStyle='rgba(255,255,255,.8)';x.fillText('Ihr neuer Ansprechpartner',512,660);
+    return cv;
+  }
+  function shadowCanvas(){
+    var cv=document.createElement('canvas');cv.width=cv.height=256;var x=cv.getContext('2d');
+    var g=x.createRadialGradient(128,128,4,128,128,126);g.addColorStop(0,'rgba(12,39,100,.22)');g.addColorStop(1,'rgba(12,39,100,0)');
+    x.fillStyle=g;x.fillRect(0,0,256,256);return cv;
+  }
+  function tex(c){var t=new THREE.CanvasTexture(c);t.anisotropy=4;t.needsUpdate=true;return t}
+
+  var disc,face,pulse,trail,trailGeo,cardsM=[],built=false,faceMat;
+  var v0=new THREE.Vector3(),v1=new THREE.Vector3(),startPos=new THREE.Vector3(),tgt=new THREE.Vector3(0,0,.7),pos=new THREE.Vector3();
+  function build(){
+    if(built)return;built=true;
+    disc=new THREE.Mesh(new THREE.CylinderGeometry(1.7,1.7,.34,80),new THREE.MeshStandardMaterial({color:0x0c2764,metalness:.35,roughness:.36}));
+    disc.rotation.x=Math.PI/2;root.add(disc);
+    var rimM=new THREE.MeshStandardMaterial({color:0x2a4a95,metalness:.6,roughness:.3});
+    [-.17,.17].forEach(function(z){var r=new THREE.Mesh(new THREE.TorusGeometry(1.7,.035,12,96),rimM);r.position.z=z;disc.parent.add(r)});
+    faceMat=new THREE.MeshBasicMaterial({map:tex(discCanvas()),transparent:true});
+    face=new THREE.Mesh(new THREE.CircleGeometry(1.64,96),faceMat);face.position.z=.178;root.add(face);
+    pulse=new THREE.Mesh(new THREE.RingGeometry(1.74,1.79,96),new THREE.MeshBasicMaterial({color:0x0c2764,transparent:true,opacity:0}));pulse.position.z=.18;root.add(pulse);
+    var pts=[];for(var i=0;i<=128;i++){pts.push(orbit(i/128*Math.PI*2,new THREE.Vector3()))}
+    root.add(new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(pts),new THREE.LineBasicMaterial({color:0x0c2764,transparent:true,opacity:.18})));
+    var sh=new THREE.Mesh(new THREE.PlaneGeometry(10,6.4),new THREE.MeshBasicMaterial({map:tex(shadowCanvas()),transparent:true,depthWrite:false}));
+    sh.rotation.x=-Math.PI/2;sh.position.y=-3.7;root.add(sh);
+    trailGeo=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(),new THREE.Vector3(0,0,.5)]);
+    trail=new THREE.Line(trailGeo,new THREE.LineBasicMaterial({color:0x0c2764,transparent:true,opacity:0}));trail.frustumCulled=false;root.add(trail);
+    var pg=new THREE.PlaneGeometry(2.3,1.4375);
+    CARDS.forEach(function(t,i){
+      var m=new THREE.Mesh(pg,new THREE.MeshBasicMaterial({map:tex(cardCanvas(t,i)),transparent:true,depthWrite:false}));
+      root.add(m);cardsM.push(m);
+    });
+    resize();
+    if(reduce){sel=2;pickT=0;captureStart(0);T=2.3;update(T);renderer.render(scene,camera)}
+    else if(visible&&!document.hidden)start();
+  }
+
+  var T=0,pickT=0,sel=1,mx=0,my=0,cx=0,cy=0,scrollAng=0,lastScrollPick=0,CYCLE=5.8;
+  var ease=function(x){x=x<0?0:x>1?1:x;return x*x*(3-2*x)};
+  var lastStatus='';
+  function setStatus(k,txt){
+    var id=k+'|'+txt;if(id===lastStatus)return;lastStatus=id;
+    if(!k){statusEl.classList.remove('show');return}
+    statusEl.className='wheel-status show '+k;$('.stx',statusEl).textContent=txt;
+  }
+  function update(t){
+    if(!reduce){
+      var sy=window.scrollY||0;
+      scrollAng+=(sy*.0014-scrollAng)*.06;
+      if(t-pickT>CYCLE){sel=(sel+3)%N;pickT=t;lastScrollPick=sy;captureStart(t)}
+      else if(Math.abs(sy-lastScrollPick)>520&&t-pickT>3.4){sel=(sel+3)%N;pickT=t;lastScrollPick=sy;captureStart(t)}
+    }
+    cx+=(mx-cx)*.05;cy+=(my-cy)*.05;
+    root.rotation.y=cx*.26+Math.sin(t*.22)*.03;
+    root.rotation.x=.07+cy*.12;
+    var p=t-pickT;
+    for(var i=0;i<N;i++){
+      var m=cardsM[i],th=i*Math.PI*2/N+t*SPEED+scrollAng;
+      orbit(th,pos);
+      var depth=(pos.z+DZ)/(2*DZ),op=.55+.45*depth,sc=1;
+      m.rotation.y=-Math.cos(th)*.3;
+      if(i===sel){
+        if(p<3.4){
+          var go=ease(p/1.7);
+          pos.lerpVectors(startPos,tgt,go);
+          sc=1-.78*go;
+          op=1-ease((p-1.0)/.7);
+          if(p<1.0)op=.55+.45*((startPos.z+DZ)/(2*DZ));
+          m.rotation.y*=(1-go);
+        }else{
+          op*=ease((p-3.4)/1.2);
+        }
+      }
+      m.position.copy(pos);m.scale.setScalar(sc);m.material.opacity=Math.max(0,Math.min(1,op));m.visible=m.material.opacity>.01;
+    }
+    // Verbindungslinie
+    var tp=cardsM[sel].position,tr=0;
+    if(p>.1&&p<3.9){tr=p<3?.8:.8*(1-ease((p-3)/.9))}
+    var arr=trailGeo.attributes.position;
+    arr.setXYZ(0,startPos.x,startPos.y,startPos.z);
+    var tx=p<3.4?tp.x:tgt.x,ty=p<3.4?tp.y:tgt.y,tz=p<3.4?tp.z:tgt.z;
+    arr.setXYZ(1,tx,ty,tz);arr.needsUpdate=true;trail.material.opacity=tr;
+    // Puls und Status
+    var pp=(p-1.7)/1.4;
+    if(pp>0&&pp<1){pulse.material.opacity=.55*(1-pp);pulse.scale.setScalar(1+pp*.32);disc.scale.set(1+.02*Math.sin(pp*Math.PI),1,1+.02*Math.sin(pp*Math.PI))}
+    else{pulse.material.opacity=0;disc.scale.set(1,1,1)}
+    if(p<.25)setStatus('','');
+    else if(p<1.7)setStatus('a','Anliegen: '+CARDS[sel]);
+    else if(p<2.9)setStatus('b','Wechsel angefragt');
+    else if(p<4.5)setStatus('c','Neue Betreuung wird organisiert');
+    else setStatus('','');
+  }
+  function captureStart(t){
+    var th=sel*Math.PI*2/N+t*SPEED+scrollAng;orbit(th,startPos);
+  }
+  captureStart(0);
+
+  var running=false,raf=0,visible=true,prev=0;
+  function loop(now){
+    raf=0;if(!running)return;
+    var dt=Math.min((now-prev)/1000,.05);prev=now;T+=dt;
+    update(T);renderer.render(scene,camera);raf=requestAnimationFrame(loop);
+  }
+  function start(){if(running||reduce||!built)return;running=true;prev=performance.now();raf=requestAnimationFrame(loop)}
+  function stop(){running=false;if(raf)cancelAnimationFrame(raf);raf=0}
+  function resize(){
+    var w=wrap.clientWidth,h=wrap.clientHeight;if(!w||!h)return;
+    renderer.setSize(w,h,false);camera.aspect=w/h;
+    camera.position.set(0,.9,Math.max(17,16.4/(w/h)));camera.lookAt(0,-.15,0);camera.updateProjectionMatrix();
+    if(built&&!running)renderer.render(scene,camera);
+  }
+  if('ResizeObserver' in window)new ResizeObserver(resize).observe(wrap);else window.addEventListener('resize',resize);
+  if('IntersectionObserver' in window)new IntersectionObserver(function(es){visible=es[0].isIntersecting;(visible&&!document.hidden)?start():stop()},{threshold:0}).observe(wrap);
+  document.addEventListener('visibilitychange',function(){document.hidden?stop():(visible&&start())});
+  if(!reduce){
+    window.addEventListener('pointermove',function(e){if(e.pointerType==='touch')return;mx=(e.clientX/window.innerWidth-.5)*2;my=(e.clientY/window.innerHeight-.5)*2},{passive:true});
+  }
+  var fontsReady=(document.fonts&&document.fonts.load)?Promise.all([document.fonts.load('700 40px Inter'),document.fonts.load('600 24px Inter'),document.fonts.load('500 40px Inter')]):Promise.resolve();
+  var gate=new Promise(function(res){setTimeout(res,1500)});
+  Promise.race([fontsReady.catch(function(){}),gate]).then(function(){setTimeout(build,0)});
+})();
+})();
+</script>
