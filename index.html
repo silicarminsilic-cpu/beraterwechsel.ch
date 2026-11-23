@@ -670,6 +670,14 @@ h3{font-weight:600;font-size:1.08rem;letter-spacing:-.01em}
 .cons .opt{align-items:flex-start;font-weight:400;font-size:.88rem;line-height:1.5;padding:12px 14px}
 .cons .opt input{margin-top:3px}
 .cons .link{font:inherit}
+.copt{display:grid;gap:0}
+.cd{margin:0;padding:6px 14px 2px}
+.cd summary{cursor:pointer;font-size:.8rem;color:var(--navy);font-weight:600;list-style:none}
+.cd summary::-webkit-details-marker{display:none}
+.cd summary::before{content:'+ ';font-weight:700}
+.cd[open] summary::before{content:'− '}
+.cd p{margin:6px 0 4px;font-size:.8rem;line-height:1.55;color:var(--muted)}
+.cons .opt{align-items:center}
 .flow{background:#f3f6fc;border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-size:.86rem;color:var(--muted)}
 .flow ol{margin:6px 0 0;padding-left:20px;display:grid;gap:3px}
 .next.confirm{border-color:var(--navy);background:#eef3fc}
@@ -731,7 +739,6 @@ h3{font-weight:600;font-size:1.08rem;letter-spacing:-.01em}
     </div>
     <p class="micro">Die Anfrage dauert etwa zwei Minuten; die tatsächliche Bearbeitung des Wechsels kann länger dauern.</p>
     <p class="micro hero-call"><span class="hero-call-t">Lieber persönlich?</span> <a class="ico-btn sm" href="tel:+4237987733" data-src="hero" aria-label="Anrufen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Anrufen</span></a><a class="ico-btn wa sm" href="https://wa.me/4237987733" target="_blank" rel="noopener" data-src="hero" aria-label="Per WhatsApp schreiben"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.65-4.9A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9 8.5c0 3.3 2.7 6 6 6l1.3-1.3-2-1-.9.7a3.6 3.6 0 0 1-1.9-1.9l.7-.9-1-2L9 8.5z" fill="currentColor" stroke="none"/></svg><span>WhatsApp</span></a> <a href="mailto:jetzt@beraterwechsel.ch" data-src="hero">E-Mail</a></p>
-    <p class="rolebar"><span>Marketingangebot der Esche Consulting GmbH. Beratung und Vermittlung nur durch die Partnerin, die Wertenburg GmbH (Versicherungsmaklerin). Weiterleitung Ihrer Anfrage nur mit Ihrer Einwilligung.</span> <button type="button" data-role-win="roles">Rollen, Datenfluss und Nachweis</button></p>
     <ul class="trust-row" id="trustRow"></ul>
   </div>
   <div class="wheel" id="wheel" role="img" aria-label="Animation: Kundenanliegen kreisen um beraterwechsel.ch und werden zu einer neuen Betreuung.">
@@ -1035,7 +1042,7 @@ h3{font-weight:600;font-size:1.08rem;letter-spacing:-.01em}
     </ul>
     <span class="fcopy">© <span id="fYear">2026</span> beraterwechsel.ch</span>
   </div>
-  <p class="fnote3">beraterwechsel.ch ist ein Marketing- und Informationsangebot der Esche Consulting GmbH. Keine Beratung, keine Vermittlung, kein Angebot. Beraten und vermitteln darf nur die Partnerin, die Wertenburg GmbH (Versicherungsmaklerin). Anfragen werden nur mit Ihrer Einwilligung weitergeleitet. <button type="button" data-role-win="roles">Rollen, Datenfluss und Nachweis</button></p>
+  <p class="fnote3"><button type="button" data-role-win="roles">Rechtlicher Hinweis: Rollen, Datenfluss und Nachweis</button></p>
   <div class="fpanel" id="fpanel" hidden aria-live="polite"><div id="fpBody"></div><button class="link inv" type="button" id="fpClose">Schliessen</button></div>
 </div></footer>
 
@@ -1046,6 +1053,7 @@ h3{font-weight:600;font-size:1.08rem;letter-spacing:-.01em}
 <h2 id="rwT">Rollen, Datenfluss und Nachweis</h2>
 <div class="rtabs" role="group" aria-label="Rechtliche Hinweise"><button type="button" data-rw="roles" aria-pressed="true">Rollen und Ablauf</button><button type="button" data-rw="dsg" aria-pressed="false">Datenschutz</button><button type="button" data-rw="agb" aria-pressed="false">Nutzungsbedingungen</button><button type="button" data-rw="imp" aria-pressed="false">Impressum</button><button type="button" data-rw="vag" aria-pressed="false">Status</button></div>
 <div id="rwBody">
+<p>beraterwechsel.ch ist ein Marketing- und Informationsangebot der Esche Consulting GmbH. Keine Beratung, keine Vermittlung, kein Angebot. Beraten und vermitteln darf nur die Partnerin, die Wertenburg GmbH (Versicherungsmaklerin). Anfragen werden nur mit Ihrer Einwilligung weitergeleitet.</p>
 <h3>Rollen</h3>
 <p><b>Esche Consulting GmbH</b> (Betreiberin, Marketingdienstleisterin): Sie wirbt für diese Seite, nimmt Ihre Anfrage entgegen, prüft nur, ob sie vollständig ist, und leitet sie nur mit Ihrer Einwilligung weiter. Sie berät nicht, empfiehlt keine Produkte, vermittelt nicht und schliesst keine Verträge ab.</p>
 <p><b>Wertenburg GmbH</b>, Vaduz (die Partnerin, Versicherungsmaklerin): Sie erhält Ihre Anfrage, nimmt Kontakt mit Ihnen auf, berät und vermittelt in eigener Verantwortung und erfüllt die gesetzlichen Informationspflichten. Ein Mandat entsteht nur mit ihr. Angaben zu ihrer Registrierung finden Sie unter «Status».</p>
@@ -1398,7 +1406,8 @@ function sendLead(d,n){
 }
 
 /* ---------- Einwilligungen (versioniert, Wortlaut wird im Nachweis festgehalten) ---------- */
-var CONSENT_VERSION='2026-11-23-v1';
+var CONSENT_VERSION='2026-11-23-v2';
+var CONSENT_HEAD={c1:'Datenschutz gelesen und Verarbeitung erlaubt',c2:'Weiterleitung an die Wertenburg GmbH und Kontakt erlaubt',mk:'Informationen der Wertenburg GmbH per E-Mail (freiwillig)'};
 var UI_LANG='de';
 var CONSENT_TEXTS={de:{
  c1:'Ich habe die Datenschutzerklärung und die rechtlichen Hinweise gelesen. Mir ist bekannt, dass die Esche Consulting GmbH als Marketingdienstleisterin weder berät noch Versicherungen vermittelt oder Verträge abschliesst. Ich erlaube die Verarbeitung meiner Angaben samt Nachweis meiner Einwilligung (Zeitpunkt, IP-Adresse).',
@@ -1409,12 +1418,11 @@ var CONSENT_TEXTS={de:{
 var TXT_DE=CONSENT_TEXTS.de,TXT=CONSENT_TEXTS[UI_LANG]||TXT_DE;
 var MANDATE_NOTE='Der Vertrag (Maklermandat) kommt ausschliesslich mit der Wertenburg GmbH zustande, nicht mit der Esche Consulting GmbH.';
 function consentBlock(S){
+  function ci(n,pre,full,on){return '<div class="copt"><label class="opt"><input type="checkbox" name="'+n+'"'+(on?' checked':'')+'><span><b>'+pre+esc(CONSENT_HEAD[n])+'</b></span></label><details class="cd"><summary>Wortlaut anzeigen</summary><p>'+full+'</p></details></div>'}
   function lk(t){return esc(t).replace('Datenschutzerklärung','<button type="button" class="link" data-role-win="dsg">Datenschutzerklärung</button>').replace('rechtlichen Hinweise','<button type="button" class="link" data-role-win="roles">rechtlichen Hinweise</button>')}
   return '<p class="flow1">Ihre Angaben gehen nur mit Ihrer Einwilligung an die Partnerin. <button type="button" class="link" data-role-win="roles">So gehen wir mit Ihren Daten um</button></p>'
    +'<fieldset class="cons"><legend class="grp">Ihre Einwilligungen (a und b sind nötig)</legend>'
-   +'<label class="opt"><input type="checkbox" name="c1"'+(S.c1?' checked':'')+'><span><b>a)</b> '+lk(TXT.c1)+'</span></label>'
-   +'<label class="opt"><input type="checkbox" name="c2"'+(S.c2?' checked':'')+'><span><b>b)</b> '+esc(TXT.c2)+'</span></label>'
-   +'<label class="opt"><input type="checkbox" name="mk"'+(S.mk?' checked':'')+'><span>'+esc(TXT.mk)+'</span></label>'
+   +ci('c1','a) ',lk(TXT.c1),S.c1)+ci('c2','b) ',esc(TXT.c2),S.c2)+ci('mk','',esc(TXT.mk),S.mk)
    +'</fieldset>';
 }
 
@@ -1491,6 +1499,7 @@ function buildNachweis(kind,id,S,nw,d){
     L.push('','== Bestätigte Texte ==');
     items.forEach(function(it){var on=it[0]==='c1'?S.c1:it[0]==='c2'?S.c2:it[0]==='mk'?S.mk:S.mok;
       L.push('['+it[0]+'] '+it[1]+', Status: '+(on?'BESTÄTIGT':'nicht bestätigt'));
+      L.push('  Angezeigte Überschrift: '+(CONSENT_HEAD[it[0]]||''));
       L.push('  Text (angezeigte Sprache '+UI_LANG+'): '+(TXT[it[0]]||''));
       L.push('  Text (Deutsch): '+(TXT_DE[it[0]]||''));
       L.push('  SHA-256 des Wortlauts: '+hs[it[0]])});
