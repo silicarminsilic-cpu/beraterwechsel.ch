@@ -662,6 +662,36 @@ h3{font-weight:600;font-size:1.08rem;letter-spacing:-.01em}
 .hero-call{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .hero-call-t{margin-right:4px}
 .who-contact{gap:10px}
+.cons{border:0;margin:0;padding:0;display:grid;gap:8px;min-width:0}
+.cons legend{padding:0;margin-bottom:6px}
+.cons .opt{align-items:flex-start;font-weight:400;font-size:.88rem;line-height:1.5;padding:12px 14px}
+.cons .opt input{margin-top:3px}
+.cons .link{font:inherit}
+.flow{background:#f3f6fc;border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-size:.86rem;color:var(--muted)}
+.flow ol{margin:6px 0 0;padding-left:20px;display:grid;gap:3px}
+.next.confirm{border-color:var(--navy);background:#eef3fc}
+.next.confirm p{margin:6px 0 0}
+.fnote3{font-size:.8rem;color:#cfd8ea;max-width:86ch;margin:0}
+.fnote3 button{font:inherit;color:#fff;background:none;border:0;border-bottom:1px solid #fff;padding:0;cursor:pointer}
+.rolebar{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;margin:14px 0 0;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:#f3f6fc;color:var(--muted);font-size:.8rem;line-height:1.5;max-width:62ch}
+.rolebar button,.fnote3 button,.flow button{font:inherit;background:none;border:0;border-bottom:1px solid currentColor;padding:0;cursor:pointer;font-weight:600}
+.rolebar button{color:var(--navy)}
+.rwin{position:fixed;inset:0;z-index:140;background:rgba(10,20,50,.62);display:grid;place-items:center;padding:14px}
+.rwin[hidden]{display:none!important}
+.rbox{position:relative;background:#fff;color:#1a2547;border-radius:18px;max-width:760px;width:100%;max-height:90vh;overflow:auto;padding:24px 24px 20px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.rbox h2{margin:0 44px 12px 0;font-size:1.3rem;color:var(--navy)}
+.rbox h3{font-size:1rem;margin:18px 0 6px;color:var(--navy)}
+.rbox h4{font-size:.92rem;margin:14px 0 4px;color:var(--navy)}
+.rbox p,.rbox li{font-size:.9rem;line-height:1.6;margin:0 0 8px}
+.rbox ul{padding-left:20px;margin:0 0 8px}
+.rbox .ph2{background:#fff6e0;border-radius:8px;padding:6px 10px;color:#7a5200}
+.rx{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;border:0;background:#eef3fc;color:var(--navy);font-size:1.3rem;cursor:pointer}
+.rtabs{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px}
+.rtabs button{font:inherit;font-size:.82rem;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--navy);cursor:pointer}
+.rtabs button[aria-pressed=true]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.rflow{list-style:none;padding:0;margin:0 0 8px;display:grid;gap:8px;counter-reset:rs}
+.rflow li{counter-increment:rs;position:relative;border:1px solid var(--line);border-radius:12px;padding:10px 12px 10px 46px;margin:0}
+.rflow li:before{content:counter(rs);position:absolute;left:12px;top:10px;width:24px;height:24px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:.8rem;font-weight:700}
 .photo-note{font-size:.8rem;color:var(--muted)}
 .final-photo{border-radius:12px;overflow:hidden;aspect-ratio:16/8;max-width:520px;position:relative}
 .final-photo img{width:100%;height:100%;object-fit:cover;display:block}
@@ -697,6 +727,7 @@ h3{font-weight:600;font-size:1.08rem;letter-spacing:-.01em}
     </div>
     <p class="micro">Die Anfrage dauert etwa zwei Minuten; die tatsächliche Bearbeitung des Wechsels kann länger dauern.</p>
     <p class="micro hero-call"><span class="hero-call-t">Lieber persönlich?</span> <a class="ico-btn sm" href="tel:+4237987733" data-src="hero" aria-label="Anrufen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Anrufen</span></a><a class="ico-btn wa sm" href="https://wa.me/4237987733" target="_blank" rel="noopener" data-src="hero" aria-label="Per WhatsApp schreiben"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.65-4.9A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9 8.5c0 3.3 2.7 6 6 6l1.3-1.3-2-1-.9.7a3.6 3.6 0 0 1-1.9-1.9l.7-.9-1-2L9 8.5z" fill="currentColor" stroke="none"/></svg><span>WhatsApp</span></a> <a href="mailto:jetzt@beraterwechsel.ch" data-src="hero">E-Mail</a></p>
+    <p class="rolebar"><span>Marketingangebot der Esche Consulting GmbH. Beratung und Vermittlung nur durch die Partnerin, die Wertenburg GmbH (Versicherungsmaklerin). Weiterleitung Ihrer Anfrage nur mit Ihrer Einwilligung.</span> <button type="button" data-role-win="roles">Rollen, Datenfluss und Nachweis</button></p>
     <ul class="trust-row" id="trustRow"></ul>
   </div>
   <div class="wheel" id="wheel" role="img" aria-label="Animation: Kundenanliegen kreisen um beraterwechsel.ch und werden zu einer neuen Betreuung.">
@@ -710,7 +741,7 @@ h3{font-weight:600;font-size:1.08rem;letter-spacing:-.01em}
   <div class="prob-left"><div class="sticky">
     <p class="eyebrow">Häufige Gründe für einen Wechsel</p>
     <h2>Schlechte Betreuung müssen Sie nicht akzeptieren.</h2>
-    <p class="lead">Sie haben Versicherungen, Vorsorgeverträge oder eine Lebensversicherung – aber keinen Berater, auf den Sie sich verlassen können? Wir helfen Ihnen weiter.</p>
+    <p class="lead">Sie haben Versicherungen, Vorsorgeverträge oder eine Lebensversicherung – aber keinen Berater, auf den Sie sich verlassen können? Die Partnerin klärt mit Ihnen, wie sich Ihre Betreuung neu regeln lässt.</p>
     <ol class="dots" id="probDots" aria-hidden="true"></ol>
     <p class="micro" id="probCount" aria-live="off"></p>
   </div></div>
@@ -720,16 +751,16 @@ h3{font-weight:600;font-size:1.08rem;letter-spacing:-.01em}
 
 <section class="sec on-navy deco" id="versprechen"><div class="wrap">
   <div class="head">
-    <p class="eyebrow">Unser Versprechen</p>
+    <p class="eyebrow">Der Grundsatz</p>
     <h2>Wechseln Sie Ihren Berater. Nicht automatisch Ihre Versicherung.</h2>
-    <p class="lead">Viele Menschen glauben, dass sie ihre bestehende Lebensversicherung oder Vorsorge kündigen müssen, wenn sie einen anderen Berater möchten. Das ist nicht grundsätzlich der Fall. Häufig lässt sich die Betreuung neu regeln. Wir helfen Ihnen, die Möglichkeiten zu prüfen und den Wechsel einzuleiten.</p>
+    <p class="lead">Viele Menschen glauben, dass sie ihre bestehende Lebensversicherung oder Vorsorge kündigen müssen, wenn sie einen anderen Berater möchten. Das ist nicht grundsätzlich der Fall. Häufig lässt sich die Betreuung neu regeln. Die Partnerin prüft mit Ihnen die Möglichkeiten und leitet den Wechsel auf Ihren Wunsch ein.</p>
   </div>
   <div class="story" id="story" data-s="0">
     <div class="story-left">
       <ol class="stl">
         <li><button type="button" class="stp" data-s="0" aria-pressed="true"><span class="no">1</span><span class="tx"><b>Ausgangslage</b><small>Kein erreichbarer Ansprechpartner, aber der Vertrag läuft weiter.</small></span></button></li>
         <li><button type="button" class="stp" data-s="1" aria-pressed="false"><span class="no">2</span><span class="tx"><b>Anfrage</b><small>Sie fragen den Wechsel an. Dabei wird nichts gekündigt.</small></span></button></li>
-        <li><button type="button" class="stp" data-s="2" aria-pressed="false"><span class="no">3</span><span class="tx"><b>Prüfung</b><small>Wir klären, ob die Betreuung bei Ihrem Vertrag übertragen werden kann. Die Police bleibt unberührt.</small></span></button></li>
+        <li><button type="button" class="stp" data-s="2" aria-pressed="false"><span class="no">3</span><span class="tx"><b>Prüfung</b><small>Die Partnerin klärt, ob die Betreuung bei Ihrem Vertrag übertragen werden kann. Die Police bleibt unberührt.</small></span></button></li>
         <li><button type="button" class="stp" data-s="3" aria-pressed="false"><span class="no">4</span><span class="tx"><b>Neuer Berater</b><small>Dieselbe Police, ein neuer Ansprechpartner, der sich kümmert.</small></span></button></li>
       </ol>
       <div class="story-ctrl"><button class="link" type="button" id="storyPlay" aria-pressed="true">Pause</button><div class="pbar"><i id="storyBar"></i></div></div>
@@ -752,7 +783,7 @@ h3{font-weight:600;font-size:1.08rem;letter-spacing:-.01em}
           <g transform="translate(14 70)">
             <g class="o s0"><rect width="276" height="52" rx="26" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/><circle cx="26" cy="26" r="13" fill="#45556c"/><text x="26" y="33" text-anchor="middle" style="font:700 19px var(--font);fill:#fff">!</text><text class="t" x="52" y="33">Anruf unbeantwortet</text></g>
             <g class="o s1"><rect width="276" height="52" rx="26" fill="#ffffff" stroke="#0c2764" stroke-width="2"/><circle cx="26" cy="26" r="13" fill="#0c2764"/><path d="M19 26 h14 m-6 -6 l6 6 -6 6" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text class="t" x="52" y="33" style="fill:#0c2764">Wechsel angefragt</text></g>
-            <g class="o s2"><rect width="276" height="52" rx="26" fill="#ffffff" stroke="#0c2764" stroke-width="2"/><circle class="spin" cx="26" cy="26" r="12" fill="none" stroke="#0c2764" stroke-width="3" stroke-dasharray="20 56" stroke-linecap="round"/><text class="t" x="52" y="33" style="fill:#0c2764">Wir prüfen Ihre Lage</text></g>
+            <g class="o s2"><rect width="276" height="52" rx="26" fill="#ffffff" stroke="#0c2764" stroke-width="2"/><circle class="spin" cx="26" cy="26" r="12" fill="none" stroke="#0c2764" stroke-width="3" stroke-dasharray="20 56" stroke-linecap="round"/><text class="t" x="52" y="33" style="fill:#0c2764">Die Partnerin prüft</text></g>
             <g class="o s3"><rect width="276" height="52" rx="26" fill="#0c2764"/><circle cx="26" cy="26" r="13" fill="#ffffff"/><path d="M20 26 l5 5 8-10" stroke="#0c2764" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text class="t" x="52" y="33" style="fill:#fff">Neue Betreuung steht</text></g>
           </g>
 
@@ -812,20 +843,20 @@ h3{font-weight:600;font-size:1.08rem;letter-spacing:-.01em}
     <div class="b"><h3>Beraterwechsel</h3><ul id="cmpB"></ul>
       <div><button class="btn lg" type="button" data-open-form data-src="versprechen">Ich möchte meinen Berater wechseln</button></div></div>
   </div>
-  <p class="honest"><b>Was wir nicht tun:</b> Wir kündigen nichts ohne Ihre ausdrückliche Zustimmung. Und wir sagen Ihnen offen, wenn sich die Betreuung bei Ihrem Vertrag nicht übertragen lässt.</p>
+  <p class="honest"><b>Was nicht passiert:</b> Ohne Ihre ausdrückliche Zustimmung wird nichts gekündigt. Und die Partnerin sagt Ihnen offen, wenn sich die Betreuung bei Ihrem Vertrag nicht übertragen lässt.</p>
 </div></section>
 
 <section class="sec" id="so-funktioniert"><div class="wrap">
   <div class="head">
     <p class="eyebrow">Ablauf</p>
     <h2>In 2 Minuten den Wechsel anfragen.</h2>
-    <p class="lead">Sie stellen die Anfrage. Wir kümmern uns um die Prüfung der nächsten Schritte.</p>
+    <p class="lead">Sie stellen die Anfrage. Die Partnerin prüft die nächsten Schritte, sobald Sie eingewilligt haben.</p>
   </div>
   <div class="steps" id="steps">
     <div class="steps-line"><i></i></div>
-    <div class="step"><span class="n">1</span><div class="scard"><div class="mock"><span class="mp on">Berater nicht erreichbar</span><span class="mp">Lebensversicherung</span><span class="mp on">Säule 3a</span></div><h3>Situation angeben</h3><p>Sie teilen uns mit, warum Sie Ihren Berater wechseln möchten und welche Versicherungen Sie besitzen.</p></div></div>
-    <div class="step"><span class="n">2</span><div class="scard"><div class="mock col"><span class="bub">Wir prüfen Ihre Angaben und melden uns bei Ihnen.</span><span class="bub me">Danke, bis bald.</span></div><h3>Persönliche Kontaktaufnahme</h3><p>Ein zuständiger Ansprechpartner prüft Ihre Angaben, meldet sich bei Ihnen und erklärt die Möglichkeiten.</p></div></div>
-    <div class="step"><span class="n">3</span><div class="scard"><div class="mock"><div class="docm"><i></i><i></i><i class="s"></i><span class="ok">✓</span></div><span class="mp on">Neue Betreuung</span></div><h3>Wechsel organisieren</h3><p>Wenn ein Wechsel möglich ist und Sie zustimmen, unterstützen wir Sie bei den notwendigen Vollmachten und der Organisation der neuen Betreuung.</p></div></div>
+    <div class="step"><span class="n">1</span><div class="scard"><div class="mock"><span class="mp on">Berater nicht erreichbar</span><span class="mp">Lebensversicherung</span><span class="mp on">Säule 3a</span></div><h3>Situation angeben</h3><p>Sie geben an, warum Sie Ihren Berater wechseln möchten und welche Versicherungen Sie besitzen.</p></div></div>
+    <div class="step"><span class="n">2</span><div class="scard"><div class="mock col"><span class="bub">Die Partnerin prüft Ihre Angaben und meldet sich.</span><span class="bub me">Danke, bis bald.</span></div><h3>Persönliche Kontaktaufnahme</h3><p>Ein zuständiger Ansprechpartner prüft Ihre Angaben, meldet sich bei Ihnen und erklärt die Möglichkeiten.</p></div></div>
+    <div class="step"><span class="n">3</span><div class="scard"><div class="mock"><div class="docm"><i></i><i></i><i class="s"></i><span class="ok">✓</span></div><span class="mp on">Neue Betreuung</span></div><h3>Wechsel organisieren</h3><p>Wenn ein Wechsel möglich ist und Sie zustimmen, unterstützt Sie die Partnerin bei den notwendigen Vollmachten und der Organisation der neuen Betreuung.</p></div></div>
   </div>
   <button class="btn lg" type="button" data-open-form data-src="ablauf">Beraterwechsel jetzt starten</button>
   <p class="micro" style="margin-top:12px">Unverbindlich · Diskret · Ca. 2 Minuten</p>
@@ -857,7 +888,7 @@ h3{font-weight:600;font-size:1.08rem;letter-spacing:-.01em}
   </div>
   <div class="vstage" id="vStage" aria-live="polite"></div>
 </div></div></div>
-<div class="wrap"><div class="cta-band"><div><b>Ihre Vorsorge braucht einen erreichbaren Ansprechpartner.</b><span>Unverbindlich anfragen. Wir prüfen, ob sich Ihre Betreuung übertragen lässt.</span></div><button class="btn inv lg" type="button" data-open-form data-src="band-vorsorge" data-reason="better">Betreuung jetzt anfragen →</button></div></div>
+<div class="wrap"><div class="cta-band"><div><b>Ihre Vorsorge braucht einen erreichbaren Ansprechpartner.</b><span>Unverbindlich anfragen. Die Partnerin prüft, ob sich Ihre Betreuung übertragen lässt.</span></div><button class="btn inv lg" type="button" data-open-form data-src="band-vorsorge" data-reason="better">Betreuung jetzt anfragen →</button></div></div>
 </section>
 
 <section class="sec" id="vorteile"><div class="wrap">
@@ -893,7 +924,7 @@ h3{font-weight:600;font-size:1.08rem;letter-spacing:-.01em}
     <small id="greetLang">Deutsch</small>
     <p class="g" id="greetText"></p>
     <button class="btn" type="button" id="greetCta">Berater in meiner Sprache anfragen</button>
-    <small>Die Verfügbarkeit einer Beratungssprache bestätigen wir Ihnen bei der Kontaktaufnahme.</small>
+    <small>Die Verfügbarkeit einer Beratungssprache bestätigt Ihnen die Partnerin bei der Kontaktaufnahme.</small>
   </div>
 </div></section>
 
@@ -906,7 +937,7 @@ h3{font-weight:600;font-size:1.08rem;letter-spacing:-.01em}
       <li><b>1</b><span><strong>Anfrage stellen</strong><small>Grund, Versicherung und Kontaktdaten in etwa 2 Minuten.</small></span></li>
       <li><b>2</b><span><strong>Mandat prüfen</strong><small>Sie sehen das vollständige Maklermandat, mit Ihren Angaben vorausgefüllt.</small></span></li>
       <li><b>3</b><span><strong>Digital unterschreiben</strong><small>Direkt im Formular, ohne Drucken und Postweg.</small></span></li>
-      <li><b>4</b><span><strong>Wir übernehmen</strong><small>Die Betreuung wird organisiert, Ihre Police bleibt bestehen.</small></span></li>
+      <li><b>4</b><span><strong>Die Partnerin übernimmt</strong><small>Die Betreuung wird organisiert, Ihre Police bleibt bestehen.</small></span></li>
     </ol>
     <button class="btn lg" type="button" data-open-form data-src="vollmacht" data-mode="digital">Digital wechseln →</button>
     <p class="micro">Die Maklervollmacht ist freiwillig. Sie können auch zuerst nur eine Anfrage stellen.</p>
@@ -929,7 +960,7 @@ h3{font-weight:600;font-size:1.08rem;letter-spacing:-.01em}
   </div>
   <div class="tgrid" id="tgrid"></div>
   <div class="who">
-    <div class="who-head"><p class="eyebrow">Transparenz</p><h3>Wer steht hinter beraterwechsel.ch?</h3><p class="who-lead">Ein unabhängiger Makler, der für Sie arbeitet und nicht für die Versicherung. Das ist uns wichtig, deshalb sehen Sie hier vorab, worauf Sie sich verlassen können.</p><button class="link" type="button" data-gofp="imp">Alle Angaben zum Anbieter finden Sie im Impressum</button></div>
+    <div class="who-head"><p class="eyebrow">Transparenz</p><h3>Wer steht hinter beraterwechsel.ch?</h3><p class="who-lead">Beraten und vermitteln darf nur die Partnerin, ein Makler in unabhängiger Stellung. Deshalb sehen Sie hier vorab, wer was tut und worauf Sie sich verlassen können.</p><button class="link" type="button" data-gofp="imp">Alle Angaben zum Anbieter finden Sie im Impressum</button></div>
     <ul class="who-grid">
       <li><span class="wk"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Unabhängig für Sie tätig</b><span>Der Makler arbeitet in unabhängiger Stellung für Sie und nicht als Vertreter einer Versicherungsgesellschaft.</span></div></li>
       <li><span class="wk"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>Ihr Vertrag bleibt bestehen</b><span>Sie bleiben Vertragspartner der Gesellschaften. Ohne Ihre Zustimmung wird nichts gekündigt.</span></div></li>
@@ -946,13 +977,13 @@ h3{font-weight:600;font-size:1.08rem;letter-spacing:-.01em}
 <section class="sec" id="faq"><div class="wrap">
   <div class="head"><p class="eyebrow">Häufige Fragen</p><h2>Alles Wichtige zum Beraterwechsel.</h2></div>
   <div class="faq" id="faqList"></div>
-  <div class="cta-band"><div><b>Noch eine Frage offen?</b><span>Beschreiben Sie kurz Ihre Situation. Wir melden uns persönlich bei Ihnen.</span></div><button class="btn inv lg" type="button" data-open-form data-src="band-faq" data-mode="talk">Persönliches Gespräch anfragen →</button></div>
+  <div class="cta-band"><div><b>Noch eine Frage offen?</b><span>Beschreiben Sie kurz Ihre Situation. Die Partnerin meldet sich persönlich bei Ihnen.</span></div><button class="btn inv lg" type="button" data-open-form data-src="band-faq" data-mode="talk">Persönliches Gespräch anfragen →</button></div>
 </div></section>
 
 <section class="sec final on-navy deco" id="abschluss"><div class="wrap">
   <div class="final-copy">
     <h2>Warum bei einem Berater bleiben, der sich nicht um Sie kümmert?</h2>
-    <p class="lead">Ob Lebensversicherung, Vorsorge oder bestehende Versicherungsverträge: Wir helfen Ihnen, Ihre Betreuung neu zu organisieren. Einfach, diskret und schweizweit.</p>
+    <p class="lead">Ob Lebensversicherung, Vorsorge oder bestehende Versicherungsverträge: Die Partnerin hilft Ihnen, Ihre Betreuung neu zu organisieren. Einfach, diskret und schweizweit.</p>
     <button class="btn inv lg" type="button" data-open-form data-src="abschluss">Jetzt in 2 Minuten Beraterwechsel anfragen</button>
     <p class="k">Ein Wechsel beginnt mit einer einfachen Anfrage.</p>
     <ul class="pills"><li>Diskret</li><li>Unverbindlich</li><li>Schweizweit</li><li>Ca. 2 Minuten</li></ul>
@@ -960,19 +991,21 @@ h3{font-weight:600;font-size:1.08rem;letter-spacing:-.01em}
   <div class="cb">
     <form id="cbForm" novalidate>
       <h3>Lieber zuerst sprechen?</h3>
-      <p class="sub">Hinterlassen Sie Ihre Nummer. Wir rufen Sie zurück.</p>
+      <p class="sub">Hinterlassen Sie Ihre Nummer. Die Partnerin ruft Sie zurück.</p>
       <div class="fgrid">
         <div class="fld"><label for="cbName">Vorname</label><input id="cbName" autocomplete="given-name"><small></small></div>
         <div class="fld"><label for="cbPhone">Telefonnummer</label><input id="cbPhone" type="tel" inputmode="tel" autocomplete="tel"><small></small></div>
+        <div class="fld"><label for="cbEmail">E-Mail-Adresse (optional)</label><input id="cbEmail" type="email" autocomplete="email" inputmode="email"><small></small></div>
         <div class="fld"><label for="cbLang">Sprache</label><select id="cbLang"></select></div>
         <div class="fld"><label for="cbWhen">Wann passt es Ihnen?</label><select id="cbWhen"><option>Vormittags</option><option>Nachmittags</option><option>Abends</option></select></div>
       </div>
-      <label class="opt"><input type="checkbox" id="cbConsent"><span>Ich bin einverstanden, dass man mich zu meiner Anfrage zurückruft. Details in der Datenschutzerklärung (Fusszeile).</span></label>
+      <div id="cbCons"></div>
       <button class="btn lg" type="submit" id="cbBtn">Rückruf anfragen</button>
       <p class="err" id="cbErr" role="alert"></p>
-      <p class="legal">Vorschau-Version: In dieser Ansicht werden keine Daten übermittelt.</p>
+      <p class="legal">Die Einwilligungen a und b sind nötig. Ihre Angaben gehen nur damit an die Wertenburg GmbH. Ohne E-Mail-Adresse erhalten Sie keine Eingangsbestätigung.</p>
+      <p class="legal" id="cbPrev" hidden>Vorschau-Version: In dieser Ansicht werden keine Daten übermittelt.</p>
     </form>
-    <div id="cbDone" hidden><span class="ic" style="width:44px;height:44px">✓</span><h3>Danke, wir rufen Sie zurück.</h3><p class="sub">Wir melden uns zum gewünschten Zeitpunkt bei Ihnen. (Vorschau-Version: Es wurde nichts übermittelt.)</p></div>
+    <div id="cbDone" hidden><span class="ic" style="width:44px;height:44px">✓</span><h3>Danke, Ihre Anfrage ist eingegangen.</h3><p class="sub" id="cbDoneT">Die Esche Consulting GmbH leitet sie auf Grundlage Ihrer Einwilligung an die Wertenburg GmbH weiter, die Sie zum gewünschten Zeitpunkt zurückruft.</p><p class="legal" id="cbDoneL"></p></div>
   </div>
 </div></section>
 
@@ -989,19 +1022,49 @@ h3{font-weight:600;font-size:1.08rem;letter-spacing:-.01em}
   <div class="fbar">
     <ul class="flinks" role="tablist" aria-label="Rechtliches">
       <li><button type="button" data-fp="imp" aria-expanded="false">Impressum</button></li>
+      <li><button type="button" data-fp="rol" aria-expanded="false">Rollen und Nachweis</button></li>
       <li><button type="button" data-fp="dsg" aria-expanded="false">Datenschutz</button></li>
-      <li><button type="button" data-fp="agb" aria-expanded="false">AGB</button></li>
-      <li><button type="button" data-fp="vag" aria-expanded="false">Vergütung</button></li>
+      <li><button type="button" data-fp="agb" aria-expanded="false">Nutzungsbedingungen</button></li>
+      <li><button type="button" data-fp="vag" aria-expanded="false">Status</button></li>
       <li><button type="button" data-fp="ck" aria-expanded="false">Cookies</button></li>
       <li><button type="button" data-fp="kon" aria-expanded="false">Kontakt</button></li>
     </ul>
     <span class="fcopy">© <span id="fYear">2026</span> beraterwechsel.ch</span>
   </div>
+  <p class="fnote3">beraterwechsel.ch ist ein Marketing- und Informationsangebot der Esche Consulting GmbH. Keine Beratung, keine Vermittlung, kein Angebot. Beraten und vermitteln darf nur die Partnerin, die Wertenburg GmbH (Versicherungsmaklerin). Anfragen werden nur mit Ihrer Einwilligung weitergeleitet. <button type="button" data-role-win="roles">Rollen, Datenfluss und Nachweis</button></p>
   <div class="fpanel" id="fpanel" hidden aria-live="polite"><div id="fpBody"></div><button class="link inv" type="button" id="fpClose">Schliessen</button></div>
 </div></footer>
 
 <div class="mbar" id="mbar" hidden><a class="btn ghost lg mcall" href="tel:+4237987733" data-src="mobile-bar" aria-label="Anrufen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a><a class="btn ghost lg mcall" href="https://wa.me/4237987733" target="_blank" rel="noopener" data-src="mobile-bar" aria-label="Per WhatsApp schreiben"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.65-4.9A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9 8.5c0 3.3 2.7 6 6 6l1.3-1.3-2-1-.9.7a3.6 3.6 0 0 1-1.9-1.9l.7-.9-1-2L9 8.5z" fill="currentColor" stroke="none"/></svg></a><button class="btn lg" type="button" data-open-form data-src="mobile-bar">In 2 Minuten Wechsel anfragen</button></div>
 
+<div class="rwin" id="rwin" hidden role="dialog" aria-modal="true" aria-labelledby="rwT"><div class="rbox">
+<button class="rx" type="button" id="rwClose" aria-label="Schliessen">×</button>
+<h2 id="rwT">Rollen, Datenfluss und Nachweis</h2>
+<div class="rtabs" role="group" aria-label="Rechtliche Hinweise"><button type="button" data-rw="roles" aria-pressed="true">Rollen und Ablauf</button><button type="button" data-rw="dsg" aria-pressed="false">Datenschutz</button><button type="button" data-rw="agb" aria-pressed="false">Nutzungsbedingungen</button><button type="button" data-rw="imp" aria-pressed="false">Impressum</button><button type="button" data-rw="vag" aria-pressed="false">Status</button></div>
+<div id="rwBody">
+<h3>Rollen</h3>
+<p><b>Esche Consulting GmbH</b> (Betreiberin, Marketingdienstleisterin): Sie wirbt für diese Seite, nimmt Ihre Anfrage entgegen, prüft nur, ob sie vollständig ist, und leitet sie nur mit Ihrer Einwilligung weiter. Sie berät nicht, empfiehlt keine Produkte, vermittelt nicht und schliesst keine Verträge ab.</p>
+<p><b>Wertenburg GmbH</b>, Vaduz (die Partnerin, Versicherungsmaklerin): Sie erhält Ihre Anfrage, nimmt Kontakt mit Ihnen auf, berät und vermittelt in eigener Verantwortung und erfüllt die gesetzlichen Informationspflichten. Ein Mandat entsteht nur mit ihr. Angaben zu ihrer Registrierung finden Sie unter «Status».</p>
+<p class="ph2">[Angabe zur Verbindung zwischen der Esche Consulting GmbH und der Wertenburg GmbH und zur Entschädigung der Esche Consulting GmbH vor Livegang ergänzen. Die Entschädigung darf nicht von einem Vertragsabschluss abhängen.]</p>
+<h3>Datenfluss</h3>
+<ol class="rflow">
+<li>Sie geben Ihre Angaben im Formular ein. Sie verlassen Ihren Browser erst beim Absenden. Beim ersten Eingeben wird nur Ihre IP-Adresse bei Cloudflare abgefragt, um sie im Nachweis festzuhalten. Ein Entwurf bleibt nur im Sitzungsspeicher Ihres Browsers.</li>
+<li>Sie bestätigen die Einwilligungen a) und b). Zeitpunkt und Wortlaut werden festgehalten.</li>
+<li>Beim Absenden geht eine E-Mail mit Ihren Angaben und einer Nachweisdatei über den Formulardienst FormSubmit an das Postfach der Esche Consulting GmbH. Es gibt keine Datenbank.</li>
+<li>Die Esche Consulting GmbH prüft nur die Vollständigkeit und ob die Einwilligung vorliegt (Betreff «Weiterleitung erlaubt»).</li>
+<li>Nur dann leitet sie Anfrage und Nachweis per E-Mail an die Wertenburg GmbH weiter. Sonst geht nichts weiter.</li>
+<li>Die Wertenburg GmbH meldet sich bei Ihnen. Bei der Esche Consulting GmbH werden Ihre Daten nach der Weiterleitung innert 14 Tagen gelöscht.</li>
+</ol>
+<h3>Nachweis</h3>
+<p>Zu jeder Anfrage und jedem Mandat entsteht in Ihrem Browser eine Textdatei (nachweis-Nr.txt). Sie enthält:</p>
+<ul><li>die Zeitpunkte in UTC (erste Eingabe, jede Bestätigung, Absenden)</li><li>den Wortlaut der bestätigten Texte mit Prüfsumme (SHA-256) und die Version der Einwilligungstexte</li><li>die Prüfsumme der Rechtstexte in der angezeigten Fassung</li><li>IP-Adresse und Land, Browserangaben, Sprache, Seite, Variante, Herkunft und Kampagnenparameter</li><li>den Formularverlauf und die Dauer</li><li>beim Mandat die Prüfsumme von Mandatstext und Unterschrift</li></ul>
+<p>Der Nachweis belegt Ihre Einwilligung und geht mit Ihrer Anfrage an die Wertenburg GmbH. Auf dem Bestätigungsbildschirm können Sie eine Kopie speichern.</p>
+<h3>Aufbewahrung</h3>
+<p>Nach der Weiterleitung löscht die Esche Consulting GmbH Anfrage und Nachweis spätestens nach 14 Tagen. Ohne Weiterleitung geschieht das nach 30 Tagen. Ein pseudonymes Weiterleitungsprotokoll (Nr., Datum, Empfängerin, Version der Einwilligung; ohne Name und Kontaktdaten) bleibt bis zu 3 Jahre.</p>
+<h3>Widerruf und Kontakt</h3>
+<p>Sie können Ihre Einwilligungen jederzeit widerrufen und Auskunft oder Löschung verlangen: <a href="mailto:jetzt@beraterwechsel.ch">jetzt@beraterwechsel.ch</a> (bitte die Anfrage-Nr. nennen).</p>
+<p class="ph2">Entwurf zur Prüfung durch eine Schweizer Kanzlei. Stand: 23.11.2026.</p>
+</div></div></div>
 <div class="cookie" id="cookie" hidden role="dialog" aria-label="Cookie-Hinweis"><p><b>Cookies und Statistik.</b> Mit Ihrer Einwilligung nutzen wir Statistik- und Werbe-Cookies, um unsere Anzeigen zu verbessern. <button class="link" type="button" data-cookie-privacy>Datenschutz</button></p><div class="ckb"><button class="btn ghost" type="button" id="ckNo">Ablehnen</button><button class="btn" type="button" id="ckYes">Akzeptieren</button></div></div>
 
 <div class="overlay" id="formOverlay" hidden>
@@ -1059,18 +1122,18 @@ function track(name,params){
 }
 
 /* ---------- Varianten (Google/Meta Ads) ---------- */
-var DEFLEAD='Ob Ihr Versicherungsberater nicht erreichbar ist, Sie keine Betreuung mehr erhalten oder sich einen besseren Ansprechpartner wünschen: Wir helfen Ihnen, Ihre bestehende Versicherungs- und Vorsorgebetreuung unkompliziert neu zu organisieren.';
+var DEFLEAD='Ob Ihr Versicherungsberater nicht erreichbar ist, Sie keine Betreuung mehr erhalten oder sich einen besseren Ansprechpartner wünschen: Die Partnerin hilft Ihnen, Ihre bestehende Versicherungs- und Vorsorgebetreuung unkompliziert neu zu organisieren.';
 var VARIANTS={
   'default':{n:'Standard',h:'Ihr Versicherungs&shy;berater passt nicht mehr? Wechseln Sie ihn.'},
-  'ab-test':{n:'A/B-Test: Berater kümmert sich nicht',h:'Ihr Berater kümmert sich nicht? Wir helfen beim Wechsel.',pre:{reason:'unhappy'}},
+  'ab-test':{n:'A/B-Test: Berater kümmert sich nicht',h:'Ihr Berater kümmert sich nicht? Ein Wechsel ist möglich.',pre:{reason:'unhappy'}},
   'versicherungsberater':{n:'Versicherungsberater wechseln',h:'Versicherungs&shy;berater wechseln? Einfacher, als Sie denken.'},
-  'broker':{n:'Broker wechseln Schweiz',h:'Broker wechseln in der Schweiz: Wir organisieren Ihren Ansprechpartner neu.',pre:{reason:'unhappy'}},
+  'broker':{n:'Broker wechseln Schweiz',h:'Broker wechseln in der Schweiz: So organisieren Sie Ihren Ansprechpartner neu.',pre:{reason:'unhappy'}},
   'makler':{n:'Versicherungsmakler wechseln',h:'Versicherungs&shy;makler wechseln, ohne selbst mit ihm zu diskutieren.',pre:{reason:'unhappy'}},
   'vorsorgeberater':{n:'Vorsorgeberater wechseln',h:'Ihr Vorsorge&shy;berater ist nicht mehr da? Wechseln Sie ihn.',pre:{reason:'better'}},
-  'lebensversicherung':{n:'Lebensversicherung Berater wechseln',h:'Lebensversicherung behalten. Berater wechseln.',l:'Ihre bestehende Lebensversicherung muss nicht gekündigt werden, nur weil Sie einen anderen Ansprechpartner möchten. Ob die Betreuung übertragen werden kann, prüfen wir für Sie.',pre:{reason:'better',type:'lv'}},
+  'lebensversicherung':{n:'Lebensversicherung Berater wechseln',h:'Lebensversicherung behalten. Berater wechseln.',l:'Ihre bestehende Lebensversicherung muss nicht gekündigt werden, nur weil Sie einen anderen Ansprechpartner möchten. Ob die Betreuung übertragen werden kann, prüft die Partnerin für Sie.',pre:{reason:'better',type:'lv'}},
   'nicht-erreichbar':{n:'Versicherungsberater nicht erreichbar',h:'Ihr Versicherungs&shy;berater meldet sich nicht mehr? Dann wechseln Sie ihn.',pre:{reason:'unreachable'}},
   'keine-betreuung':{n:'Keine Versicherungsbetreuung',h:'Sie bezahlen seit Jahren für Ihre Vorsorge. Aber wer betreut Sie eigentlich?',pre:{reason:'none'}},
-  'saeule-3a':{n:'Säule 3a Berater wechseln',h:'Säule 3a ohne Ansprechpartner? Wechseln Sie Ihren Berater.',l:'Ihre Vorsorge in der Säule 3a läuft weiter. Wir prüfen mit Ihnen, wie die Betreuung neu organisiert werden kann.',pre:{reason:'better',type:'3a'}}
+  'saeule-3a':{n:'Säule 3a Berater wechseln',h:'Säule 3a ohne Ansprechpartner? Wechseln Sie Ihren Berater.',l:'Ihre Vorsorge in der Säule 3a läuft weiter. Die Partnerin prüft mit Ihnen, wie die Betreuung neu organisiert werden kann.',pre:{reason:'better',type:'3a'}}
 };
 var curVariant='default';
 var vsel=$('#variantSel')||{};
@@ -1090,7 +1153,7 @@ window.addEventListener('hashchange',function(){var m=/^#variant-([a-z0-9-]+)$/.
 
 /* ---------- Statische Inhalte ---------- */
 $('#trustRow').innerHTML=['Diskrete Anfrage','Schweizweiter Wechselservice','Persönliche Betreuung','Keine automatische Kündigung Ihrer Policen'].map(function(t){return '<li><span class="ic">'+svg('check',12,3)+'</span>'+t+'</li>'}).join('');
-$('#cmpA').innerHTML=['Versicherungsprodukt kann verändert werden','Neue Vertragsbedingungen möglich','Gesonderte Prüfung erforderlich','Nicht das automatische Ziel unseres Services'].map(function(t){return '<li><span class="mk">'+svg('minus',12,3)+'</span>'+t+'</li>'}).join('');
+$('#cmpA').innerHTML=['Versicherungsprodukt kann verändert werden','Neue Vertragsbedingungen möglich','Gesonderte Prüfung erforderlich','Nicht das automatische Ziel eines Beraterwechsels'].map(function(t){return '<li><span class="mk">'+svg('minus',12,3)+'</span>'+t+'</li>'}).join('');
 $('#cmpB').innerHTML=['Neuer Ansprechpartner','Bestehende Verträge zunächst behalten','Betreuung neu organisieren','Persönliche Unterstützung','Langfristige Begleitung'].map(function(t){return '<li><span class="mk">'+svg('check',12,3)+'</span>'+t+'</li>'}).join('');
 
 var PH=["foto-1.jpg", "foto-2.jpg", "foto-3.jpg", "foto-4.jpg", "foto-5.jpg", "foto-6.jpg", "foto-7.jpg", "foto-8.jpg", "foto-9.jpg", "foto-10.jpg", "foto-11.jpg"];
@@ -1110,7 +1173,7 @@ var ART=[
  {i:'help',a:'Wer ist zuständig?',b:'Berater ausgetreten'},
  {i:'msg',a:'Unterlagen fehlen',b:'Keine Rückmeldung'},
  {i:'globe',a:'Hallo · Merhaba · Përshëndetje',b:'Ihre Sprache'},
- {i:'file',a:'Vollmacht vorbereiten',b:'Wir organisieren'},
+ {i:'file',a:'Vollmacht vorbereiten',b:'Partnerin organisiert'},
  {i:'shield',a:'Vertrag läuft weiter',b:'Ansprechpartner fehlt'}
 ];
 function art(i){var a=ART[i],k=PHMAP[i];return '<div class="art ph"><img src="'+PH[k]+'" alt="'+esc(PHALT[k])+'" loading="lazy" decoding="async"><span class="fl f1">'+esc(a.a)+'</span></div>'}
@@ -1150,7 +1213,7 @@ var VORS=[{"g": "LV", "t": "Lebensversicherungen", "p": "Bestehende Lebensversic
   var sec=$('#vscroll'),pin=$('.vpin',sec),stage=$('#vStage'),tabs=$('#vTabs');if(!sec)return;
   var N=VORS.length,cur=-1,static_=reduce;
   tabs.innerHTML=VORS.map(function(v,i){return '<li><button type="button" class="vtab" data-i="'+i+'" aria-pressed="false"><span class="g">'+esc(v.g)+'</span><span class="n">'+esc(v.t)+'</span></button></li>'}).join('');
-  stage.innerHTML=VORS.map(function(v,i){return '<article class="vpanel" data-i="'+i+'" aria-hidden="true"><div class="vph"><span class="glyph">'+esc(v.g)+'</span><div><h3>'+esc(v.t)+'</h3><p class="q">'+esc(v.q)+'</p></div></div><p class="d">'+esc(v.p)+'</p><div class="vcl"><b>Das klären wir mit Ihnen</b><ul>'+v.c.map(function(c,j){return '<li style="--d:'+(0.12+j*0.09).toFixed(2)+'s"><span aria-hidden="true">✓</span>'+esc(c)+'</li>'}).join('')+'</ul></div><div class="vstay"><span>Bleibt: Ihr Vertrag</span><span class="new">Neu: Ihr Ansprechpartner</span></div><button class="btn" type="button" data-open-form data-src="vorsorge-'+v.type+'" data-type="'+v.type+'" data-reason="better">'+esc(v.t)+' anfragen <span aria-hidden="true">→</span></button></article>'}).join('');
+  stage.innerHTML=VORS.map(function(v,i){return '<article class="vpanel" data-i="'+i+'" aria-hidden="true"><div class="vph"><span class="glyph">'+esc(v.g)+'</span><div><h3>'+esc(v.t)+'</h3><p class="q">'+esc(v.q)+'</p></div></div><p class="d">'+esc(v.p)+'</p><div class="vcl"><b>Das klärt die Partnerin mit Ihnen</b><ul>'+v.c.map(function(c,j){return '<li style="--d:'+(0.12+j*0.09).toFixed(2)+'s"><span aria-hidden="true">✓</span>'+esc(c)+'</li>'}).join('')+'</ul></div><div class="vstay"><span>Bleibt: Ihr Vertrag</span><span class="new">Neu: Ihr Ansprechpartner</span></div><button class="btn" type="button" data-open-form data-src="vorsorge-'+v.type+'" data-type="'+v.type+'" data-reason="better">'+esc(v.t)+' anfragen <span aria-hidden="true">→</span></button></article>'}).join('');
   var panels=$$('.vpanel',stage),btns=$$('.vtab',tabs);
   function set(i){
     if(i===cur)return;var prev=cur;cur=i;
@@ -1185,39 +1248,40 @@ var VORS=[{"g": "LV", "t": "Lebensversicherungen", "p": "Bestehende Lebensversic
 var TRUST=[
  {i:'lock',t:'Diskrete Bearbeitung',p:'Ihre Anfrage wird vertraulich behandelt.'},
  {i:'file',t:'Keine automatische Kündigung',p:'Bestehende Versicherungen werden durch die Anfrage nicht automatisch gekündigt.'},
- {i:'user',t:'Persönlicher Ansprechpartner',p:'Wir helfen Ihnen, einen passenden zuständigen Ansprechpartner zu erhalten.'},
+ {i:'user',t:'Persönlicher Ansprechpartner',p:'Die Partnerin hilft Ihnen, einen passenden zuständigen Ansprechpartner zu erhalten.'},
  {i:'list',t:'Transparenter Wechselprozess',p:'Sie erfahren, welche Schritte erforderlich sind und welche Möglichkeiten bestehen.'}
 ];
 $('#tgrid').innerHTML=TRUST.map(function(t){return '<article class="tcard"><span class="ico">'+svg(t.i,22,2)+'</span><h3>'+t.t+'</h3><p>'+t.p+'</p></article>'}).join('');
 
 var FAQ=[
- ['Kann ich meinen Versicherungsberater einfach wechseln?','Grundsätzlich ja: Sie entscheiden, wer Sie künftig betreut. Wie der Wechsel konkret abläuft, hängt von Ihrem Vertrag, dem Versicherer und dem bisherigen Betreuungsmandat ab. Wir prüfen das für Sie und zeigen Ihnen die nächsten Schritte.'],
- ['Muss ich meine Lebensversicherung kündigen?','Nein, nicht grundsätzlich. Beim Beraterwechsel geht es um die Betreuung, nicht um das Produkt. Häufig lässt sich die Betreuung neu regeln, ohne dass der Vertrag verändert wird. Ob das bei Ihrem Vertrag möglich ist, klären wir vorab. Ihre Anfrage führt nie automatisch zu einer Kündigung.'],
- ['Erfährt mein bisheriger Berater vom Wechsel?','Wenn die Betreuung übertragen wird, werden je nach Ablauf der bisherige Berater oder die Gesellschaft informiert, etwa sobald eine Vollmacht eingereicht wird. Sie müssen aber nicht selbst mit ihm diskutieren. Wir erklären Ihnen im Voraus, wer wann informiert wird.'],
- ['Kann ich wechseln, wenn mein Berater nicht erreichbar ist?','Das ist einer der häufigsten Gründe für eine Anfrage. Sie brauchen dafür keine Antwort Ihres bisherigen Beraters, um die Möglichkeiten prüfen zu lassen. Ob und wie die Betreuung im Einzelfall übertragen werden kann, klären wir mit Ihnen.'],
- ['Was passiert, wenn ich meinen Broker nicht kenne?','Das ist kein Hindernis für die Anfrage. Anhand Ihrer Unterlagen, etwa Police oder Prämienrechnung, versuchen wir gemeinsam mit Ihnen herauszufinden, wer aktuell für Ihre Verträge zuständig ist. Nennen Sie uns im Formular einfach die Versicherungsgesellschaft, falls Sie sie kennen.'],
- ['Wie lange dauert ein Beraterwechsel?','Die Anfrage selbst dauert etwa zwei Minuten. Wie lange die Bearbeitung dauert, hängt vom Versicherer, vom Vertrag und von den vorhandenen Unterlagen ab. Eine pauschale Dauer können wir deshalb nicht zusagen. Im persönlichen Gespräch erfahren Sie, womit Sie rechnen können.'],
+ ['Wer steckt hinter beraterwechsel.ch und wer berät mich?','beraterwechsel.ch ist ein Marketing- und Informationsangebot der Esche Consulting GmbH. Sie nimmt Ihre Anfrage entgegen, prüft nur, ob sie vollständig ist, und leitet sie nur mit Ihrer Einwilligung weiter. Beraten und vermitteln darf nur die Partnerin, die Wertenburg GmbH, Vaduz (Versicherungsmaklerin). Rollen, Datenfluss und Nachweis sehen Sie unter «Rollen und Nachweis» in der Fusszeile.'],
+  ['Kann ich meinen Versicherungsberater einfach wechseln?','Grundsätzlich ja: Sie entscheiden, wer Sie künftig betreut. Wie der Wechsel konkret abläuft, hängt von Ihrem Vertrag, dem Versicherer und dem bisherigen Betreuungsmandat ab. Die Partnerin prüft das für Sie und zeigt Ihnen die nächsten Schritte.'],
+ ['Muss ich meine Lebensversicherung kündigen?','Nein, nicht grundsätzlich. Beim Beraterwechsel geht es um die Betreuung, nicht um das Produkt. Häufig lässt sich die Betreuung neu regeln, ohne dass der Vertrag verändert wird. Ob das bei Ihrem Vertrag möglich ist, klärt die Partnerin vorab. Ihre Anfrage führt nie automatisch zu einer Kündigung.'],
+ ['Erfährt mein bisheriger Berater vom Wechsel?','Wenn die Betreuung übertragen wird, werden je nach Ablauf der bisherige Berater oder die Gesellschaft informiert, etwa sobald eine Vollmacht eingereicht wird. Sie müssen aber nicht selbst mit ihm diskutieren. Die Partnerin erklärt Ihnen im Voraus, wer wann informiert wird.'],
+ ['Kann ich wechseln, wenn mein Berater nicht erreichbar ist?','Das ist einer der häufigsten Gründe für eine Anfrage. Sie brauchen dafür keine Antwort Ihres bisherigen Beraters, um die Möglichkeiten prüfen zu lassen. Ob und wie die Betreuung im Einzelfall übertragen werden kann, klärt die Partnerin mit Ihnen.'],
+ ['Was passiert, wenn ich meinen Broker nicht kenne?','Das ist kein Hindernis für die Anfrage. Anhand Ihrer Unterlagen, etwa Police oder Prämienrechnung, versucht die Partnerin gemeinsam mit Ihnen herauszufinden, wer aktuell für Ihre Verträge zuständig ist. Nennen Sie im Formular einfach die Versicherungsgesellschaft, falls Sie sie kennen.'],
+ ['Wie lange dauert ein Beraterwechsel?','Die Anfrage selbst dauert etwa zwei Minuten. Wie lange die Bearbeitung dauert, hängt vom Versicherer, vom Vertrag und von den vorhandenen Unterlagen ab. Eine pauschale Dauer kann deshalb nicht zugesagt werden. Im persönlichen Gespräch erfahren Sie, womit Sie rechnen können.'],
  ['Was kostet der Wechsel?','Die Anfrage ist kostenlos und unverbindlich. Beim Maklermandat bleiben Sie Vertragspartner der Gesellschaften. Der Makler wird von den Gesellschaften mit branchenüblichen Ansätzen entschädigt. Besteht das Mandat mindestens ein Kalenderjahr und wurde nichts anderes vereinbart, ist die Dienstleistung für Sie kostenlos. Fallen nicht entschädigte Aufwendungen an, informiert Sie der Berater vorab. Die Details lesen Sie im Mandat, bevor Sie unterschreiben.'],
  ['Kann ich auch mehrere Versicherungen betreuen lassen?','Ja. Sie können im Formular mehrere Vorsorge- und Versicherungsarten auswählen. So erhalten Sie, soweit möglich, einen zentralen Ansprechpartner für mehrere Verträge. Ob sich einzelne Verträge übertragen lassen, wird jeweils geprüft.'],
- ['Kann ich meinen Berater auf Albanisch, Türkisch oder Bosnisch wechseln?','Sie können im Formular Ihre Wunschsprache angeben, darunter Albanisch, Türkisch und Bosnisch. Ob eine Sprache zum Zeitpunkt Ihrer Anfrage verfügbar ist, bestätigen wir Ihnen bei der Kontaktaufnahme.'],
+ ['Kann ich meinen Berater auf Albanisch, Türkisch oder Bosnisch wechseln?','Sie können im Formular Ihre Wunschsprache angeben, darunter Albanisch, Türkisch und Bosnisch. Ob eine Sprache zum Zeitpunkt Ihrer Anfrage verfügbar ist, bestätigt Ihnen die Partnerin bei der Kontaktaufnahme.'],
  ['Kann ich eine Maklervollmacht digital unterschreiben?','Ja, auf Wunsch. Im Anfrageformular können Sie die Maklervollmacht gleich erteilen. Sie sehen das vollständige Maklermandat mit Ihren Angaben, unterschreiben direkt am Bildschirm und bestätigen es. Das ist freiwillig; Sie können auch zuerst nur eine Anfrage stellen. Das Mandat wird nach Eingang vom Makler gegengezeichnet.']
 ];
 $('#faqList').innerHTML=FAQ.map(function(f,i){return '<details'+(i===0?' open':'')+'><summary>'+esc(f[0])+svg('chev',22)+'</summary><div class="ans">'+esc(f[1])+'</div></details>'}).join('');
 
 /* ---------- Sprachen ---------- */
-var LANGS=[['de','Deutsch','de-CH','Grüezi! Wir helfen Ihnen beim Wechsel, in Ihrer Sprache.'],
- ['fr','Französisch','fr','Bonjour ! Nous vous aidons à changer de conseiller, dans votre langue.'],
- ['it','Italienisch','it','Buongiorno! La aiutiamo a cambiare consulente, nella sua lingua.'],
- ['en','Englisch','en','Hello! We help you change your advisor, in your language.'],
- ['sq','Albanisch','sq','Përshëndetje! Ju ndihmojmë të ndërroni këshilluesin tuaj, në gjuhën tuaj.'],
- ['bs','Bosnisch','bs','Dobar dan! Pomažemo vam da promijenite savjetnika, na vašem jeziku.'],
- ['hr','Kroatisch','hr','Dobar dan! Pomažemo vam promijeniti savjetnika, na vašem jeziku.'],
- ['sr','Serbisch','sr-Latn','Dobar dan! Pomažemo vam da promenite savetnika, na vašem jeziku.'],
- ['tr','Türkisch','tr','Merhaba! Danışmanınızı kendi dilinizde değiştirmenize yardımcı oluyoruz.'],
- ['pt','Portugiesisch','pt','Olá! Ajudamos a mudar de consultor, no seu idioma.'],
- ['es','Spanisch','es','¡Hola! Le ayudamos a cambiar de asesor, en su idioma.'],
- ['pl','Polnisch','pl','Dzień dobry! Pomożemy zmienić doradcę, w Państwa języku.'],
- ['ru','Russisch','ru','Здравствуйте! Мы поможем вам сменить консультанта, на вашем языке.']];
+var LANGS=[['de','Deutsch','de-CH','Grüezi! Die Partnerin hilft Ihnen beim Wechsel, in Ihrer Sprache.'],
+ ['fr','Französisch','fr','Bonjour ! La partenaire vous aide à changer de conseiller, dans votre langue.'],
+ ['it','Italienisch','it','Buongiorno! La partner la aiuta a cambiare consulente, nella sua lingua.'],
+ ['en','Englisch','en','Hello! The partner firm helps you change your advisor, in your language.'],
+ ['sq','Albanisch','sq','Përshëndetje! Partnerja ju ndihmon të ndërroni këshilluesin tuaj, në gjuhën tuaj.'],
+ ['bs','Bosnisch','bs','Dobar dan! Partnerica vam pomaže da promijenite savjetnika, na vašem jeziku.'],
+ ['hr','Kroatisch','hr','Dobar dan! Partnerica vam pomaže promijeniti savjetnika, na vašem jeziku.'],
+ ['sr','Serbisch','sr-Latn','Dobar dan! Partnerica vam pomaže da promenite savetnika, na vašem jeziku.'],
+ ['tr','Türkisch','tr','Merhaba! Ortak firma, danışmanınızı kendi dilinizde değiştirmenize yardımcı olur.'],
+ ['pt','Portugiesisch','pt','Olá! A parceira ajuda a mudar de consultor, no seu idioma.'],
+ ['es','Spanisch','es','¡Hola! La socia le ayuda a cambiar de asesor, en su idioma.'],
+ ['pl','Polnisch','pl','Dzień dobry! Partnerka pomoże zmienić doradcę, w Państwa języku.'],
+ ['ru','Russisch','ru','Здравствуйте! Партнёрская компания поможет вам сменить консультанта, на вашем языке.']];
 var greetLang='de';
 $('#chips').innerHTML=LANGS.map(function(l){return '<button type="button" class="chip" data-lang="'+l[0]+'" aria-pressed="'+(l[0]==='de')+'">'+l[1]+'</button>'}).join('');
 function setGreet(code){
@@ -1232,7 +1296,7 @@ $('#greetCta').addEventListener('click',function(){openForm({src:'sprachen',reas
 var PAGE_TITLE=document.title;
 /* ---------- Konfiguration (vor Livegang ausfüllen) ---------- */
 var CONFIG={
-  endpoint:'lead.php',        // z. B. 'lead.php' oder Webhook-URL (Make, Zapier, CRM). Leer = Vorschau ohne Versand.
+  endpoint:'https://formsubmit.co/ajax/jetzt@beraterwechsel.ch',        // FormSubmit-AJAX-Adresse, z. B. 'https://formsubmit.co/ajax/ALIAS'. Leer = Vorschau ohne Versand.
   phoneDisplay:'+423 798 77 33',
   phoneHref:'tel:+4237987733',
   waHref:'https://wa.me/4237987733',
@@ -1299,15 +1363,154 @@ document.addEventListener('click',function(e){
   track(a.href.indexOf('tel:')===0?'phone_click':(a.href.indexOf('wa.me')>-1?'whatsapp_click':'email_click'),{variant:curVariant,source:a.dataset.src||'link'});
 });
 
-/* ---------- Versand ---------- */
-function sendLead(data){
-  data.meta={variant:curVariant,page:location.pathname,referrer:document.referrer||'',ts:new Date().toISOString(),attr:attr};
-  if(!CONFIG.endpoint)return new Promise(function(r){setTimeout(function(){r({ok:true,id:'vorschau-'+Date.now().toString(36)})},reduce?150:900)});
-  return fetch(CONFIG.endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(function(r){
-    if(!r.ok)throw new Error('http '+r.status);
-    return r.json().catch(function(){return {ok:true}});
+/* ---------- Versand (FormSubmit, AJAX) ---------- */
+var KIND={lead:'Anfrage',details:'Vertragsangaben',mandate:'Mandat',callback:'Rückruf'};
+var FLABEL={first_name:'Vorname',last_name:'Nachname',phone:'Telefon',email:'E-Mail',language:'Sprache',contact_preference:'Kontaktweg',callback_time:'Rückruf gewünscht',reasons:'Gründe',insurance_types:'Versicherungen',insurer:'Gesellschaft',policy_numbers:'Policennummern',birth_date:'Geburtsdatum',street:'Strasse',postcode:'PLZ',city:'Ort',areas:'Bereiche',reporting:'Reporting',signed_at:'Unterschrieben am'};
+function dataURLtoBlob(u){try{var p=u.split(','),m=/data:([^;]+)/.exec(p[0]),bin=atob(p[1]),a=new Uint8Array(bin.length);for(var i=0;i<bin.length;i++)a[i]=bin.charCodeAt(i);return new Blob([a],{type:m?m[1]:'image/png'})}catch(e){return null}}
+function autoResp(d){return 'Guten Tag '+(d.first_name||'')+'\n\nIhre Anfrage (Nr. '+d.lead_id+') ist eingegangen. Die Esche Consulting GmbH (Marketingdienstleisterin, keine Beratung, keine Vermittlung) prüft nur, ob sie vollständig ist, und leitet sie auf Grundlage Ihrer Einwilligung an die Wertenburg GmbH, Vaduz (Versicherungsmaklerin), weiter. Die Wertenburg GmbH nimmt danach Kontakt mit Ihnen auf.\n\nIhre Einwilligung können Sie jederzeit widerrufen: jetzt@beraterwechsel.ch (bitte Anfrage-Nr. nennen).\n\nFreundliche Grüsse\nberaterwechsel.ch'}
+function sendLead(d,n){
+  d.meta={variant:curVariant,page:location.pathname,referrer:document.referrer||'',ts:new Date().toISOString(),attr:attr};
+  if(!CONFIG.endpoint)return new Promise(function(r){setTimeout(function(){r({ok:true,id:d.lead_id})},reduce?150:900)});
+  var fd=new FormData(),name=((d.first_name||'')+' '+(d.last_name||'')).trim();
+  fd.append('_subject',(n.allowed?'[Weiterleitung erlaubt]':'[NICHT weiterleiten]')+' '+(KIND[d.kind]||'Anfrage')+' '+d.lead_id+' '+name);
+  fd.append('_template','table');fd.append('_captcha','false');fd.append('_honey',d.hp||'');
+  if(d.email){fd.append('_replyto',d.email);fd.append('_autoresponse',autoResp(d))}
+  fd.append('Anfrage-Nr.',d.lead_id);fd.append('Art',KIND[d.kind]||'Anfrage');
+  Object.keys(FLABEL).forEach(function(k){var v=d[k];if(v===undefined||v===''||v===null)return;fd.append(FLABEL[k],Array.isArray(v)?v.join(', '):String(v))});
+  fd.append('weiterleitung_und_kontakt_erlaubt',n.allowed?'ja':'nein');
+  fd.append('marketing_einwilligung',d.marketing?'ja':'nein');
+  fd.append('einwilligungs_version',CONSENT_VERSION);
+  fd.append('seite',location.href.split('#')[0]);fd.append('variante',curVariant);
+  Object.keys(attr).forEach(function(k){fd.append('kampagne_'+k,attr[k])});
+  fd.append('nachweis',new Blob([n.text],{type:'text/plain'}),'nachweis-'+d.lead_id+'.txt');
+  if(d.signature_png){var sb=dataURLtoBlob(d.signature_png);if(sb)fd.append('unterschrift',sb,'unterschrift-'+d.lead_id+'.png')}
+  return fetch(CONFIG.endpoint,{method:'POST',body:fd,headers:{Accept:'application/json'}}).then(function(r){
+    return r.json().then(function(j){return {r:r,j:j}},function(){return {r:r,j:null}});
+  }).then(function(o){
+    if(!o.r.ok||(o.j&&(o.j.success===false||o.j.success==='false')))throw new Error('send');
+    return {ok:true,id:d.lead_id};
   });
 }
+
+/* ---------- Einwilligungen (versioniert, Wortlaut wird im Nachweis festgehalten) ---------- */
+var CONSENT_VERSION='2026-11-23-v1';
+var UI_LANG='de';
+var CONSENT_TEXTS={de:{
+ c1:'Ich habe die Datenschutzerklärung und die rechtlichen Hinweise gelesen. Mir ist bekannt, dass die Esche Consulting GmbH als Marketingdienstleisterin weder berät noch Versicherungen vermittelt oder Verträge abschliesst. Ich erlaube die Verarbeitung meiner Angaben samt Nachweis meiner Einwilligung (Zeitpunkt, IP-Adresse).',
+ c2:'Ich willige ein, dass die Esche Consulting GmbH meine Angaben per E-Mail an die Wertenburg GmbH, Vaduz (Versicherungsmaklerin), weiterleitet und dass mich die Wertenburg GmbH per Telefon, E-Mail oder WhatsApp kontaktiert. Ich kann diese Einwilligung jederzeit widerrufen.',
+ mk:'Freiwillig: Ich möchte zusätzlich Informationen und Angebote der Wertenburg GmbH per E-Mail erhalten. Ich kann dies jederzeit widerrufen.',
+ mok:'Ich habe das Maklermandat gelesen, bin mit den Bedingungen einverstanden und erteile es dem im Mandat genannten Makler. Der Vertrag entsteht ausschliesslich mit der Wertenburg GmbH, nicht mit der Esche Consulting GmbH.'
+}};
+var TXT_DE=CONSENT_TEXTS.de,TXT=CONSENT_TEXTS[UI_LANG]||TXT_DE;
+var MANDATE_NOTE='Der Vertrag (Maklermandat) kommt ausschliesslich mit der Wertenburg GmbH zustande, nicht mit der Esche Consulting GmbH.';
+function consentBlock(S){
+  function lk(t){return esc(t).replace('Datenschutzerklärung','<button type="button" class="link" data-role-win="dsg">Datenschutzerklärung</button>').replace('rechtlichen Hinweise','<button type="button" class="link" data-role-win="roles">rechtlichen Hinweise</button>')}
+  return '<div class="flow"><b>So gehen wir mit Ihren Daten um</b><ol>'
+   +'<li>Die Esche Consulting GmbH wirbt, nimmt Ihre Anfrage entgegen und prüft nur, ob sie vollständig ist. Sie berät nicht und vermittelt nicht.</li>'
+   +'<li>Nur mit Ihrer Einwilligung leitet sie Ihre Angaben per E-Mail an die Wertenburg GmbH (Versicherungsmaklerin) weiter.</li>'
+   +'<li>Es gibt keine Datenbank. Als Nachweis wird Ihre Einwilligung mit Zeitpunkt und IP-Adresse dokumentiert.</li>'
+   +'<li>Sie können jederzeit widerrufen und Löschung verlangen. <button type="button" class="link" data-role-win="roles">Rollen, Datenfluss und Nachweis ansehen</button></li></ol></div>'
+   +'<fieldset class="cons"><legend class="grp">Ihre Einwilligungen (a und b sind nötig)</legend>'
+   +'<label class="opt"><input type="checkbox" name="c1"'+(S.c1?' checked':'')+'><span><b>a)</b> '+lk(TXT.c1)+'</span></label>'
+   +'<label class="opt"><input type="checkbox" name="c2"'+(S.c2?' checked':'')+'><span><b>b)</b> '+esc(TXT.c2)+'</span></label>'
+   +'<label class="opt"><input type="checkbox" name="mk"'+(S.mk?' checked':'')+'><span>'+esc(TXT.mk)+'</span></label>'
+   +'</fieldset>';
+}
+
+/* ---------- Nachweisprotokoll (entsteht im Browser, geht als Anhang mit) ---------- */
+var H256=[],K256=[];
+(function(){var p=[],n=2,i;while(p.length<64){var ok=true;for(i=0;i<p.length;i++)if(n%p[i]===0){ok=false;break}if(ok)p.push(n);n++}
+  for(i=0;i<64;i++){K256[i]=(Math.pow(p[i],1/3)%1*4294967296)|0;if(i<8)H256[i]=(Math.pow(p[i],1/2)%1*4294967296)|0}})();
+function ror(x,n){return (x>>>n)|(x<<(32-n))}
+function sha256js(m){
+  var l=m.length,w=[],h=H256.slice(),i,j,nb=((l+9+63)>>6)<<6,b=new Uint8Array(nb);b.set(m);b[l]=128;
+  var bits=l*8;b[nb-4]=(bits>>>24)&255;b[nb-3]=(bits>>>16)&255;b[nb-2]=(bits>>>8)&255;b[nb-1]=bits&255;
+  for(i=0;i<nb;i+=64){
+    for(j=0;j<16;j++)w[j]=(b[i+4*j]<<24)|(b[i+4*j+1]<<16)|(b[i+4*j+2]<<8)|b[i+4*j+3];
+    for(j=16;j<64;j++){var s0=ror(w[j-15],7)^ror(w[j-15],18)^(w[j-15]>>>3),s1=ror(w[j-2],17)^ror(w[j-2],19)^(w[j-2]>>>10);w[j]=(w[j-16]+s0+w[j-7]+s1)|0}
+    var a=h[0],b2=h[1],c=h[2],d=h[3],e=h[4],f=h[5],g=h[6],hh=h[7];
+    for(j=0;j<64;j++){var S1=ror(e,6)^ror(e,11)^ror(e,25),ch=(e&f)^(~e&g),t1=(hh+S1+ch+K256[j]+w[j])|0,S0=ror(a,2)^ror(a,13)^ror(a,22),mj=(a&b2)^(a&c)^(b2&c),t2=(S0+mj)|0;hh=g;g=f;f=e;e=(d+t1)|0;d=c;c=b2;b2=a;a=(t1+t2)|0}
+    h[0]=(h[0]+a)|0;h[1]=(h[1]+b2)|0;h[2]=(h[2]+c)|0;h[3]=(h[3]+d)|0;h[4]=(h[4]+e)|0;h[5]=(h[5]+f)|0;h[6]=(h[6]+g)|0;h[7]=(h[7]+hh)|0;
+  }
+  return h.map(function(x){return ('00000000'+(x>>>0).toString(16)).slice(-8)}).join('');
+}
+function sha256(str){
+  var enc=new TextEncoder().encode(str);
+  if(window.crypto&&crypto.subtle&&crypto.subtle.digest){
+    return crypto.subtle.digest('SHA-256',enc).then(function(buf){return Array.prototype.map.call(new Uint8Array(buf),function(x){return ('0'+x.toString(16)).slice(-2)}).join('')}).catch(function(){return sha256js(enc)});
+  }
+  return Promise.resolve(sha256js(enc));
+}
+var TRACE=null;
+function getTrace(){
+  if(TRACE)return TRACE;
+  TRACE=new Promise(function(res){
+    var done=false,ac=window.AbortController?new AbortController():null;
+    var tm=setTimeout(function(){if(ac){try{ac.abort()}catch(e){}}if(!done){done=true;res(null)}},3000);
+    try{fetch('https://www.cloudflare.com/cdn-cgi/trace',{cache:'no-store',signal:ac?ac.signal:undefined}).then(function(r){return r.text()}).then(function(t){
+      if(done)return;done=true;clearTimeout(tm);var o={};t.split('\n').forEach(function(l){var i=l.indexOf('=');if(i>0)o[l.slice(0,i)]=l.slice(i+1)});res({ip:o.ip||'',loc:o.loc||'',ts:o.ts||''})
+    }).catch(function(){if(!done){done=true;clearTimeout(tm);res(null)}})}catch(e){clearTimeout(tm);res(null)}
+  });
+  return TRACE;
+}
+function nwNew(){return {t0:null,ev:[]}}
+function nwEv(nw,n,d){
+  if(!nw)return;var t=new Date().toISOString();
+  if(!nw.t0){nw.t0=t;nw.ev.push([t,'erste_eingabe','']);getTrace()}
+  if(n==='erste_eingabe')return;
+  var l=nw.ev[nw.ev.length-1];if(l&&l[1]===n&&l[2]===(d||''))return;
+  nw.ev.push([t,n,d||'']);
+}
+function mandateText(){var tmp=document.createElement('div');tmp.innerHTML=mandateHtml();return (tmp.textContent||'').replace(/\s+/g,' ').trim()}
+var lastNach='';
+function buildNachweis(kind,id,S,nw,d){
+  var now=new Date().toISOString();nwEv(nw,'absenden',KIND[kind]||kind);
+  var items=[['c1','Pflicht'],['c2','Pflicht'],['mk','freiwillig']];
+  if(kind==='mandate')items.push(['mok','Pflicht (Mandat)']);
+  var FPo=window.BW_FP||{},legal=[['Datenschutzerklärung','dsg'],['Impressum','imp'],['Nutzungsbedingungen','agb'],['Status und Vergütung','vag'],['Rollen und Nachweis (Fenster)','rol']];
+  var jobs=[];
+  items.forEach(function(it){jobs.push(sha256(TXT[it[0]]||'').then(function(h){return h}))});
+  legal.forEach(function(l){jobs.push(sha256(JSON.stringify(FPo[l[1]]||'')))});
+  jobs.push(sha256(JSON.stringify(legal.map(function(l){return FPo[l[1]]||''}))));
+  var mt='';if(kind==='mandate'){mt=mandateText();jobs.push(sha256(mt));jobs.push(sha256(S.sig&&S.sig!=='x'?S.sig:''))}
+  jobs.push(getTrace());
+  return Promise.all(jobs).then(function(r){
+    var k=0,L=[],hs={},i;
+    items.forEach(function(it){hs[it[0]]=r[k++]});
+    var lh=[];legal.forEach(function(l){lh.push(r[k++])});var lall=r[k++];
+    var mh='',sh='';if(kind==='mandate'){mh=r[k++];sh=r[k++]}
+    var tr=r[k++];
+    var ok=!!(S.c1&&S.c2);
+    var dur=nw&&nw.t0?Math.max(0,Math.round((Date.parse(now)-Date.parse(nw.t0))/1000)):0;
+    L.push('NACHWEIS DER EINWILLIGUNG (Entwurf, zur Prüfung durch eine Schweizer Kanzlei)');
+    L.push('Anfrage-Nr.: '+id);L.push('Art: '+(KIND[kind]||kind));L.push('Version der Einwilligungstexte: '+CONSENT_VERSION);L.push('Erstellt (UTC): '+now);
+    L.push('','== Zeitpunkte (UTC) ==');
+    (nw?nw.ev:[]).forEach(function(e){L.push(e[0]+'  '+e[1]+(e[2]?'  '+e[2]:''))});
+    L.push('Dauer von der ersten Eingabe bis zum Absenden: '+dur+' Sekunden');
+    L.push('','== Bestätigte Texte ==');
+    items.forEach(function(it){var on=it[0]==='c1'?S.c1:it[0]==='c2'?S.c2:it[0]==='mk'?S.mk:S.mok;
+      L.push('['+it[0]+'] '+it[1]+', Status: '+(on?'BESTÄTIGT':'nicht bestätigt'));
+      L.push('  Text (angezeigte Sprache '+UI_LANG+'): '+(TXT[it[0]]||''));
+      L.push('  Text (Deutsch): '+(TXT_DE[it[0]]||''));
+      L.push('  SHA-256 des Wortlauts: '+hs[it[0]])});
+    L.push('','== Rechtstexte (Stand der angezeigten Fassung) ==');
+    legal.forEach(function(l,j){L.push(l[0]+', SHA-256: '+lh[j])});
+    L.push('Gesamt-Hash der Rechtstexte: '+lall);
+    L.push('','== Herkunft ==');
+    L.push('IP-Adresse: '+(tr&&tr.ip?tr.ip:'nicht ermittelbar'));L.push('Land: '+(tr&&tr.loc?tr.loc:'nicht ermittelbar'));
+    L.push('Quelle der IP/Land-Angabe: '+(tr?'Cloudflare-Trace (Zeitstempel '+tr.ts+')':'Abruf nicht möglich (Timeout oder blockiert)'));
+    L.push('User-Agent: '+navigator.userAgent);L.push('Browsersprache: '+(navigator.language||''));L.push('Gewählte Sprache im Formular: '+(S.lang||S.langSel||''));
+    L.push('URL: '+location.href.split('#')[0]);L.push('Variante: '+curVariant);L.push('Referrer: '+(document.referrer||'-'));
+    var ak=Object.keys(attr);L.push('Kampagnenparameter: '+(ak.length?ak.map(function(a){return a+'='+attr[a]}).join('&'):'-'));
+    L.push('','== Ergebnis ==');
+    L.push('weiterleitung_und_kontakt_erlaubt: '+(ok?'ja':'nein'));L.push('marketing_einwilligung: '+(S.mk?'ja':'nein'));
+    if(kind==='mandate'){L.push('SHA-256 des Mandatstexts: '+mh);L.push('SHA-256 der Unterschrift (PNG): '+(S.sig&&S.sig!=='x'?sh:'keine Unterschrift'))}
+    var body=L.join('\n');
+    return sha256(body).then(function(cs){var text=body+'\n\nPrüfsumme (SHA-256 über den Text oberhalb): '+cs+'\n';lastNach=text;return {text:text,allowed:ok}});
+  });
+}
+function genId(){var a=new Uint8Array(4);try{crypto.getRandomValues(a)}catch(e){for(var i=0;i<4;i++)a[i]=Math.floor(Math.random()*256)}return 'BW-'+Array.prototype.map.call(a,function(x){return ('0'+x.toString(16)).slice(-2)}).join('').toUpperCase()}
+function submitWithProof(kind,d,S,nw){d.kind=kind;d.marketing=!!S.mk;return buildNachweis(kind,d.lead_id,S,nw,d).then(function(n){return sendLead(d,n)})}
 
 /* ---------- Formular ---------- */
 var REASONS=[['unreachable','Mein Berater ist nicht erreichbar'],['none','Ich habe keinen Berater mehr'],['unhappy','Ich bin mit der Betreuung unzufrieden'],['left','Mein Berater hat die Firma verlassen'],['language','Ich möchte einen Berater in meiner Sprache'],['better','Ich möchte meine Vorsorge besser betreuen lassen'],['other','Anderer Grund']];
@@ -1315,8 +1518,8 @@ var TYPES=[['lv','Lebensversicherung'],['3a','Säule 3a'],['3b','Säule 3b'],['p
 var AREAS=[['lv','Versicherungsverträge im Bereich Leben / Fondspolicen'],['kap','Kapitalanlagen'],['hyp','Hypothekarverträge / Kredite / Leasing'],['andere','andere']];
 var FREQ=[['jaehrlich','jährlich'],['halbjaehrlich','halbjährlich'],['vierteljaehrlich','vierteljährlich']];
 var STEPN=['anliegen','kontakt','angaben','mandat_unterschrift'];
-var F,fstep=0,startedForm=false,lastFocus=null,leadId='',stage2=false,submitting=false;
-function freshF(){return {reasons:new Set(),types:new Set(),insurer:'',pol:'',lang:'de',first:'',last:'',phone:'',email:'',contact:'phone',consent:false,hp:'',wantMandate:false,
+var NWF=nwNew(),F,fstep=0,startedForm=false,lastFocus=null,leadId='',stage2=false,submitting=false;
+function freshF(){return {reasons:new Set(),types:new Set(),insurer:'',pol:'',lang:'de',first:'',last:'',phone:'',email:'',contact:'phone',c1:false,c2:false,mk:false,hp:'',wantMandate:false,
   mandate:false,mTouched:false,birth:'',street:'',plz:'',ort:'',areas:new Set(['lv']),freq:'jaehrlich',mok:false,share:false,sig:'',sigDirty:false}}
 function lastStep(){return stage2?(F.mandate?3:2):1}
 function fmtDate(){var d=new Date();return ('0'+d.getDate()).slice(-2)+'.'+('0'+(d.getMonth()+1)).slice(-2)+'.'+d.getFullYear()}
@@ -1328,27 +1531,27 @@ function renderStep(){
    case 0:h='<h2 id="fTitle" tabindex="-1">Worum geht es?</h2><p class="sub">Zwei Antworten genügen. Mehrfachauswahl möglich.</p>'
      +'<p class="grp">Warum möchten Sie wechseln?</p><div class="opts">'+REASONS.map(function(r){return opt('checkbox','reason',r[0],r[1],F.reasons.has(r[0]))}).join('')+'</div>'
      +'<p class="grp">Welche Versicherung betrifft es?</p><div class="opts cols">'+TYPES.map(function(r){return opt('checkbox','type',r[0],r[1],F.types.has(r[0]))}).join('')+'</div>';break;
-   case 1:h='<h2 id="fTitle" tabindex="-1">Wie erreichen wir Sie?</h2><p class="sub">Wir melden uns persönlich. Unverbindlich und diskret.</p><div class="fgrid">'
+   case 1:h='<h2 id="fTitle" tabindex="-1">Wie erreicht Sie die Partnerin?</h2><p class="sub">Die Partnerin meldet sich persönlich. Unverbindlich und diskret.</p><div class="fgrid">'
      +fld('fFirst','Vorname',F.first,'autocomplete="given-name"')+fld('fLast','Nachname',F.last,'autocomplete="family-name"')
      +fld('fPhone','Telefonnummer',F.phone,'type="tel" autocomplete="tel" inputmode="tel"')+fld('fEmail','E-Mail-Adresse',F.email,'type="email" autocomplete="email"')
      +'<div class="fld"><label for="fLang">Sprache</label><select id="fLang">'+LANGS.map(function(l){return '<option value="'+l[0]+'"'+(F.lang===l[0]?' selected':'')+'>'+l[1]+'</option>'}).join('')+'</select><small></small></div></div>'
      +'<div><p class="grp">Bevorzugter Kontaktweg</p><div class="opts" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">'+opt('radio','contact','phone','Telefon',F.contact==='phone')+opt('radio','contact','mail','E-Mail',F.contact==='mail')+'</div></div>'
      +'<input id="fHp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" value="'+esc(F.hp)+'">'
-     +'<label class="opt"><input type="checkbox" name="consent"'+(F.consent?' checked':'')+'><span>Ich bin einverstanden, dass meine Anfrage zur Bearbeitung an unseren Vermittlungspartner weitergegeben wird und man mich kontaktiert. Details in der <button type="button" class="link" data-fp-open="dsg">Datenschutzerklärung</button>. (Pflichtfeld)</span></label>'
+     +consentBlock(F)
      +(CONFIG.endpoint?'':'<p class="legal">Vorschau-Version: In dieser Ansicht werden keine Daten übermittelt.</p>');break;
-   case 2:h='<h2 id="fTitle" tabindex="-1">Angaben zur Vertragszuordnung</h2><p class="sub">Freiwillig. Damit können wir Ihre Verträge schneller zuordnen. Sie können das auch am Telefon ergänzen.</p><div class="fgrid">'
+   case 2:h='<h2 id="fTitle" tabindex="-1">Angaben zur Vertragszuordnung</h2><p class="sub">Freiwillig. Damit kann die Partnerin Ihre Verträge schneller zuordnen. Sie können das auch am Telefon ergänzen.</p><div class="fgrid">'
      +fld('fInsurer','Versicherungsgesellschaft',F.insurer,'autocomplete="off"')+fld('fPol','Policennummer(n)',F.pol,'autocomplete="off"')
      +fld('fBirth','Geburtsdatum',F.birth,'inputmode="numeric" placeholder="TT.MM.JJJJ" maxlength="10" autocomplete="bday"')
      +fld('fStreet','Strasse und Nummer',F.street,'autocomplete="street-address"')
      +fld('fPlz','PLZ',F.plz,'inputmode="numeric" maxlength="4" autocomplete="postal-code"')
      +fld('fOrt','Ort',F.ort,'autocomplete="address-level2"')+'</div>'
-     +'<label class="opt mand"><input type="checkbox" name="mandate"'+(F.mandate?' checked':'')+'><span><b>Maklervollmacht gleich jetzt erteilen</b> (freiwillig, schnellere Bearbeitung). Sie sehen das Maklermandat vor der Unterschrift vollständig und unterschreiben direkt am Bildschirm.</span></label>'
+     +'<label class="opt mand"><input type="checkbox" name="mandate"'+(F.mandate?' checked':'')+'><span><b>Maklervollmacht gleich jetzt erteilen</b> (freiwillig, schnellere Bearbeitung). Sie sehen das Maklermandat vor der Unterschrift vollständig und unterschreiben direkt am Bildschirm. '+esc(MANDATE_NOTE)+'</span></label>'
      +(F.mandate?'<div><p class="grp">Betreffende Policen / Verträge / Bereiche</p><div class="opts" style="grid-template-columns:minmax(0,1fr)">'+AREAS.map(function(r){return opt('checkbox','area',r[0],r[1],F.areas.has(r[0]))}).join('')+'</div></div>'
      +'<div><p class="grp">Reporting</p><div class="opts" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr))">'+FREQ.map(function(r){return opt('radio','freq',r[0],r[1],F.freq===r[0])}).join('')+'</div></div>':'');break;
-   case 3:h='<h2 id="fTitle" tabindex="-1">Ihr Maklermandat</h2><p class="sub">Bitte lesen, unterschreiben und bestätigen.</p>'
+   case 3:h='<h2 id="fTitle" tabindex="-1">Ihr Maklermandat</h2><p class="sub">Bitte lesen, unterschreiben und bestätigen. '+esc(MANDATE_NOTE)+'</p>'
      +'<div class="mwrap" id="mwrap">'+mandateHtml()+'</div><button class="link" type="button" id="mToggle">Vollansicht</button>'
      +'<div><p class="grp" style="margin-top:6px">Unterschrift Mandant/in</p><canvas class="sigpad" id="fsig" aria-label="Unterschriftenfeld"></canvas><div class="sigrow"><button class="link" type="button" id="fsigClear">Löschen</button><small>Mit Finger oder Maus zeichnen. Das Mandat wird nach Eingang vom Makler gegengezeichnet.</small></div></div>'
-     +'<label class="opt"><input type="checkbox" name="mok"'+(F.mok?' checked':'')+'><span>Ich habe das Maklermandat gelesen, bin mit den Bedingungen einverstanden und erteile es dem im Mandat genannten Makler. (Pflichtfeld)</span></label>'
+     +'<label class="opt"><input type="checkbox" name="mok"'+(F.mok?' checked':'')+'><span>'+esc(TXT.mok)+' (Pflichtfeld)</span></label>'
      +(CONFIG.endpoint?'':'<p class="legal">Vorschau-Version: Die Unterschrift wird in dieser Ansicht nicht gespeichert oder gesendet.</p>');break;
   }
   b.innerHTML=h;meta();
@@ -1401,14 +1604,15 @@ var IDMAP={fInsurer:'insurer',fPol:'pol',fBirth:'birth',fStreet:'street',fPlz:'p
 function onFormInput(e){
   var t=e.target;
   if(!startedForm){startedForm=true;track('form_start',{variant:curVariant})}
+  nwEv(NWF,'erste_eingabe');
   if(IDMAP[t.id]){F[IDMAP[t.id]]=t.value;var w=t.closest('.fld');if(w&&w.classList.contains('bad')){w.classList.remove('bad');var s=$('small',w);if(s)s.textContent=''}return}
   var n=t.name;
   if(n==='reason'||n==='type'){var set=n==='reason'?F.reasons:F.types;t.checked?set.add(t.value):set.delete(t.value)}
   else if(n==='area'){t.checked?F.areas.add(t.value):F.areas.delete(t.value)}
   else if(n==='freq')F.freq=t.value;
   else if(n==='contact')F.contact=t.value;
-  else if(n==='mok')F.mok=t.checked;
-  else if(n==='consent')F.consent=t.checked;
+  else if(n==='mok'){F.mok=t.checked;nwEv(NWF,'bestaetigung_mok',t.checked?'ja':'nein')}
+  else if(n==='c1'||n==='c2'||n==='mk'){F[n]=t.checked;nwEv(NWF,'bestaetigung_'+n,t.checked?'ja':'nein')}
   else if(n==='mandate'){F.mandate=t.checked;F.mTouched=true;renderStep();var c=$('input[name=mandate]');if(c)c.focus({preventScroll:true})}
   $('#fErr').textContent='';
 }
@@ -1430,7 +1634,7 @@ function validate(){
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(F.email.trim()))errs.fEmail='Bitte gültige E-Mail-Adresse eingeben.';
     showErrs(errs);
     if(Object.keys(errs).length)err='Bitte prüfen Sie die markierten Felder.';
-    else if(!F.consent)err='Bitte bestätigen Sie die Einwilligung.';
+    else if(!(F.c1&&F.c2))err='Bitte bestätigen Sie die Einwilligungen a und b. Ohne sie kann Ihre Anfrage nicht weitergeleitet werden.';
     break;
    case 2:
     var any=F.insurer.trim()||F.pol.trim()||F.birth.trim()||F.street.trim()||F.plz.trim()||F.ort.trim();
@@ -1453,7 +1657,7 @@ function validate(){
 }
 function leadData(type){
   var d={type:type,lead_id:leadId,language:F.lang};
-  if(type==='lead'){d.reasons=Array.from(F.reasons);d.insurance_types=Array.from(F.types);d.first_name=F.first.trim();d.last_name=F.last.trim();d.phone=F.phone.trim();d.email=F.email.trim();d.contact_preference=F.contact;d.consent_forward=true;d.hp=F.hp}
+  if(type==='lead'){d.reasons=Array.from(F.reasons);d.insurance_types=Array.from(F.types);d.first_name=F.first.trim();d.last_name=F.last.trim();d.phone=F.phone.trim();d.email=F.email.trim();d.contact_preference=F.contact;d.hp=F.hp}
   else{d.first_name=F.first.trim();d.last_name=F.last.trim();d.email=F.email.trim();d.phone=F.phone.trim();d.insurer=F.insurer.trim();d.policy_numbers=F.pol.trim();d.birth_date=F.birth.trim();d.street=F.street.trim();d.postcode=F.plz.trim();d.city=F.ort.trim();d.hp=F.hp;
     if(type==='mandate'){d.areas=Array.from(F.areas);d.reporting=F.freq;d.mandate_accepted=true;d.signature_png=F.sig==='x'?'':F.sig;d.signed_at=new Date().toISOString()}}
   return d;
@@ -1463,11 +1667,13 @@ $('#leadForm').addEventListener('submit',function(e){
   e.preventDefault();if(submitting)return;
   if(!validate())return;
   track('form_step_completed',{step:fstep+1,name:STEPN[fstep]});
+  nwEv(NWF,'schritt_abgeschlossen',STEPN[fstep]);
   if(fstep===0){fstep=1;renderStep();return}
   if(stage2&&fstep===2&&F.mandate){track('signature_process_started',{variant:curVariant});fstep=3;renderStep();return}
   var type=!stage2?'lead':(fstep===3?'mandate':'details');
   var nb=$('#fNext');submitting=true;nb.disabled=true;nb.textContent='Wird übermittelt …';
-  var p=(type==='lead'&&F.hp)?Promise.resolve({ok:true,id:'x'}):sendLead(leadData(type));
+  if(!leadId)leadId=genId();var d0=leadData(type);d0.lead_id=leadId;
+  var p=(type==='lead'&&F.hp)?Promise.resolve({ok:true,id:'x'}):submitWithProof(type,d0,F,NWF);
   p.then(function(res){
     submitting=false;nb.disabled=false;
     if(res&&res.ok===false)throw new Error('server');
@@ -1477,21 +1683,21 @@ $('#leadForm').addEventListener('submit',function(e){
 });
 $('#fBack').addEventListener('click',function(){if(fstep===1||fstep===3){fstep--;renderStep()}});
 var leadCount=0;
+function nwLink(){var u='';try{u=URL.createObjectURL(new Blob([lastNach],{type:'text/plain'}))}catch(e){}return u?'<a class="link" download="nachweis-'+esc(leadId)+'.txt" href="'+u+'">Kopie Ihres Nachweises speichern</a>':''}
 function finishLead(){
   leadCount++;
   track('lead_submitted',{variant:curVariant,language:F.lang,insurance_types:F.types.size});
   fireConversion();
   try{history.pushState({d:1},'','#danke');document.title='Danke | beraterwechsel.ch'}catch(e){}
   track('virtual_pageview',{page_path:'/danke',page_title:'Danke'});
-  LEADS.push({id:'D-'+(1003+leadCount),info:Array.from(F.types).join(', ')+' · '+F.lang,stage:0,fresh:true});renderBoard();
   $('#leadForm').hidden=true;
   var d=$('#fDone');d.hidden=false;
-  var dig=F.wantMandate;
+  var dig=F.wantMandate,ch=F.contact==='mail'?'per E-Mail':'telefonisch';
   d.innerHTML='<span class="ic">'+svg('check',26,3)+'</span><h2 id="doneT" tabindex="-1">Danke, '+esc(F.first.trim())+'. Ihre Anfrage ist eingegangen.</h2>'
-   +'<p class="lead">Wir melden uns '+(F.contact==='mail'?'per E-Mail':'telefonisch')+' bei Ihnen.</p>'
-   +'<div class="next"><b>So geht es weiter</b><ol><li>Wir prüfen Ihre Angaben.</li><li>Ein Ansprechpartner meldet sich persönlich bei Ihnen.</li><li>Gemeinsam klären wir, ob und wie sich die Betreuung übertragen lässt.</li></ol></div>'
-   +'<div class="upsell"><b>'+(dig?'Weiter zur Maklervollmacht':'Schneller starten?')+'</b><p>Ergänzen Sie in etwa 1 Minute Ihre Vertragsangaben oder erteilen Sie gleich die Maklervollmacht. Freiwillig.</p><button class="btn" type="button" id="doneMore">'+(dig?'Vollmacht jetzt erteilen':'Angaben und Vollmacht ergänzen')+' →</button></div>'
-   +'<p class="legal">Lieber persönlich? <a href="'+CONFIG.phoneHref+'" data-src="danke">Anrufen</a> · <a href="'+CONFIG.waHref+'" target="_blank" rel="noopener" data-src="danke">WhatsApp</a>'+(CONFIG.endpoint?'':' · Vorschau-Version: In dieser Ansicht wurden keine Daten übermittelt.')+'</p>'
+   +'<p class="lead">Die Esche Consulting GmbH prüft nur, ob Ihre Anfrage vollständig ist, und leitet sie auf Grundlage Ihrer Einwilligung an die Wertenburg GmbH weiter.</p>'
+   +'<div class="next"><b>So geht es weiter</b><ol><li>Ihre Anfrage geht an die Wertenburg GmbH, Vaduz (Versicherungsmaklerin).</li><li>Die Wertenburg GmbH meldet sich '+ch+' bei Ihnen.</li><li>Ob eine neue Betreuung zustande kommt, entscheiden Sie.</li></ol></div>'
+   +'<div class="upsell"><b>'+(dig?'Weiter zur Maklervollmacht':'Schneller starten?')+'</b><p>Ergänzen Sie in etwa 1 Minute Ihre Vertragsangaben oder erteilen Sie gleich die Maklervollmacht. Freiwillig. '+esc(MANDATE_NOTE)+'</p><button class="btn" type="button" id="doneMore">'+(dig?'Vollmacht jetzt erteilen':'Angaben und Vollmacht ergänzen')+' →</button></div>'
+   +'<p class="legal">Anfrage-Nr. '+esc(leadId)+'. '+nwLink()+'<br>Lieber persönlich? <a href="'+CONFIG.phoneHref+'" data-src="danke">Anrufen</a> · <a href="'+CONFIG.waHref+'" target="_blank" rel="noopener" data-src="danke">WhatsApp</a>'+(CONFIG.endpoint?'':' · Vorschau-Version: In dieser Ansicht wurden keine Daten übermittelt.')+'</p>'
    +'<button class="link" type="button" id="doneClose">Schliessen</button>';
   $('#fBar').style.width='100%';$('#fStep').textContent='Anfrage gesendet';
   $('#doneT').focus({preventScroll:true});
@@ -1506,8 +1712,8 @@ function finishStage2(signed){
   $('#leadForm').hidden=true;
   var d=$('#fDone');d.hidden=false;
   d.innerHTML='<span class="ic">'+svg('check',26,3)+'</span><h2 id="doneT" tabindex="-1">'+(signed?'Ihr Maklermandat ist unterschrieben.':'Danke, Ihre Angaben sind angekommen.')+'</h2>'
-   +'<p class="lead">'+(signed?'Nach Eingang wird es vom Makler gegengezeichnet. Wir melden uns bei Ihnen.':'Das hilft uns, Ihre Verträge schneller zuzuordnen. Wir melden uns bei Ihnen.')+'</p>'
-   +(CONFIG.endpoint?'':'<p class="legal">Vorschau-Version: In dieser Ansicht wurden keine Daten übermittelt.</p>')
+   +'<p class="lead">'+(signed?'Die Esche Consulting GmbH leitet es an die Wertenburg GmbH weiter, die es nach Eingang gegenzeichnet. '+esc(MANDATE_NOTE):'Das hilft der Wertenburg GmbH, Ihre Verträge schneller zuzuordnen.')+'</p>'
+   +'<p class="legal">Anfrage-Nr. '+esc(leadId)+'. '+nwLink()+(CONFIG.endpoint?'':'<br>Vorschau-Version: In dieser Ansicht wurden keine Daten übermittelt.')+'</p>'
    +'<button class="btn" type="button" id="doneClose">Schliessen</button>';
   $('#fBar').style.width='100%';$('#fStep').textContent='Fertig';
   $('#doneT').focus({preventScroll:true});
@@ -1515,7 +1721,7 @@ function finishStage2(signed){
 }
 function openForm(o){
   o=o||{};
-  F=freshF();fstep=0;stage2=false;leadId='';submitting=false;
+  F=freshF();NWF=nwNew();fstep=0;stage2=false;leadId='';submitting=false;
   var pre=VARIANTS[curVariant].pre||{};
   var reason=o.reasons?null:(o.reason||pre.reason),type=o.type||pre.type;
   if(reason)F.reasons.add(reason);
@@ -1635,7 +1841,8 @@ poaRender();
 /* ---------- Fusszeile ---------- */
 (function foot(){
   var y=$('#fYear');if(y)y.textContent=String(new Date().getFullYear());
-  var FP={"imp": ["Impressum", "<h4>Betreiberin dieser Website</h4><p>Esche Consuting GmbH<br>Städtle 35, 9490 Vaduz, Liechtenstein<br>Handelsregister des Fürstentums Liechtenstein, Nr. FL-0002.747.099-3<br>Geschäftsführer: Armin Silic<br>Zweck: Beratungsdienstleistung von Unternehmenskunden sowie Marketingdienstleistungen<br>Telefon und Chat: <a href=\"tel:+4237987733\" style=\"color:#fff\">Anrufen</a> · <a href=\"https://wa.me/4237987733\" target=\"_blank\" rel=\"noopener\" style=\"color:#fff\">WhatsApp</a><br>E-Mail: <a href=\"mailto:jetzt@beraterwechsel.ch\" style=\"color:#fff\">jetzt@beraterwechsel.ch</a><br><span class=\"ph2\">UID / MWST-Nr.: [Platzhalter]</span></p><h4>Betreuung und Vermittlung</h4><p>Wertenburg GmbH<br>Wuhrstrasse 6, 9490 Vaduz, Liechtenstein<br>Handelsregister Nr. FL-0002.695.823-8<br>Versicherungsmakler, bewilligt durch die FMA Liechtenstein (Registernummer 338879), Rechtsgrundlage VersVertG, Bewilligung erteilt am 01.05.2023</p><h4>Haftungsausschluss</h4><p>Die Inhalte dieser Website wurden sorgfältig erstellt. Für Richtigkeit, Vollständigkeit und Aktualität wird keine Gewähr übernommen. Die Website enthält allgemeine Informationen und keine individuelle Beratung. Für verlinkte externe Seiten sind deren Betreiber verantwortlich.</p><h4>Urheberrecht</h4><p>Texte, Grafiken und Gestaltung dieser Website sind urheberrechtlich geschützt. Eine Verwendung ausserhalb der gesetzlichen Schranken bedarf der vorherigen Zustimmung. Bilder sind teilweise Symbolbilder.</p>"], "kon": ["Kontakt", "<h4>beraterwechsel.ch</h4><p>Angaben zum Anbieter und die Adresse finden Sie im <button class=\"link\" type=\"button\" data-gofp=\"imp\" style=\"color:#fff\">Impressum</button>.</p><h4>Erreichbarkeit</h4><p>Telefon und Chat: <a href=\"tel:+4237987733\" style=\"color:#fff\">Anrufen</a> · <a href=\"https://wa.me/4237987733\" target=\"_blank\" rel=\"noopener\" style=\"color:#fff\">WhatsApp</a><br>E-Mail: <a href=\"mailto:jetzt@beraterwechsel.ch\" style=\"color:#fff\">jetzt@beraterwechsel.ch</a><br>Anfragen per E-Mail und Formular: rund um die Uhr (24 Stunden). Wir melden uns so rasch wie möglich bei Ihnen.</p><h4>Direkt starten</h4><p><button class=\"link\" type=\"button\" data-open-form data-src=\"footer-callback\" data-mode=\"talk\" style=\"color:#fff\">Rückruf anfragen</button> &nbsp;·&nbsp; <button class=\"link\" type=\"button\" data-open-form data-src=\"footer-form\" style=\"color:#fff\">Beraterwechsel anfragen</button></p>"], "dsg": ["Datenschutzerklärung", "<h4>1. Verantwortliche Stelle</h4><p>Verantwortlich für die Bearbeitung Ihrer Personendaten auf dieser Website ist die Esche Consuting GmbH, Städtle 35, 9490 Vaduz, Liechtenstein. Kontakt für Datenschutzanfragen: <a href=\"mailto:jetzt@beraterwechsel.ch\" style=\"color:#fff\">jetzt@beraterwechsel.ch</a></p><h4>2. Welche Daten wir bearbeiten</h4><p>Angaben aus dem Anfrageformular und dem Rückruf-Formular: Grund des Wechsels, gewünschte Versicherungsarten, Versicherungsgesellschaft, Policennummer, Name, Telefonnummer, E-Mail, PLZ, Kanton, Sprache, bevorzugter Kontaktweg und freiwillige Nachricht. Bei freiwilliger Erteilung eines Maklermandats zusätzlich Geburtsdatum, Adresse, betroffene Bereiche und Ihre Unterschrift. Ausserdem technische Daten beim Besuch der Website (z. B. IP-Adresse, Browser, Zeitpunkt, aufgerufene Seiten).</p><h4>3. Zwecke</h4><p>Bearbeitung und Beantwortung Ihrer Anfrage, Prüfung eines Beraterwechsels, Vorbereitung und Abwicklung eines Maklermandats, Kontaktaufnahme, Betrieb und Sicherheit der Website sowie Erfolgsmessung und Optimierung unserer Werbung.</p><h4>4. Weitergabe</h4><p>Ihre Anfrage wird zur Bearbeitung an die Wertenburg GmbH, Vaduz, weitergegeben, die Sie kontaktiert. Weitere Empfänger sind sorgfältig ausgewählte Dienstleister (z. B. Hosting, E-Mail, CRM), soweit sie für die genannten Zwecke nötig sind. Bei einem Wechsel können Versicherungsgesellschaften informiert werden, aber nur mit Ihrem Mandat. Eine Weitergabe zu Werbezwecken Dritter findet nicht statt.</p><h4>5. Werbung und Tracking</h4><p>Wir nutzen Dienste wie Google Ads und Meta (Facebook/Instagram), um Werbung auszuspielen und deren Erfolg zu messen. Dabei können Cookies oder ähnliche Technologien eingesetzt werden. Sie erhalten dazu vorab eine Einwilligungsabfrage, soweit das Gesetz sie verlangt. An Werbeplattformen übermitteln wir keine Freitexte und keine Angaben zu Ihren Versicherungen. Ihre Einwilligung können Sie jederzeit widerrufen. <span class=\"ph2\">[Liste der eingesetzten Dienste und Anbieter vor Livegang ergänzen]</span></p><h4>6. Aufbewahrung</h4><p>Wir bewahren Ihre Daten nur so lange auf, wie es für die genannten Zwecke und für gesetzliche Aufbewahrungspflichten erforderlich ist. <span class=\"ph2\">[Fristen vor Livegang festlegen]</span></p><h4>7. Datenübermittlung ins Ausland</h4><p>Eingesetzte Dienstleister können ihren Sitz ausserhalb der Schweiz und des EWR haben, etwa in den USA. In diesem Fall stellen wir ein angemessenes Datenschutzniveau durch geeignete Garantien sicher, zum Beispiel Standardvertragsklauseln.</p><h4>8. Ihre Rechte</h4><p>Sie haben im Rahmen des anwendbaren Rechts (Datenschutzgesetz Liechtenstein, DSGVO, Schweizer DSG) das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch sowie auf Widerruf einer Einwilligung. Wenden Sie sich dazu an die oben genannte Stelle. Sie können sich zudem bei der Datenschutzstelle des Fürstentums Liechtenstein oder beim Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB) beschweren.</p><h4>9. Datensicherheit</h4><p>Wir treffen angemessene technische und organisatorische Massnahmen zum Schutz Ihrer Daten, zum Beispiel verschlüsselte Übertragung. Eine absolute Sicherheit ist im Internet nicht möglich.</p><p class=\"fnote2\">Stand: Entwurf. Vor dem Livegang rechtlich prüfen lassen.</p>"], "agb": ["Allgemeine Geschäftsbedingungen", "<h4>1. Geltung</h4><p>Diese Bedingungen gelten für die Nutzung der Website beraterwechsel.ch und für Anfragen, die darüber an die Esche Consuting GmbH (\"wir\") gestellt werden.</p><h4>2. Unsere Leistung</h4><p>Wir nehmen Ihre Anfrage zu einem Beraterwechsel entgegen und leiten sie an die Wertenburg GmbH weiter, die Sie kontaktiert und die Möglichkeiten einer neuen Betreuung mit Ihnen bespricht. Wir erbringen selbst keine Versicherungsberatung und schliessen keine Versicherungsverträge ab.</p><h4>3. Unverbindlich</h4><p>Ihre Anfrage ist kostenlos und unverbindlich. Sie führt nicht automatisch zur Kündigung oder Änderung eines Versicherungsvertrags. Ob und wie eine Betreuung übertragen werden kann, hängt vom Vertrag, der Gesellschaft und dem bisherigen Mandat ab und wird im Einzelfall geprüft. Wir sichern weder einen bestimmten Erfolg noch eine bestimmte Dauer zu.</p><h4>4. Maklermandat</h4><p>Ein Maklermandat kommt nur zustande, wenn Sie es ausdrücklich erteilen und unterzeichnen. Es gelten dessen eigene Bedingungen, insbesondere zu Auftrag, Vergütung und Kündigung. Sie erhalten das Mandat vor der Unterschrift vollständig zur Ansicht.</p><h4>5. Ihre Angaben</h4><p>Sie sind für die Richtigkeit Ihrer Angaben verantwortlich. Bitte geben Sie nur Daten an, zu deren Verwendung Sie berechtigt sind.</p><h4>6. Vergütung</h4><p>Für die Anfrage über diese Website entstehen Ihnen keine Kosten. Zur Vergütung des Maklers gelten die Angaben im Maklermandat und die Informationen im Abschnitt \"Vergütung\".</p><h4>7. Haftung</h4><p>Wir haften nur für Schäden, die wir absichtlich oder grob fahrlässig verursachen, soweit das Gesetz eine Beschränkung zulässt. Für Inhalte Dritter und für Leistungen der Wertenburg GmbH und von Versicherungsgesellschaften sind wir nicht verantwortlich.</p><h4>8. Datenschutz</h4><p>Es gilt die Datenschutzerklärung.</p><h4>9. Änderungen</h4><p>Wir können diese Bedingungen jederzeit anpassen. Es gilt die jeweils auf der Website veröffentlichte Fassung.</p><h4>10. Recht und Gerichtsstand</h4><p>Es gilt liechtensteinisches Recht. Gerichtsstand ist Vaduz, soweit zwingendes Recht (z. B. für Konsumentinnen und Konsumenten) nichts anderes vorsieht. <span class=\"ph2\">[Rechtswahl und Gerichtsstand vor Livegang prüfen]</span></p><p class=\"fnote2\">Stand: Entwurf. Vor dem Livegang rechtlich prüfen lassen.</p>"], "vag": ["Vergütung und Vermittlerinformation", "<h4>Kosten für Sie</h4><p>Die Anfrage über diese Website ist kostenlos und unverbindlich.</p><h4>Vergütung des Maklers</h4><p>Wie im Maklermandat beschrieben, bleiben Sie Vertragspartner der Versicherungsgesellschaften und Prämienschuldner. Der Makler wird von den Gesellschaften mit branchenüblichen Ansätzen für Beratung und Betreuung entschädigt. Sofern nichts anderes vereinbart wurde und das Mandat mindestens ein Kalenderjahr besteht, ist die Dienstleistung für Sie kostenlos. Fallen nicht entschädigte Aufwendungen an, informiert Sie der Berater rechtzeitig vorab.</p><h4>Vermittlerinformation</h4><p>Der Makler handelt in unabhängiger Stellung für Sie. </p><h4>Registrierung des Maklers</h4><p>Wertenburg GmbH, Wuhrstrasse 6, 9490 Vaduz, Liechtenstein<br>Handelsregister Nr. FL-0002.695.823-8<br>Eingetragen im Register der Versicherungsvermittler der Finanzmarktaufsicht Liechtenstein (FMA), Registernummer 338879<br>Kategorie: Versicherungsvermittler, Makler (Haupttätigkeit), Bewilligung gemäss VersVertG, erteilt am 01.05.2023<br>Versicherungszweige: Lebensversicherung (01) sowie anteil- bzw. fondsgebundene Lebensversicherung (03)<br>Grenzüberschreitender Dienstleistungsverkehr: Deutschland, Schweiz</p><h4>Aufsicht und Register</h4><p>Finanzmarktaufsicht Liechtenstein (FMA), Landstrasse 109, Postfach 279, 9490 Vaduz, <a href=\"https://www.fma-li.li\" target=\"_blank\" rel=\"noopener\" style=\"color:#fff\">www.fma-li.li</a></p><h4>Keine automatische Kündigung</h4><p>Ein Beraterwechsel betrifft die Betreuung, nicht automatisch Ihren Vertrag.</p><p class=\"fnote2\">Stand: Entwurf. Vor dem Livegang rechtlich prüfen lassen.</p>"], "ck": ["Cookies und Tracking", "<h4>Was wir einsetzen</h4><p>Technisch notwendige Cookies sorgen dafür, dass die Website funktioniert. Analyse- und Werbe-Cookies (z. B. Google Ads, Meta) setzen wir nur mit Ihrer Einwilligung ein, soweit das Gesetz sie verlangt.</p><h4>Ihre Wahl</h4><p>Sie können Cookies jederzeit in Ihrem Browser löschen oder blockieren und eine erteilte Einwilligung widerrufen. <button class=\"link\" type=\"button\" data-cookie-reset style=\"color:#fff\">Cookie-Einstellungen ändern</button></p><p class=\"fnote2\">Stand: Entwurf. Vor dem Livegang rechtlich prüfen lassen.</p>"]};
+  var FP={"imp": ["Impressum", "<h4>Betreiberin dieser Website</h4><p>Esche Consulting GmbH<br>Städtle 35, 9490 Vaduz, Liechtenstein<br>Handelsregister des Fürstentums Liechtenstein, Nr. FL-0002.747.099-3<br>Geschäftsführer: Armin Silic<br>Telefon und Chat: <a href=\"tel:+4237987733\" style=\"color:#fff\">Anrufen</a> · <a href=\"https://wa.me/4237987733\" target=\"_blank\" rel=\"noopener\" style=\"color:#fff\">WhatsApp</a><br>E-Mail: <a href=\"mailto:jetzt@beraterwechsel.ch\" style=\"color:#fff\">jetzt@beraterwechsel.ch</a><br><span class=\"ph2\">[UID / MWST-Nr. ergänzen]</span></p><h4>Tätigkeit der Betreiberin</h4><p>Die Esche Consulting GmbH ist reine Marketingdienstleisterin. Sie wirbt für beraterwechsel.ch, nimmt Anfragen entgegen, prüft nur, ob sie vollständig sind, und leitet sie nur mit Ihrer Einwilligung an die Partnerin weiter. Sie berät nicht, empfiehlt keine Produkte, vermittelt keine Versicherungen und schliesst keine Verträge ab.</p><h4>Partnerin (Beratung und Vermittlung)</h4><p>Wertenburg GmbH<br>Wuhrstrasse 6, 9490 Vaduz, Liechtenstein<br>Handelsregister Nr. FL-0002.695.823-8<br>Versicherungsmaklerin, bewilligt durch die FMA Liechtenstein (Registernummer 338879). Einzelheiten unter «Status».</p><h4>Haftungsausschluss</h4><p>Die Inhalte wurden sorgfältig erstellt. Für Richtigkeit, Vollständigkeit und Aktualität wird keine Gewähr übernommen. Die Website enthält allgemeine Informationen und keine individuelle Beratung, kein Angebot und keine Empfehlung eines bestimmten Produkts. Für verlinkte Seiten sind deren Betreiber verantwortlich.</p><h4>Urheberrecht</h4><p>Texte, Grafiken und Gestaltung sind urheberrechtlich geschützt. Bilder sind teilweise Symbolbilder und mit Hilfe von KI erstellt.</p><p class=\"fnote2\">Stand: 23.11.2026. Entwurf zur Prüfung durch eine Schweizer Kanzlei.</p>"], "rol": ["Rollen, Datenfluss und Nachweis", "<p>Siehe Fenster «Rollen, Datenfluss und Nachweis».</p>"], "dsg": ["Datenschutzerklärung", "<h4>1. Verantwortliche</h4><p>Verantwortlich ist die Esche Consulting GmbH, Städtle 35, 9490 Vaduz, Liechtenstein (E-Mail <a href=\"mailto:jetzt@beraterwechsel.ch\" style=\"color:#fff\">jetzt@beraterwechsel.ch</a>). Sie bearbeitet Ihre Angaben bis zur Weiterleitung. Ab der Weiterleitung ist die Wertenburg GmbH, Wuhrstrasse 6, 9490 Vaduz, für ihre Bearbeitung selbst verantwortlich. Diese Erklärung richtet sich nach dem Schweizer Datenschutzgesetz (DSG). Das liechtensteinische Datenschutzgesetz und die DSGVO gelten daneben, soweit sie anwendbar sind.</p><h4>2. Welche Daten wir bearbeiten</h4><p>Angaben im Formular: Gründe, Versicherungsarten, Name, Telefon, E-Mail, bevorzugter Kontaktweg, Sprache, Rückrufzeit. Freiwillig und nur bei Nutzung dieser Schritte: Gesellschaft, Policennummern, Geburtsdatum, Adresse, Bereiche, Unterschrift für ein Maklermandat.</p><p><b>Nachweis:</b> Zeitpunkte (UTC), Wortlaut und Prüfsummen der bestätigten Texte, Prüfsumme der Rechtstexte, IP-Adresse und Land, Browserangaben, Sprache, Seite, Variante, Herkunft, Kampagnenparameter, Formularverlauf und Dauer.</p><p>Wir führen keine Datenbank und kein CRM und legen aus Kampagnen keine Profile an.</p><h4>3. Zwecke und Rechtsgrundlagen</h4><p>Wir nehmen Ihre Anfrage entgegen, prüfen sie auf Vollständigkeit, leiten sie mit Ihrer Einwilligung weiter und dokumentieren die Einwilligung. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 6 und 7 DSG, Art. 6 Abs. 1 Bst. a DSGVO). Den Nachweis bearbeiten wir zusätzlich, um Rechtsansprüche zu verteidigen und Pflichten zu erfüllen. Die freiwillige Marketing-Einwilligung gilt getrennt und nur für Informationen der Wertenburg GmbH.</p><h4>4. Weitergabe nur mit Einwilligung</h4><p>Wir leiten Ihre Angaben und den Nachweis nur an die Wertenburg GmbH, Vaduz, weiter, und nur wenn Sie die Einwilligungen a und b erteilt haben. Liechtenstein gehört zum EWR und gilt aus Sicht der Schweiz als Staat mit angemessenem Datenschutz. Sonst geben wir Ihre Angaben nur weiter, wenn das Gesetz es verlangt.</p><h4>5. Empfänger und Dienstleister</h4><ul><li><b>FormSubmit</b> (formsubmit.co): Formulardienst, der Formulardaten und Nachweisdatei per E-Mail an unser Postfach zustellt. <span class=\"ph2\">[Anbieter, Standort und Auftragsbearbeitung vor Livegang prüfen]</span></li><li><b>E-Mail-Postfach:</b> Infomaniak Network AG, Schweiz.</li><li><b>Hosting dieser Website:</b> Infomaniak Network AG, Schweiz. Beim Aufruf der Seite werden technisch notwendige Verbindungsdaten (zum Beispiel IP-Adresse, Zeitpunkt, Browserangaben) in Server-Protokollen bearbeitet.</li><li><b>Cloudflare:</b> Abruf Ihrer IP-Adresse und Ihres Landes für den Nachweis (bei der ersten Eingabe im Formular) und Auslieferung von Bibliotheken (cdnjs).</li><li><b>Google:</b> Schriftarten (Google Fonts) sowie Google Ads und Analytics, die Letzteren nur mit Ihrer Einwilligung.</li><li><b>Meta:</b> Pixel für Werbung, nur mit Ihrer Einwilligung.</li></ul><p>Google und Meta erhalten weder Ihre Formularangaben noch Angaben zu Ihren Versicherungen, nur das Ereignis, dass eine Anfrage eingegangen ist.</p><h4>6. Auslandsübermittlung</h4><p>Einige Anbieter (Google, Meta, Cloudflare, möglicherweise FormSubmit) bearbeiten Daten in den USA oder anderen Staaten ohne angemessenen Datenschutz. Wir stützen uns auf Ihre Einwilligung, Standardvertragsklauseln oder das Datenschutzrahmenabkommen, soweit dieses gilt. <span class=\"ph2\">[Vor Livegang pro Anbieter prüfen]</span></p><h4>7. Aufbewahrung und Löschung</h4><p>Nach der Weiterleitung löschen wir Anfrage und Nachweis spätestens nach 14 Tagen. Ohne Weiterleitung löschen wir sie nach 30 Tagen. Ein pseudonymes Weiterleitungsprotokoll (Anfrage-Nr., Datum, Empfängerin, Version der Einwilligung; ohne Name und Kontaktdaten) bewahren wir bis zu 3 Jahre auf. Gesetzliche Aufbewahrungspflichten bleiben vorbehalten. Für Daten bei der Wertenburg GmbH gelten deren Fristen.</p><h4>8. Datensicherheit</h4><p>Wir treffen angemessene technische und organisatorische Massnahmen, zum Beispiel verschlüsselte Übertragung, getrennte Postfächer, Zugriffsbeschränkung und Löschroutinen. Ein Entwurf Ihrer Eingaben bleibt nur im Sitzungsspeicher Ihres Browsers und verschwindet beim Schliessen. Absolute Sicherheit ist im Internet nicht möglich.</p><h4>9. Ihre Rechte</h4><p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Herausgabe oder Übertragung Ihrer Daten und auf Widerspruch. Erteilte Einwilligungen können Sie jederzeit mit Wirkung für die Zukunft widerrufen: <a href=\"mailto:jetzt@beraterwechsel.ch\" style=\"color:#fff\">jetzt@beraterwechsel.ch</a> (bitte die Anfrage-Nr. nennen). Beschwerden richten Sie an den Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB) oder an die Datenschutzstelle des Fürstentums Liechtenstein.</p><p class=\"fnote2\">Stand: 23.11.2026. Entwurf zur Prüfung durch eine Schweizer Kanzlei.</p>"], "agb": ["Nutzungsbedingungen", "<h4>1. Geltung</h4><p>Diese Bedingungen gelten für die Nutzung von beraterwechsel.ch und für Anfragen an die Esche Consulting GmbH («wir»).</p><h4>2. Unsere Rolle</h4><p>Wir sind Marketingdienstleisterin. Wir nehmen Ihre Anfrage entgegen, prüfen nur, ob sie vollständig ist, und leiten sie nur mit Ihrer Einwilligung an die Wertenburg GmbH weiter. Wir beraten nicht, empfehlen keine Produkte, vermitteln nicht und schliessen keine Verträge ab. Die Wertenburg GmbH prüft, klärt und berät in eigener Verantwortung.</p><h4>3. Unverbindlich</h4><p>Ihre Anfrage ist kostenlos und unverbindlich. Sie führt nicht automatisch zur Kündigung oder Änderung eines Versicherungsvertrags. Ob und wie eine Betreuung übertragen werden kann, hängt vom Vertrag, der Gesellschaft und dem bisherigen Mandat ab und wird im Einzelfall durch die Wertenburg GmbH geprüft. Es wird kein Erfolg zugesichert.</p><h4>4. Einwilligungen</h4><p>Wir leiten Ihre Anfrage nur weiter, wenn Sie im Formular die Einwilligungen a und b erteilt haben. Sie können sie jederzeit widerrufen. Die Weiterleitung unterbleibt dann, und wir löschen Ihre Angaben.</p><h4>5. Maklermandat</h4><p>Ein Maklermandat kommt nur zustande, wenn Sie es ausdrücklich erteilen und unterzeichnen. Der Vertrag entsteht ausschliesslich zwischen Ihnen und der Wertenburg GmbH, nicht mit der Esche Consulting GmbH. Es gelten dessen Bedingungen zu Auftrag, Vergütung und Kündigung. Sie sehen es vor der Unterschrift vollständig. Wir leiten es nur technisch weiter.</p><h4>6. Ihre Angaben</h4><p>Sie sind für die Richtigkeit Ihrer Angaben verantwortlich. Geben Sie nur Daten an, zu deren Verwendung Sie berechtigt sind.</p><h4>7. Haftung</h4><p>Wir haften nur für Schäden, die wir absichtlich oder grob fahrlässig verursachen, soweit das Gesetz eine Beschränkung zulässt. Für Inhalte Dritter und für Leistungen der Wertenburg GmbH und von Versicherungsgesellschaften sind wir nicht verantwortlich.</p><h4>8. Datenschutz</h4><p>Es gilt die Datenschutzerklärung.</p><h4>9. Änderungen, Recht, Gerichtsstand</h4><p>Wir können diese Bedingungen jederzeit anpassen. Es gilt die jeweils veröffentlichte Fassung. Es gilt liechtensteinisches Recht, Gerichtsstand ist Vaduz, soweit zwingendes Recht (zum Beispiel für Konsumentinnen und Konsumenten) nichts anderes vorsieht. <span class=\"ph2\">[Rechtswahl und Gerichtsstand vor Livegang prüfen]</span></p><p class=\"fnote2\">Stand: 23.11.2026. Entwurf zur Prüfung durch eine Schweizer Kanzlei.</p>"], "vag": ["Status und Vergütung", "<h4>Status der Betreiberin</h4><p>Die Esche Consulting GmbH tritt auf dieser Website als Marketingdienstleisterin auf. Sie erbringt keine Beratung und keine Vermittlung.</p><h4>Status der Partnerin</h4><p>Wertenburg GmbH, Wuhrstrasse 6, 9490 Vaduz, Liechtenstein<br>Handelsregister Nr. FL-0002.695.823-8<br>Eingetragen im Register der Versicherungsvermittler der Finanzmarktaufsicht Liechtenstein (FMA), Registernummer 338879<br>Kategorie: Versicherungsvermittler, Makler (Haupttätigkeit), Bewilligung gemäss VersVertG, erteilt am 01.05.2023<br>Versicherungszweige: Lebensversicherung (01) sowie anteil- bzw. fondsgebundene Lebensversicherung (03)<br>Grenzüberschreitender Dienstleistungsverkehr: Deutschland, Schweiz</p><p>Aufsicht: Finanzmarktaufsicht Liechtenstein (FMA), Landstrasse 109, Postfach 279, 9490 Vaduz, <a href=\"https://www.fma-li.li\" target=\"_blank\" rel=\"noopener\" style=\"color:#fff\">www.fma-li.li</a></p><p><span class=\"ph2\">[Zur Tätigkeit der Wertenburg GmbH für Kundinnen und Kunden in der Schweiz (Registrierung, Status nach Schweizer Aufsichtsrecht) vor Livegang Angaben ergänzen]</span></p><h4>Kosten für Sie</h4><p>Die Anfrage über diese Website ist kostenlos und unverbindlich.</p><h4>Vergütung der Partnerin</h4><p>Wie im Maklermandat beschrieben, bleiben Sie Vertragspartner der Versicherungsgesellschaften und Prämienschuldner. Der Makler wird von den Gesellschaften mit branchenüblichen Ansätzen für Beratung und Betreuung entschädigt. Sofern nichts anderes vereinbart wurde und das Mandat mindestens ein Kalenderjahr besteht, ist die Dienstleistung für Sie kostenlos. Fallen nicht entschädigte Aufwendungen an, informiert Sie der Berater rechtzeitig vorab. Die Wertenburg GmbH informiert Sie vor einem Mandats- oder Vertragsabschluss über Identität, Status, Beziehungen zu Versicherungsgesellschaften und Vergütung.</p><h4>Vergütung der Betreiberin</h4><p><span class=\"ph2\">[Angabe zur Verbindung zwischen der Esche Consulting GmbH und der Wertenburg GmbH und zur Entschädigung für Marketingleistungen vor Livegang ergänzen. Sie darf nicht von einem Vertragsabschluss abhängen.]</span></p><h4>Keine automatische Kündigung</h4><p>Ein Beraterwechsel betrifft die Betreuung, nicht automatisch Ihren Vertrag.</p><p class=\"fnote2\">Stand: 23.11.2026. Entwurf zur Prüfung durch eine Schweizer Kanzlei.</p>"], "ck": ["Cookies und Tracking", "<h4>Was wir einsetzen</h4><p>Technisch notwendige Cookies sorgen dafür, dass die Website funktioniert. Analyse- und Werbe-Cookies (z. B. Google Ads, Meta) setzen wir nur mit Ihrer Einwilligung ein, soweit das Gesetz sie verlangt.</p><h4>Ihre Wahl</h4><p>Sie können Cookies jederzeit in Ihrem Browser löschen oder blockieren und eine erteilte Einwilligung widerrufen. <button class=\"link\" type=\"button\" data-cookie-reset style=\"color:#fff\">Cookie-Einstellungen ändern</button></p><p class=\"fnote2\">Stand: Entwurf. Vor dem Livegang rechtlich prüfen lassen.</p>"], "kon": ["Kontakt", "<h4>beraterwechsel.ch</h4><p>Betreiberin: Esche Consulting GmbH, Städtle 35, 9490 Vaduz. Alle Angaben im Impressum.</p><h4>Erreichbarkeit</h4><p>Telefon und Chat: <a href=\"tel:+4237987733\" style=\"color:#fff\">Anrufen</a> · <a href=\"https://wa.me/4237987733\" target=\"_blank\" rel=\"noopener\" style=\"color:#fff\">WhatsApp</a><br>E-Mail: <a href=\"mailto:jetzt@beraterwechsel.ch\" style=\"color:#fff\">jetzt@beraterwechsel.ch</a><br>Anfragen per E-Mail und Formular: rund um die Uhr (24 Stunden).</p><h4>Widerruf und Datenschutz</h4><p>Einwilligung widerrufen, Auskunft oder Löschung verlangen: Schreiben Sie an <a href=\"mailto:jetzt@beraterwechsel.ch\" style=\"color:#fff\">jetzt@beraterwechsel.ch</a> und nennen Sie Ihre Anfrage-Nr.</p><h4>Direkt starten</h4><p><button class=\"link\" type=\"button\" data-open-form data-src=\"footer-callback\" data-mode=\"talk\" style=\"color:#fff\">Rückruf anfragen</button> &nbsp;·&nbsp; <button class=\"link\" type=\"button\" data-open-form data-src=\"footer-form\" style=\"color:#fff\">Beraterwechsel anfragen</button></p>"]};
+  window.BW_FP=FP;
   var panel=$('#fpanel'),body=$('#fpBody'),cur='';
   function close(){panel.hidden=true;cur='';$$('[data-fp]').forEach(function(b){b.setAttribute('aria-expanded','false')})}
   $$('[data-fp]').forEach(function(b){b.addEventListener('click',function(){
@@ -1648,17 +1855,29 @@ poaRender();
   document.addEventListener('click',function(e){var g=e.target.closest('[data-gofp]');if(!g)return;var bt=document.querySelector('[data-fp="'+g.dataset.gofp+'"]');if(bt){if(bt.getAttribute('aria-expanded')!=='true')bt.click();else panel.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'})}});
 })();
 
-/* ---------- CRM-Mock ---------- */
-var STAGES=['Neue Anfrage','Kontakt-aufnahme','Bedarf geklärt','Wechsel-prüfung','Vollmacht','Übertragung beantragt','Betreuung übernommen'];
-var LEADS=[{id:'D-1001',info:'Lebensversicherung · Türkisch · ZH',stage:1,demo:1},{id:'D-1002',info:'Säule 3a · Deutsch · BE',stage:3,demo:1},{id:'D-1003',info:'Private Vorsorge · Albanisch · AG',stage:5,demo:1}];
-function renderBoard(){
-  if(!$('#board'))return;
-  $('#board').innerHTML=STAGES.map(function(s,i){
-    return '<div class="col"><h4>'+s.replace('-','&shy;')+'</h4>'+LEADS.map(function(l,j){return l.stage===i?'<button type="button" class="lead-card'+(l.fresh?' new':'')+'" data-j="'+j+'" title="In die nächste Stufe verschieben"><b>'+l.id+(l.demo?' · Demo':' · neu')+'</b><span>'+esc(l.info)+'</span></button>':''}).join('')+'</div>';
-  }).join('');
-}
-if($('#board'))$('#board').addEventListener('click',function(e){var b=e.target.closest('.lead-card');if(!b)return;var l=LEADS[+b.dataset.j];if(l.stage<6){l.stage++;renderBoard()}});
-renderBoard();
+/* ---------- Fenster: Rollen, Datenfluss und Nachweis ---------- */
+(function roles(){
+  var w=$('#rwin');if(!w)return;
+  var tabs=$$('[data-rw]',w),body=$('#rwBody'),roles=body.innerHTML,last=null;
+  function show(k){
+    tabs.forEach(function(t){t.setAttribute('aria-pressed',String(t.dataset.rw===k))});
+    if(k==='roles')body.innerHTML=roles;
+    else{var fp=(window.BW_FP||{})[k];body.innerHTML=fp?'<h3>'+esc(fp[0])+'</h3>'+fp[1].replace(/color:#fff/g,'color:#0c2764'):''}
+    $('.rbox',w).scrollTop=0;
+  }
+  function open(k){last=document.activeElement;show(k||'roles');w.hidden=false;$('#rwClose').focus({preventScroll:true})}
+  function close(){w.hidden=true;if(last&&last.focus){try{last.focus({preventScroll:true})}catch(e){}}}
+  document.addEventListener('click',function(e){
+    var o=e.target.closest('[data-role-win],[data-fp="rol"],[data-gofp="rol"],[data-fp-open="rol"]');
+    if(o){e.preventDefault();e.stopPropagation();open(o.dataset.roleWin||'roles')}
+  },true);
+  w.addEventListener('click',function(e){
+    if(e.target===w||e.target.closest('#rwClose')){close();return}
+    var t=e.target.closest('[data-rw]');if(t){show(t.dataset.rw);return}
+    var g=e.target.closest('[data-gofp]');if(g&&g.dataset.gofp&&g.dataset.gofp!=='rol'){e.stopPropagation();show(g.dataset.gofp)}
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!w.hidden){e.stopPropagation();close()}},true);
+})();
 
 /* ---------- Mobile-Leiste ---------- */
 if('IntersectionObserver' in window){
@@ -1686,11 +1905,11 @@ if('IntersectionObserver' in window){
 /* ---------- Vorteile ---------- */
 (function benefits(){
   var B=[{i:'phone',t:'Ein Ansprechpartner, der erreichbar ist',p:'Sie wissen wieder, wen Sie bei Fragen zu Ihrer Vorsorge anrufen können.'},
-   {i:'list',t:'Mehr Überblick',p:'Wir helfen Ihnen, Ihre bestehenden Verträge und deren Betreuung geordnet zu sehen.'},
-   {i:'globe',t:'Beratung in Ihrer Sprache',p:'Sie geben Ihre Wunschsprache an. Die Verfügbarkeit bestätigen wir Ihnen.'},
+   {i:'list',t:'Mehr Überblick',p:'Die Partnerin hilft Ihnen, Ihre bestehenden Verträge und deren Betreuung geordnet zu sehen.'},
+   {i:'globe',t:'Beratung in Ihrer Sprache',p:'Sie geben Ihre Wunschsprache an. Die Verfügbarkeit bestätigt Ihnen die Partnerin.'},
    {i:'file',t:'Kein Papierkrieg',p:'Notwendige Vollmachten werden für Sie vorbereitet, auf Wunsch digital.'}];
   $('#bgrid').innerHTML=B.map(function(b){return '<article class="tile"><span class="ico">'+svg(b.i,22,2)+'</span><h3>'+b.t+'</h3><p>'+b.p+'</p></article>'}).join('');
-  var R=[['Zuständigen herausfinden','Selbst recherchieren','Wir helfen bei der Prüfung'],
+  var R=[['Zuständigen herausfinden','Selbst recherchieren','Partnerin hilft bei der Prüfung'],
    ['Vollmacht vorbereiten','Formulare selbst suchen und ausfüllen','Vorbereitet, auf Wunsch digital'],
    ['Gespräch mit dem bisherigen Berater','Häufig selbst zu führen','Sie müssen nicht selbst diskutieren'],
    ['Neuer Ansprechpartner','Selbst suchen und vergleichen','Persönliche Kontaktaufnahme']];
@@ -1700,25 +1919,34 @@ if('IntersectionObserver' in window){
 /* ---------- Rückruf ---------- */
 (function callback(){
   var f=$('#cbForm');if(!f)return;
+  var CS={c1:false,c2:false,mk:false,lang:'de'},NWC=nwNew(),cbId='';
   $('#cbLang').innerHTML=LANGS.map(function(l){return '<option value="'+l[0]+'">'+l[1]+'</option>'}).join('');
+  $('#cbCons').innerHTML=consentBlock(CS);
+  if(!CONFIG.endpoint)$('#cbPrev').hidden=false;
+  f.addEventListener('input',function(){nwEv(NWC,'erste_eingabe')});
+  f.addEventListener('change',function(e){var t=e.target;if(t&&(t.name==='c1'||t.name==='c2'||t.name==='mk')){CS[t.name]=t.checked;nwEv(NWC,'bestaetigung_'+t.name,t.checked?'ja':'nein')}});
   function mark(el,msg){var w=el.closest('.fld');w.classList.toggle('bad',!!msg);$('small',w).textContent=msg||''}
+  var busy=false;
   f.addEventListener('submit',function(e){
-    e.preventDefault();
-    var n=$('#cbName'),p=$('#cbPhone'),ok=true;
-    mark(n,'');mark(p,'');$('#cbErr').textContent='';
+    e.preventDefault();if(busy)return;
+    var n=$('#cbName'),p=$('#cbPhone'),m=$('#cbEmail'),ok=true;
+    mark(n,'');mark(p,'');mark(m,'');$('#cbErr').textContent='';
     if(n.value.trim().length<2){mark(n,'Bitte Vorname eingeben.');ok=false}
     if(p.value.replace(/\D/g,'').length<9||!/^[+0-9 ()\/\-]{9,22}$/.test(p.value.trim())){mark(p,'Bitte gültige Telefonnummer eingeben.');ok=false}
-    if(ok&&!$('#cbConsent').checked){$('#cbErr').textContent='Bitte bestätigen Sie das Einverständnis.';ok=false}
+    if(m.value.trim()&&!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(m.value.trim())){mark(m,'Bitte gültige E-Mail-Adresse eingeben oder das Feld leer lassen.');ok=false}
+    if(ok&&!(CS.c1&&CS.c2)){$('#cbErr').textContent='Bitte bestätigen Sie die Einwilligungen a und b.';ok=false}
     if(!ok)return;
-    var b=$('#cbBtn');b.disabled=true;b.textContent='Wird übermittelt …';
-    setTimeout(function(){
-      var sl=$('#cbLang');
+    var b=$('#cbBtn');busy=true;b.disabled=true;b.textContent='Wird übermittelt …';
+    var sl=$('#cbLang');CS.lang=sl.value;if(!cbId)cbId=genId();
+    var d={type:'callback',lead_id:cbId,language:sl.value,first_name:n.value.trim(),last_name:'',phone:p.value.trim(),email:m.value.trim(),contact_preference:'phone',callback_time:$('#cbWhen').value,reasons:['rueckruf'],hp:''};
+    submitWithProof('callback',d,CS,NWC).then(function(res){
+      if(res&&res.ok===false)throw new Error('server');
       track('lead_submitted',{variant:curVariant,source:'rueckruf',language:sl.value});
-      leadCount++;
-      LEADS.push({id:'D-'+(1003+leadCount),info:'Rückruf · '+sl.options[sl.selectedIndex].text+' · '+$('#cbWhen').value,stage:0,fresh:true});
-      renderBoard();
+      fireConversion();
       f.hidden=true;$('#cbDone').hidden=false;
-    },reduce?150:900);
+      var dl=$('#cbDoneL');if(dl){try{var u=URL.createObjectURL(new Blob([lastNach],{type:'text/plain'}));dl.innerHTML='<a class="link" download="nachweis-'+esc(cbId)+'.txt" href="'+u+'">Kopie Ihres Nachweises speichern</a>'}catch(_){}}
+      if(!CONFIG.endpoint)$('#cbDoneT').textContent+=' (Vorschau-Version: Es wurde nichts übermittelt.)';
+    }).catch(function(){busy=false;b.disabled=false;b.textContent='Rückruf anfragen';$('#cbErr').textContent='Senden nicht möglich. Bitte versuchen Sie es erneut oder nutzen Sie den Anruf-Button oben.'});
   });
 })();
 
