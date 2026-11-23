@@ -1013,10 +1013,10 @@ h3{font-weight:600;font-size:1.08rem;letter-spacing:-.01em}
       <div id="cbCons"></div>
       <button class="btn lg" type="submit" id="cbBtn">Rückruf anfragen</button>
       <p class="err" id="cbErr" role="alert"></p>
-      <p class="legal">Die Einwilligungen a und b sind nötig. Ihre Angaben gehen nur damit an die Wertenburg GmbH. Ohne E-Mail-Adresse erhalten Sie keine Eingangsbestätigung.</p>
+      <p class="legal">Die Einwilligungen a und b sind nötig. Ihre Angaben gehen nur damit an die Partnerin. Ohne E-Mail-Adresse erhalten Sie keine Eingangsbestätigung.</p>
       <p class="legal" id="cbPrev" hidden>Vorschau-Version: In dieser Ansicht werden keine Daten übermittelt.</p>
     </form>
-    <div id="cbDone" hidden><span class="ic" style="width:44px;height:44px">✓</span><h3>Danke, Ihre Anfrage ist eingegangen.</h3><p class="sub" id="cbDoneT">Die Esche Consulting GmbH leitet sie auf Grundlage Ihrer Einwilligung an die Wertenburg GmbH weiter, die Sie zum gewünschten Zeitpunkt zurückruft.</p><p class="legal" id="cbDoneL"></p></div>
+    <div id="cbDone" hidden><span class="ic" style="width:44px;height:44px">✓</span><h3>Danke, Ihre Anfrage ist eingegangen.</h3><p class="sub" id="cbDoneT">Die Esche Consulting GmbH leitet sie auf Grundlage Ihrer Einwilligung an die Partnerin weiter, die Sie zum gewünschten Zeitpunkt zurückruft.</p><p class="legal" id="cbDoneL"></p></div>
   </div>
 </div></section>
 
@@ -1267,7 +1267,7 @@ var TRUST=[
 $('#tgrid').innerHTML=TRUST.map(function(t){return '<article class="tcard"><span class="ico">'+svg(t.i,22,2)+'</span><h3>'+t.t+'</h3><p>'+t.p+'</p></article>'}).join('');
 
 var FAQ=[
- ['Wer steckt hinter beraterwechsel.ch und wer berät mich?','beraterwechsel.ch ist ein Marketing- und Informationsangebot der Esche Consulting GmbH. Sie nimmt Ihre Anfrage entgegen, prüft nur, ob sie vollständig ist, und leitet sie nur mit Ihrer Einwilligung weiter. Beraten und vermitteln darf nur die Partnerin, die Wertenburg GmbH, Vaduz (Versicherungsmaklerin). Rollen, Datenfluss und Nachweis sehen Sie unter «Rollen und Nachweis» in der Fusszeile.'],
+ ['Wer steckt hinter beraterwechsel.ch und wer berät mich?','beraterwechsel.ch ist ein Marketing- und Informationsangebot der Esche Consulting GmbH. Sie nimmt Ihre Anfrage entgegen, prüft nur, ob sie vollständig ist, und leitet sie nur mit Ihrer Einwilligung weiter. Beraten und vermitteln darf nur die Partnerin (Versicherungsmaklerin). Rollen, Datenfluss und Nachweis sehen Sie unter «Rollen und Nachweis» in der Fusszeile.'],
   ['Kann ich meinen Versicherungsberater einfach wechseln?','Grundsätzlich ja: Sie entscheiden, wer Sie künftig betreut. Wie der Wechsel konkret abläuft, hängt von Ihrem Vertrag, dem Versicherer und dem bisherigen Betreuungsmandat ab. Die Partnerin prüft das für Sie und zeigt Ihnen die nächsten Schritte.'],
  ['Muss ich meine Lebensversicherung kündigen?','Nein, nicht grundsätzlich. Beim Beraterwechsel geht es um die Betreuung, nicht um das Produkt. Häufig lässt sich die Betreuung neu regeln, ohne dass der Vertrag verändert wird. Ob das bei Ihrem Vertrag möglich ist, klärt die Partnerin vorab. Ihre Anfrage führt nie automatisch zu einer Kündigung.'],
  ['Erfährt mein bisheriger Berater vom Wechsel?','Wenn die Betreuung übertragen wird, werden je nach Ablauf der bisherige Berater oder die Gesellschaft informiert, etwa sobald eine Vollmacht eingereicht wird. Sie müssen aber nicht selbst mit ihm diskutieren. Die Partnerin erklärt Ihnen im Voraus, wer wann informiert wird.'],
@@ -1380,7 +1380,7 @@ document.addEventListener('click',function(e){
 var KIND={lead:'Anfrage',details:'Vertragsangaben',mandate:'Mandat',callback:'Rückruf'};
 var FLABEL={first_name:'Vorname',last_name:'Nachname',phone:'Telefon',email:'E-Mail',language:'Sprache',contact_preference:'Kontaktweg',callback_time:'Rückruf gewünscht',reasons:'Gründe',insurance_types:'Versicherungen',insurer:'Gesellschaft',policy_numbers:'Policennummern',birth_date:'Geburtsdatum',street:'Strasse',postcode:'PLZ',city:'Ort',areas:'Bereiche',reporting:'Reporting',signed_at:'Unterschrieben am'};
 function dataURLtoBlob(u){try{var p=u.split(','),m=/data:([^;]+)/.exec(p[0]),bin=atob(p[1]),a=new Uint8Array(bin.length);for(var i=0;i<bin.length;i++)a[i]=bin.charCodeAt(i);return new Blob([a],{type:m?m[1]:'image/png'})}catch(e){return null}}
-function autoResp(d){return 'Guten Tag '+(d.first_name||'')+'\n\nIhre Anfrage (Nr. '+d.lead_id+') ist eingegangen. Die Esche Consulting GmbH (Marketingdienstleisterin, keine Beratung, keine Vermittlung) prüft nur, ob sie vollständig ist, und leitet sie auf Grundlage Ihrer Einwilligung an die Wertenburg GmbH, Vaduz (Versicherungsmaklerin), weiter. Die Wertenburg GmbH nimmt danach Kontakt mit Ihnen auf.\n\nIhre Einwilligung können Sie jederzeit widerrufen: jetzt@beraterwechsel.ch (bitte Anfrage-Nr. nennen).\n\nFreundliche Grüsse\nberaterwechsel.ch'}
+function autoResp(d){return 'Guten Tag '+(d.first_name||'')+'\n\nIhre Anfrage (Nr. '+d.lead_id+') ist eingegangen. Die Esche Consulting GmbH (Marketingdienstleisterin, keine Beratung, keine Vermittlung) prüft nur, ob sie vollständig ist, und leitet sie auf Grundlage Ihrer Einwilligung an die Partnerin (Versicherungsmaklerin) weiter. Die Partnerin nimmt danach Kontakt mit Ihnen auf.\n\nIhre Einwilligung können Sie jederzeit widerrufen: jetzt@beraterwechsel.ch (bitte Anfrage-Nr. nennen).\n\nFreundliche Grüsse\nberaterwechsel.ch'}
 function sendLead(d,n){
   d.meta={variant:curVariant,page:location.pathname,referrer:document.referrer||'',ts:new Date().toISOString(),attr:attr};
   if(!CONFIG.endpoint)return new Promise(function(r){setTimeout(function(){r({ok:true,id:d.lead_id})},reduce?150:900)});
@@ -1406,8 +1406,8 @@ function sendLead(d,n){
 }
 
 /* ---------- Einwilligungen (versioniert, Wortlaut wird im Nachweis festgehalten) ---------- */
-var CONSENT_VERSION='2026-11-23-v2';
-var CONSENT_HEAD={c1:'Datenschutz gelesen und Verarbeitung erlaubt',c2:'Weiterleitung an die Wertenburg GmbH und Kontakt erlaubt',mk:'Informationen der Wertenburg GmbH per E-Mail (freiwillig)'};
+var CONSENT_VERSION='2026-11-23-v3';
+var CONSENT_HEAD={c1:'Datenschutz gelesen und Verarbeitung erlaubt',c2:'Weiterleitung an die Partnerin und Kontakt erlaubt',mk:'Informationen der Partnerin per E-Mail (freiwillig)'};
 var UI_LANG='de';
 var CONSENT_TEXTS={de:{
  c1:'Ich habe die Datenschutzerklärung und die rechtlichen Hinweise gelesen. Mir ist bekannt, dass die Esche Consulting GmbH als Marketingdienstleisterin weder berät noch Versicherungen vermittelt oder Verträge abschliesst. Ich erlaube die Verarbeitung meiner Angaben samt Nachweis meiner Einwilligung (Zeitpunkt, IP-Adresse).',
@@ -1416,7 +1416,7 @@ var CONSENT_TEXTS={de:{
  mok:'Ich habe das Maklermandat gelesen, bin mit den Bedingungen einverstanden und erteile es dem im Mandat genannten Makler. Der Vertrag entsteht ausschliesslich mit der Wertenburg GmbH, nicht mit der Esche Consulting GmbH.'
 }};
 var TXT_DE=CONSENT_TEXTS.de,TXT=CONSENT_TEXTS[UI_LANG]||TXT_DE;
-var MANDATE_NOTE='Der Vertrag (Maklermandat) kommt ausschliesslich mit der Wertenburg GmbH zustande, nicht mit der Esche Consulting GmbH.';
+var MANDATE_NOTE='Der Vertrag (Maklermandat) kommt ausschliesslich mit der Partnerin zustande, nicht mit der Esche Consulting GmbH.';
 function consentBlock(S){
   function ci(n,pre,full,on){return '<div class="copt"><label class="opt"><input type="checkbox" name="'+n+'"'+(on?' checked':'')+'><span><b>'+pre+esc(CONSENT_HEAD[n])+'</b></span></label><details class="cd"><summary>Wortlaut anzeigen</summary><p>'+full+'</p></details></div>'}
   function lk(t){return esc(t).replace('Datenschutzerklärung','<button type="button" class="link" data-role-win="dsg">Datenschutzerklärung</button>').replace('rechtlichen Hinweise','<button type="button" class="link" data-role-win="roles">rechtlichen Hinweise</button>')}
@@ -1704,8 +1704,8 @@ function finishLead(){
   var d=$('#fDone');d.hidden=false;
   var dig=F.wantMandate,ch=F.contact==='mail'?'per E-Mail':'telefonisch';
   d.innerHTML='<span class="ic">'+svg('check',26,3)+'</span><h2 id="doneT" tabindex="-1">Danke, '+esc(F.first.trim())+'. Ihre Anfrage ist eingegangen.</h2>'
-   +'<p class="lead">Die Esche Consulting GmbH prüft nur, ob Ihre Anfrage vollständig ist, und leitet sie auf Grundlage Ihrer Einwilligung an die Wertenburg GmbH weiter.</p>'
-   +'<div class="next"><b>So geht es weiter</b><ol><li>Ihre Anfrage geht an die Wertenburg GmbH, Vaduz (Versicherungsmaklerin).</li><li>Die Wertenburg GmbH meldet sich '+ch+' bei Ihnen.</li><li>Ob eine neue Betreuung zustande kommt, entscheiden Sie.</li></ol></div>'
+   +'<p class="lead">Die Esche Consulting GmbH prüft nur, ob Ihre Anfrage vollständig ist, und leitet sie auf Grundlage Ihrer Einwilligung an die Partnerin weiter.</p>'
+   +'<div class="next"><b>So geht es weiter</b><ol><li>Ihre Anfrage geht an die Partnerin (Versicherungsmaklerin).</li><li>Die Partnerin meldet sich '+ch+' bei Ihnen.</li><li>Ob eine neue Betreuung zustande kommt, entscheiden Sie.</li></ol></div>'
    +'<div class="upsell"><b>'+(dig?'Weiter zur Maklervollmacht':'Schneller starten?')+'</b><p>Ergänzen Sie in etwa 1 Minute Ihre Vertragsangaben oder erteilen Sie gleich die Maklervollmacht. Freiwillig. '+esc(MANDATE_NOTE)+'</p><button class="btn" type="button" id="doneMore">'+(dig?'Vollmacht jetzt erteilen':'Angaben und Vollmacht ergänzen')+' →</button></div>'
    +'<p class="legal">Anfrage-Nr. '+esc(leadId)+'. '+nwLink()+'<br>Lieber persönlich? <a href="'+CONFIG.phoneHref+'" data-src="danke">Anrufen</a> · <a href="'+CONFIG.waHref+'" target="_blank" rel="noopener" data-src="danke">WhatsApp</a>'+(CONFIG.endpoint?'':' · Vorschau-Version: In dieser Ansicht wurden keine Daten übermittelt.')+'</p>'
    +'<button class="link" type="button" id="doneClose">Schliessen</button>';
@@ -1722,7 +1722,7 @@ function finishStage2(signed){
   $('#leadForm').hidden=true;
   var d=$('#fDone');d.hidden=false;
   d.innerHTML='<span class="ic">'+svg('check',26,3)+'</span><h2 id="doneT" tabindex="-1">'+(signed?'Ihr Maklermandat ist unterschrieben.':'Danke, Ihre Angaben sind angekommen.')+'</h2>'
-   +'<p class="lead">'+(signed?'Die Esche Consulting GmbH leitet es an die Wertenburg GmbH weiter, die es nach Eingang gegenzeichnet. '+esc(MANDATE_NOTE):'Das hilft der Wertenburg GmbH, Ihre Verträge schneller zuzuordnen.')+'</p>'
+   +'<p class="lead">'+(signed?'Die Esche Consulting GmbH leitet es an die Partnerin weiter, die es nach Eingang gegenzeichnet. '+esc(MANDATE_NOTE):'Das hilft der Partnerin, Ihre Verträge schneller zuzuordnen.')+'</p>'
    +'<p class="legal">Anfrage-Nr. '+esc(leadId)+'. '+nwLink()+(CONFIG.endpoint?'':'<br>Vorschau-Version: In dieser Ansicht wurden keine Daten übermittelt.')+'</p>'
    +'<button class="btn" type="button" id="doneClose">Schliessen</button>';
   $('#fBar').style.width='100%';$('#fStep').textContent='Fertig';
@@ -1789,9 +1789,9 @@ function poaRender(){
   switch(P.step){
    case 0:h='<h3>Kundendaten erfassen</h3><p class="sub">Demo: Die Eingaben bleiben in dieser Seite und werden nicht gespeichert.</p><div class="fgrid">'+fld('pFirst','Vorname',P.first,'autocomplete="off"')+fld('pLast','Nachname',P.last,'autocomplete="off"')+'</div>';break;
    case 1:h='<h3>Bestehende Versicherungen auswählen</h3><div class="opts cols">'+TYPES.slice(0,4).concat([TYPES[5]]).map(function(r){return opt('checkbox','ptype',r[0],r[1],P.types.has(r[0]))}).join('')+'</div>';break;
-   case 2:h='<h3>Neue betreuende Gesellschaft offenlegen</h3><div class="ph"><b>Wertenburg GmbH</b>, Wuhrstrasse 6, 9490 Vaduz, Liechtenstein. Versicherungsmaklerin, eingetragen im Register der Versicherungsvermittler der FMA Liechtenstein (Nr. 338879).</div>'+opt('checkbox','pack','1','Ich habe die Angaben zur betreuenden Gesellschaft zur Kenntnis genommen.',P.ack);break;
+   case 2:h='<h3>Neue betreuende Gesellschaft offenlegen</h3><div class="ph">Name, Adresse und Registereintrag der Partnerin (Versicherungsmaklerin) stehen im Maklermandat, das Sie vor der Unterschrift vollständig sehen.</div>'+opt('checkbox','pack','1','Ich habe die Angaben zur betreuenden Gesellschaft zur Kenntnis genommen.',P.ack);break;
    case 3:h='<h3>Vollmacht individuell vorbereiten</h3><p class="sub" id="prepTxt">'+(P.prep?'Ihre Vollmacht ist vorbereitet.':'Ihre Vollmacht wird vorbereitet …')+'</p><div class="bar"><i id="prepBar" style="width:'+(P.prep?'100':'0')+'%"></i></div>';break;
-   case 4:h='<h3>Dokument zur Prüfung</h3><div class="paper"><strong>MAKLERVOLLMACHT · DEMO-MUSTER</strong><p>Ich, <b>'+esc(names)+'</b>, bevollmächtige die Wertenburg GmbH, Wuhrstrasse 6, 9490 Vaduz (Versicherungsmaklerin), die Betreuung folgender Verträge zu übernehmen: <b>'+esc(tlist)+'</b>.</p><p>Dieses Dokument ist ein unverbindliches Muster zu Demonstrationszwecken und entfaltet keine Rechtswirkung. Ein produktiver Einsatz setzt geklärte rechtliche Voraussetzungen und eine zuständige Vermittlergesellschaft voraus.</p></div>'+opt('checkbox','pread','1','Ich habe das Dokument gelesen.',P.read);break;
+   case 4:h='<h3>Dokument zur Prüfung</h3><div class="paper"><strong>MAKLERVOLLMACHT · DEMO-MUSTER</strong><p>Ich, <b>'+esc(names)+'</b>, bevollmächtige die im Maklermandat genannte Partnerin (Versicherungsmaklerin), die Betreuung folgender Verträge zu übernehmen: <b>'+esc(tlist)+'</b>.</p><p>Dieses Dokument ist ein unverbindliches Muster zu Demonstrationszwecken und entfaltet keine Rechtswirkung. Ein produktiver Einsatz setzt geklärte rechtliche Voraussetzungen und eine zuständige Vermittlergesellschaft voraus.</p></div>'+opt('checkbox','pread','1','Ich habe das Dokument gelesen.',P.read);break;
    case 5:h='<h3>Elektronische Unterschrift (Simulation)</h3><p class="sub">Zeichnen Sie mit Maus oder Finger. Das ist keine rechtsverbindliche Unterschrift.</p><canvas class="sigpad" id="sig" aria-label="Unterschriftenfeld"></canvas><button class="link" type="button" id="sigClear">Feld leeren</button>';break;
    case 6:h='<h3>Dokument sicher übermitteln</h3><p class="sub">In der Live-Version würde das Dokument hier verschlüsselt übermittelt. In der Demo wird nichts gesendet.</p><div class="bar"><i id="sendBar"></i></div><div><button class="btn" type="button" id="sendBtn">Sicher übermitteln (simuliert)</button></div>';break;
    case 7:h='<h3>Betreuungsübertragung eingeleitet</h3><div class="ph">Simulation abgeschlossen. In der Live-Version würde nun die Übertragung der Betreuung beim jeweiligen Versicherer beantragt und Sie würden über den Stand informiert.</div><div><button class="btn ghost" type="button" id="poaRestart">Demo neu starten</button></div>';break;
